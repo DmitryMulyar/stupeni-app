@@ -428,6 +428,13 @@ input[type=range]{accent-color:var(--accent);height:32px}
 .lib .ex .n small{font-weight:600;color:var(--ink-2)}
 .btn svg{width:20px;height:20px;flex:none}
 .snd.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--sage)}
+/* v3: избранное */
+.fav{margin-left:auto;width:48px;height:48px;flex:none;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);font-size:22px;line-height:1;color:var(--ink-2)}
+.fav[aria-pressed="true"]{color:var(--i-yellow);border-color:var(--i-yellow);background:var(--butter)}
+.ex-act{display:flex;align-items:center;gap:10px;flex:none}
+.ex-act .fav{width:40px;height:40px;font-size:18px;margin:0}
+.ex-act a{flex:none;font-size:14px;font-weight:800;color:var(--accent);text-decoration:none;padding:8px 0}
+.analogy .box svg{width:84%}
 </style>
 
 <header class="topbar">
@@ -559,6 +566,47 @@ function shp(kind, color='sky', s=1, fill=true){
     case 'star': return `<path d="M${t(50,12)} L${t(60,38)} L${t(88,39)} L${t(66,56)} L${t(74,84)} L${t(50,68)} L${t(26,84)} L${t(34,56)} L${t(12,39)} L${t(40,38)}z" ${st} stroke-linejoin="round"/>`;
     case 'heart': return `<path d="M${t(50,84)} C${t(22,64)} ${t(12,48)} ${t(14,36)} C${t(16,18)} ${t(42,14)} ${t(50,32)} C${t(58,14)} ${t(84,18)} ${t(86,36)} C${t(88,48)} ${t(78,64)} ${t(50,84)}z" ${st}/>`;
   }
+}
+
+/* ===================== v3: рисунки для новых разделов ===================== */
+Object.assign(I, {
+  school:`<rect x="18" y="40" width="64" height="46" rx="4" fill="var(--i-peach)"/><path d="M12 42L50 18l38 24z" fill="var(--i-rose)"/><rect x="44" y="62" width="12" height="24" rx="3" fill="var(--i-brown)"/><rect x="26" y="50" width="12" height="10" rx="2" fill="var(--i-sky)"/><rect x="62" y="50" width="12" height="10" rx="2" fill="var(--i-sky)"/><circle cx="50" cy="34" r="5" fill="var(--i-light)"/>`,
+  cart:`<path d="M10 22h12l10 40h44l8-28H26" fill="none" stroke="var(--i-ink)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity=".7"/><rect x="30" y="34" width="48" height="24" rx="4" fill="var(--i-green)"/><circle cx="38" cy="76" r="7" fill="var(--i-ink)"/><circle cx="72" cy="76" r="7" fill="var(--i-ink)"/>`,
+  cake:`<rect x="20" y="52" width="60" height="32" rx="8" fill="var(--i-peach)"/><path d="M20 62q10 8 20 0t20 0t20 0" fill="none" stroke="var(--i-light)" stroke-width="5"/><rect x="47" y="34" width="6" height="18" rx="2" fill="var(--i-sky)"/><path d="M50 20q7 7 0 13q-7-6 0-13z" fill="var(--i-yellow)"/>`,
+  balloon:`<ellipse cx="50" cy="40" rx="22" ry="26" fill="var(--i-rose)"/><path d="M46 66h8l-4 5z" fill="var(--i-rose)"/><path d="M50 71q-6 8 2 14t-2 10" stroke="var(--i-ink)" stroke-width="2" fill="none" opacity=".5"/><ellipse cx="42" cy="30" rx="5" ry="8" fill="var(--i-light)" opacity=".4"/>`,
+  trophy:`<path d="M30 16h40v18a20 20 0 0 1-40 0z" fill="var(--i-yellow)"/><path d="M30 22H18q0 16 14 18M70 22h12q0 16-14 18" fill="none" stroke="var(--i-yellow)" stroke-width="5"/><rect x="44" y="52" width="12" height="16" fill="var(--i-yellow)"/><rect x="32" y="68" width="36" height="12" rx="4" fill="var(--i-brown)"/>`,
+  hand:`<rect x="30" y="44" width="42" height="42" rx="16" fill="var(--i-peach)"/><rect x="31" y="22" width="9" height="34" rx="4.5" fill="var(--i-peach)"/><rect x="42" y="14" width="9" height="40" rx="4.5" fill="var(--i-peach)"/><rect x="53" y="16" width="9" height="38" rx="4.5" fill="var(--i-peach)"/><rect x="64" y="24" width="8" height="32" rx="4" fill="var(--i-peach)"/><rect x="14" y="50" width="26" height="10" rx="5" transform="rotate(-35 27 55)" fill="var(--i-peach)"/>`,
+  cup:`<path d="M24 28h44l-5 52H29z" fill="var(--i-sky)"/><path d="M68 40h6a8 8 0 0 1 0 16h-8" fill="none" stroke="var(--i-sky)" stroke-width="5"/><path d="M27 40h38" stroke="var(--i-light)" stroke-width="4" opacity=".6"/>`,
+  toilet:`<rect x="30" y="14" width="30" height="26" rx="4" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><path d="M20 44h60q0 24-30 24t-30-24z" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><rect x="40" y="66" width="20" height="20" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/>`,
+  pause:`<circle cx="50" cy="50" r="36" fill="var(--i-lavender)"/><rect x="36" y="32" width="9" height="36" rx="4" fill="var(--i-light)"/><rect x="55" y="32" width="9" height="36" rx="4" fill="var(--i-light)"/>`,
+  helpq:`<circle cx="50" cy="50" r="36" fill="var(--i-sky)"/><path d="M40 40a10 10 0 1 1 14 9c-3 2-4 4-4 8" fill="none" stroke="var(--i-light)" stroke-width="8" stroke-linecap="round"/><circle cx="50" cy="70" r="5" fill="var(--i-light)"/>`,
+  no:`<circle cx="50" cy="50" r="36" fill="var(--i-rose)"/><path d="M36 36l28 28M64 36L36 64" stroke="var(--i-light)" stroke-width="9" stroke-linecap="round"/>`,
+  yes:`<circle cx="50" cy="50" r="36" fill="var(--i-green)"/><path d="M33 51l12 12 22-26" stroke="var(--i-light)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+  list:`<rect x="22" y="12" width="56" height="76" rx="8" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><path d="M32 30l4 4 7-8M32 50l4 4 7-8M32 70l4 4 7-8" stroke="var(--i-green)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M50 32h18M50 52h18M50 72h18" stroke="var(--line)" stroke-width="5" stroke-linecap="round"/>`,
+  coin:`<circle cx="50" cy="50" r="34" fill="var(--i-yellow)"/><circle cx="50" cy="50" r="26" fill="none" stroke="var(--i-light)" stroke-width="3" opacity=".6"/><path d="M44 66V32h10a9 9 0 0 1 0 18H38M38 58h18" stroke="var(--i-brown)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
+  tv:`<rect x="14" y="26" width="72" height="50" rx="8" fill="var(--i-ink)"/><rect x="20" y="32" width="60" height="38" rx="4" fill="var(--i-sky)"/><path d="M40 14l10 12 10-12" stroke="var(--i-ink)" stroke-width="4" fill="none" stroke-linecap="round"/><rect x="36" y="78" width="28" height="6" rx="3" fill="var(--i-ink)"/>`,
+  cloud:`<path d="M24 72a16 16 0 0 1 4-31 22 22 0 0 1 42-4 18 18 0 0 1 6 35z" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/>`,
+  tree:`<rect x="45" y="58" width="10" height="28" rx="3" fill="var(--i-brown)"/><circle cx="50" cy="42" r="26" fill="var(--i-green)"/><circle cx="40" cy="36" r="6" fill="var(--i-light)" opacity=".25"/>`,
+  beach:`<circle cx="70" cy="28" r="12" fill="var(--i-yellow)"/><path d="M6 62q11-8 22 0t22 0 22 0 22 0v30H6z" fill="var(--i-sky)"/><path d="M6 80h88v12H6z" fill="var(--i-butter)"/>`,
+  sofa:`<rect x="14" y="40" width="72" height="30" rx="10" fill="var(--i-lavender)"/><rect x="8" y="50" width="18" height="32" rx="8" fill="var(--i-lavender)"/><rect x="74" y="50" width="18" height="32" rx="8" fill="var(--i-lavender)"/><rect x="24" y="60" width="52" height="16" rx="5" fill="var(--i-peach)"/>`,
+  box:`<rect x="18" y="42" width="64" height="44" rx="6" fill="var(--i-peach)"/><path d="M14 30h72v14H14z" fill="var(--i-rose)"/><path d="M50 30v56" stroke="var(--i-yellow)" stroke-width="6"/><circle cx="30" cy="20" r="3" fill="var(--i-yellow)"/><circle cx="70" cy="16" r="2.5" fill="var(--i-yellow)"/><circle cx="56" cy="10" r="2" fill="var(--i-yellow)"/>`,
+  medal:`<path d="M36 10l14 28 14-28h12L58 44H42L24 10z" fill="var(--i-sky)"/><circle cx="50" cy="62" r="24" fill="var(--i-yellow)"/><path d="M50 48l4.4 9 9.8 1.2-7.2 6.8 1.9 9.8L50 70l-8.9 4.8 1.9-9.8-7.2-6.8 9.8-1.2z" fill="var(--i-light)" opacity=".8"/>`,
+  worker:face('calm','var(--i-peach)') + `<path d="M24 26q26-22 52 0v6H24z" fill="var(--i-sky)"/><rect x="18" y="28" width="64" height="6" rx="3" fill="var(--i-sky)"/>`,
+  friend:face('joy','var(--i-peach)'),
+  stranger:face('calm','var(--i-lime)') + `<rect x="22" y="8" width="56" height="18" rx="5" fill="var(--i-ink)"/><rect x="14" y="22" width="72" height="7" rx="3" fill="var(--i-ink)"/><rect x="30" y="40" width="40" height="10" rx="5" fill="var(--i-ink)" opacity=".85"/>`,
+  bubble:`<circle cx="50" cy="50" r="34" fill="var(--i-sky)" opacity=".35"/><circle cx="50" cy="50" r="34" fill="none" stroke="var(--i-sky)" stroke-width="3"/><ellipse cx="38" cy="36" rx="8" ry="5" fill="var(--i-light)" opacity=".8" transform="rotate(-30 38 36)"/>`,
+  square:`<rect x="18" y="18" width="64" height="64" rx="12" fill="none" stroke="var(--i-sky)" stroke-width="7"/><circle cx="18" cy="18" r="9" fill="var(--i-rose)"/>`,
+  puzzle:`<path d="M20 30h18a8 8 0 1 1 16 0h18v18a8 8 0 1 1 0 16v18H54a8 8 0 1 0-16 0H20V64a8 8 0 1 0 0-16z" fill="var(--i-green)"/>`,
+  pajama:`<path d="M36 18l-22 12 8 16 8-4v42h40V42l8 4 8-16-22-12q-6 8-14 8t-14-8z" fill="var(--i-lavender)"/><circle cx="40" cy="50" r="3" fill="var(--i-light)"/><circle cx="58" cy="62" r="3" fill="var(--i-light)"/><circle cx="46" cy="74" r="3" fill="var(--i-light)"/><path d="M60 30a8 8 0 1 0 6 10 6 6 0 1 1-6-10z" fill="var(--i-butter)"/>`,
+  mirror:`<ellipse cx="50" cy="44" rx="28" ry="34" fill="var(--i-sky)" opacity=".5"/><ellipse cx="50" cy="44" rx="28" ry="34" fill="none" stroke="var(--i-brown)" stroke-width="6"/><rect x="46" y="78" width="8" height="14" rx="3" fill="var(--i-brown)"/><path d="M38 28q8-8 16-4" stroke="var(--i-light)" stroke-width="4" fill="none" stroke-linecap="round"/>`
+});
+const bear = (k='calm') => `<circle cx="22" cy="24" r="13" fill="var(--i-brown)"/><circle cx="78" cy="24" r="13" fill="var(--i-brown)"/><circle cx="22" cy="24" r="6" fill="var(--i-peach)"/><circle cx="78" cy="24" r="6" fill="var(--i-peach)"/>` + face(k, 'var(--i-brown)').replace(/<path d="M30 24q20-18 40 0q-20-6-40 0z"[^>]*\/>/, '');
+I.bear = bear('joy');
+/* рукавичка из трёх цветных зон: основа, полоса, манжета */
+const MIT_COL = ['rose','sky','green','yellow','lavender'];
+function mitten(c, flip){
+  const col = i => `var(--i-${MIT_COL[c[i]]})`;
+  return `<g ${flip?'transform="translate(100 0) scale(-1 1)"':''}><path d="M30 92V40a20 20 0 0 1 40 0v12l9-6a7 7 0 0 1 8 11L70 72v20z" fill="${col(0)}"/><rect x="30" y="54" width="40" height="10" fill="${col(1)}"/><rect x="26" y="80" width="48" height="14" rx="5" fill="${col(2)}"/></g>`;
 }
 
 /* ===================== общие данные и помощники ===================== */
@@ -699,7 +747,7 @@ function recognize(){
 
 /* ---------- каркас упражнения ---------- */
 const ICON_SPEAK = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`;
-const shell = (title, inner='') => `<section class="wrap game"><div class="game-top"><button class="back" data-act="back" aria-label="Назад">${ICON_BACK}</button><h1 class="game-title">${title}</h1></div><div id="stage">${inner}</div></section>`;
+const shell = (title, inner='') => `<section class="wrap game"><div class="game-top"><button class="back" data-act="back" aria-label="Назад">${ICON_BACK}</button><h1 class="game-title">${title}</h1><button class="fav" data-act="fav" data-cur="1" aria-label="В избранное">☆</button></div><div id="stage">${inner}</div></section>`;
 function result({stars, title, sub, meta}){
   return `<div class="result">
     <div class="stars">${[1,2,3].map(i => `<svg class="star${i<=stars?' on':''}" style="--d:${i*140}ms" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l5.9 12.6 13.6 1.6-10 9.4 2.7 13.6L24 34.4l-12.2 6.8 2.7-13.6-10-9.4 13.6-1.6z"/></svg>`).join('')}</div>
@@ -900,7 +948,7 @@ function kidPage(id){
     ${[...k.assign.map(a=>({t:a[0],f:a[1],p:a[2]})), ...extra.map(a=>({t:a.t,f:a.f,p:'новое',isNew:true}))].map(a=>`<li><div><p class="t">${a.t}</p><p class="w">${a.f}</p></div><p class="r">${a.isNew?'<span class="pill new">Новое</span>':`<span class="pill">${a.p}</span>`}</p></li>`).join('')}
   </ul>
   <form class="form" id="assignForm" style="margin-top:18px">
-    <label class="field" for="asEx">Добавить упражнение<select id="asEx">${LIB.flatMap(m=>m.cats.flatMap(c=>c.items.map(it=>`<option>${it.t}</option>`))).join('')}</select></label>
+    <label class="field" for="asEx">Добавить упражнение<select id="asEx">${allItems().map(it=>`<option>${it.t}</option>`).join('')}</select></label>
     <label class="field" for="asF">Как часто<select id="asF"><option>каждый день</option><option>5 раз в неделю</option><option selected>3 раза в неделю</option><option>1 раз в неделю</option></select></label>
     <button class="btn primary" type="submit">Назначить</button>
   </form></div>
@@ -1544,6 +1592,461 @@ ACT['vo-rec'] = async el => {
 };
 ACT['vo-play'] = el => say(G.all[+el.dataset.i], 0.7);
 
+/* ===================== Движки упражнений =====================
+   Упражнение = запись в EX: {t: название, e: движок, mod, cat, age, tier, ...данные}.
+   Маршрут #ex-<id>. Новое упражнение того же типа добавляется только данными. */
+const EX = {}, ENG = {};
+const ex = (id, o) => { EX[id] = o; };
+CHILD.add('ex');
+R.ex = id => EX[id] ? shell(EX[id].t) : `<section class="wrap"><p>Упражнение не найдено.</p></section>`;
+AFTER.ex = id => { const e = EX[id]; if (e) { G = {id, e, t0:performance.now(), errors:0, lock:false}; ENG[e.e](e); } };
+const done = (res, o) => { record('ex-'+G.id, G.e.t, res, performance.now()-G.t0); finish(o); };
+const elapsed = () => fmtSec(performance.now()-G.t0);
+/* картинка из описания: {ill}, {face}, {bear}, {svg}, {shape:[k,c,s]} */
+function pic(o){
+  if (!o) return '';
+  if (o.ill) return svg(I[o.ill]);
+  if (o.face) return svg(face(o.face, o.skin));
+  if (o.bear) return svg(bear(o.bear));
+  if (o.shape) return svg(shp(...o.shape));
+  if (o.svg) return o.svg.startsWith('<svg') ? o.svg : svg(o.svg, o.vb);
+  return '';
+}
+
+/* --- 1. Пошаговое расписание / чек-лист --- */
+ENG.steps = e => { G.i = 0; stepsRender(); };
+function stepsRender(){
+  const st = G.e.steps;
+  $('stage').innerHTML = `<p class="prompt">${G.e.prompt||'Нажми, когда сделаешь'}</p>
+    <div class="sched" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">${st.map((s,i)=>{ const c = i<G.i?'done':i===G.i?'now':''; return `<button class="step ${c}" data-act="st" data-i="${i}">${svg(I[s.k])}<span>${s.t}</span><span class="tick">${i<G.i?'✓ Сделано':''}</span></button>`; }).join('')}</div>`;
+}
+ACT.st = el => {
+  if (+el.dataset.i !== G.i) return;
+  if (G.e.speak) say(G.e.steps[G.i].t);
+  G.i++; stepsRender();
+  if (G.i === G.e.steps.length) later(() => done(`${G.i} из ${G.i} шагов`, {stars:3, title:G.e.doneTitle||'Всё сделано!', sub:G.e.doneSub||'Все шаги пройдены. Ты молодец.'}), 700);
+};
+
+/* --- 2. История из страниц с озвучкой --- */
+ENG.story = e => { G.p = 0; storyPage(); };
+function storyPage(){
+  const pg = G.e.pages[G.p], last = G.p === G.e.pages.length-1;
+  $('stage').innerHTML = `<div class="story">
+    <div class="story-art" style="--tint:var(--${pg.tint||'sky'})">${pic(pg)}</div>
+    <p class="story-text">${pg.text}</p>
+    <div class="story-nav">
+      <button class="icon-btn" data-act="sp-prev" aria-label="Назад" ${G.p?'':'disabled style="opacity:.4"'}>${ICON_BACK}</button>
+      <button class="btn" data-act="sp-read">${ICON_SPEAK} Прочитать</button>
+      <button class="btn primary" data-act="sp-next">${last?'Конец':'Дальше'}</button>
+    </div>${dots(G.p+1, G.e.pages.length)}</div>`;
+}
+ACT['sp-prev'] = () => { if (G.p){ G.p--; storyPage(); } };
+ACT['sp-read'] = () => say(G.e.pages[G.p].text, 0.85);
+ACT['sp-next'] = () => {
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  if (G.p < G.e.pages.length-1){ G.p++; return storyPage(); }
+  done('прочитана', {stars:3, title:'История прочитана', sub:G.e.moral||'Её полезно перечитывать вместе со взрослым.'});
+};
+
+/* --- 3. Выбор ответа: картинки, лица или текст --- */
+ENG.choice = e => { G.r = 0; G.rounds = typeof e.rounds === 'function' ? e.rounds() : e.rounds; choiceRender(); };
+function choiceRender(){
+  const q = G.rounds[G.r], opts = q.keep ? q.opts : shuffle(q.opts), text = opts.every(o=>o.text && !o.ill && !o.face && !o.bear && !o.shape && !o.svg);
+  G.opts = opts;
+  $('stage').innerHTML = `${q.scene?`<div class="situ">${pic(q.scene)}</div>`:''}
+    ${q.who?`<p class="hint" style="margin:0 0 6px"><b>${q.who}</b></p>`:''}<p class="prompt">${q.ask}</p>
+    ${text ? `<div class="answers">${opts.map((o,i)=>`<button class="answer" data-act="ch" data-i="${i}">${o.text}</button>`).join('')}</div>`
+           : `<div class="${opts.length===4?'pick4':'pick3'}">${opts.map((o,i)=>`<button class="pick" data-act="ch" data-i="${i}" aria-label="${o.text||''}">${pic(o)}${o.text?`<span>${o.text}</span>`:''}</button>`).join('')}</div>`}
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.rounds.length)}`;
+  if (q.speak && G.spoke) say(q.ask);
+}
+ACT.ch = el => { const q = G.rounds[G.r], o = G.opts[+el.dataset.i];
+  choose(el, !!o.ok, o.why || q.yes || 'Верно!', o.why || q.no || 'Подумай ещё.', () => {
+    if (++G.r < G.rounds.length) return choiceRender();
+    done(`${G.rounds.length} из ${G.rounds.length}, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:G.e.doneTitle||'Здорово!', sub:G.e.doneSub||'Ты справился со всеми заданиями.', meta:`Для взрослых: ${elapsed()}, ошибок ${G.errors}`});
+  }); };
+
+/* --- 4. Коммуникативные карточки (PECS-подобные) с озвучкой --- */
+ENG.pecs = e => { G.strip = []; pecsRender(); };
+function pecsRender(){
+  const e = G.e;
+  $('stage').innerHTML = `<div class="say-card" style="min-height:120px"><p class="level">Моя фраза</p><p class="say-word" id="strip">${G.strip.map(c=>c.say).join(' ') || '…'}</p>
+      <div class="ctrl" style="margin:0"><button class="btn primary" data-act="pc-say">${ICON_SPEAK} Сказать</button><button class="btn" data-act="pc-clear">Стереть</button></div></div>
+    ${e.groups.map(g=>`<p class="level" style="margin:16px 0 8px">${g.t}</p><div class="pick4">${g.cards.map((c,i)=>`<button class="pick" data-act="pc" data-g="${e.groups.indexOf(g)}" data-i="${i}">${pic(c)}<span>${c.say}</span></button>`).join('')}</div>`).join('')}
+    <p class="note">Карточку можно нажать одну (она сразу озвучится) или собрать фразу из нескольких.</p>`;
+}
+ACT.pc = el => { const c = G.e.groups[+el.dataset.g].cards[+el.dataset.i]; G.strip.push(c); say(c.say); $('strip').textContent = G.strip.map(x=>x.say).join(' '); record('ex-'+G.id, G.e.t, 'карточка «'+c.say+'»', 0); };
+ACT['pc-say'] = () => { if (G.strip.length) say(G.strip.map(x=>x.say).join(' ')); };
+ACT['pc-clear'] = () => { G.strip = []; $('strip').textContent = '…'; };
+
+/* --- 5. Собери фразу из слов --- */
+ENG.phrase = e => { G.r = 0; phraseRender(); };
+function phraseRender(){
+  const q = G.e.rounds[G.r]; G.built = [];
+  $('stage').innerHTML = `<div class="situ" style="max-width:260px">${pic(q)}</div>
+    <div class="say-card" style="min-height:96px"><p class="say-word" id="built" style="font-size:clamp(22px,5vw,34px)">…</p></div>
+    <div class="digits" id="words">${shuffle(q.words.map((w,i)=>({w,i}))).map(o=>`<button style="width:auto;padding:0 18px;font-size:20px" data-act="ph-w" data-i="${o.i}">${o.w}</button>`).join('')}</div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.e.rounds.length)}`;
+}
+ACT['ph-w'] = el => {
+  const q = G.e.rounds[G.r], i = +el.dataset.i;
+  if (i !== G.built.length){ G.errors++; $('fb').textContent = 'Какое слово должно быть дальше?'; return; }
+  G.built.push(q.words[i]); el.style.visibility = 'hidden'; $('built').textContent = G.built.join(' '); $('fb').textContent = '';
+  if (G.built.length < q.words.length) return;
+  const s = G.built.join(' '); say(s); $('fb').textContent = 'Отлично! ' + s + '.';
+  later(() => { if (++G.r < G.e.rounds.length) return phraseRender();
+    done(`${G.e.rounds.length} фразы, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Фразы собраны', sub:'Ты собрал фразы целиком.', meta:`Для взрослых: ошибок ${G.errors}`}); }, 1800);
+};
+
+/* ===================== Движки: эмоции, совместные игры, регуляция, самооценка ===================== */
+
+/* --- «Мой гнев»: выбрать цвет злости, «выдыхать» её, пока не станет спокойно --- */
+ENG.anger = e => { G.size = 1; G.col = null; angerRender(); };
+const ANGER_COLS = [['rose','красная'],['peach','оранжевая'],['yellow','жёлтая'],['lavender','фиолетовая'],['brown','коричневая']];
+function angerRender(){
+  if (!G.col){
+    $('stage').innerHTML = `<p class="prompt">Какого цвета твоя злость?</p>
+      <div class="digits">${ANGER_COLS.map(([c,n])=>`<button data-act="ang-col" data-c="${c}" aria-label="${n}" style="background:var(--i-${c});border-color:transparent"></button>`).join('')}</div>
+      <p class="note">Нет правильного ответа. Выбери цвет, который подходит.</p>`;
+    return;
+  }
+  $('stage').innerHTML = `<p class="prompt" id="angSay">Это твоя злость. Сдуй её!</p>
+    <div class="breath" style="width:min(280px,72vw)"><svg viewBox="0 0 100 100" style="width:100%;height:100%;overflow:visible"><g id="blob" style="transition:transform 1.2s var(--ease);transform-origin:50px 50px;transform:scale(${G.size})">
+      <path d="M50 8c14 0 18 10 28 14s16 16 12 28-2 22-14 30-26 12-38 4S6 66 8 52 14 30 24 20 36 8 50 8z" fill="var(--i-${G.col})" opacity=".85"/>
+      <circle cx="38" cy="44" r="4" fill="var(--i-ink)"/><circle cx="62" cy="44" r="4" fill="var(--i-ink)"/><path d="M36 34l10 5M64 34l-10 5" stroke="var(--i-ink)" stroke-width="3.5" stroke-linecap="round"/><path d="M40 64q10-6 20 0" stroke="var(--i-ink)" stroke-width="3.5" fill="none" stroke-linecap="round"/></g></svg></div>
+    <div class="row center"><button class="btn primary" data-act="ang-blow" style="min-height:72px;padding:0 34px">Медленно выдохнуть</button></div>
+    <p class="note">Каждый выдох делает злость меньше. Злость — нормальное чувство, ей просто нужно выйти.</p>`;
+}
+ACT['ang-col'] = el => { G.col = el.dataset.c; angerRender(); };
+ACT['ang-blow'] = el => {
+  if (G.lock) return; G.lock = true; G.size = Math.max(.15, G.size - .17);
+  $('blob').style.transform = `scale(${G.size})`; $('angSay').textContent = G.size > .5 ? 'Ещё выдох…' : G.size > .2 ? 'Злость становится маленькой' : 'Злость ушла';
+  later(() => { G.lock = false;
+    if (G.size <= .16) done('злость «выдохнута»', {stars:3, title:'Злость ушла', sub:'Ты справился. Когда злишься, можно так же медленно дышать.'}); }, 1300);
+};
+
+/* --- «Рукавички»: раскрасить вторую рукавичку так же, как первую (вместе со взрослым) --- */
+ENG.mittens = e => { G.r = 0; mitRound(); };
+function mitRound(){
+  G.left = [0,1,2].map(() => Math.floor(Math.random()*MIT_COL.length)); G.right = [4,4,4].map(()=>-1);
+  mitRender();
+}
+function mitRender(){
+  const rc = G.right.map(v => v<0 ? 'line' : MIT_COL[v]);
+  const right = `<g><path d="M30 92V40a20 20 0 0 1 40 0v12l9-6a7 7 0 0 1 8 11L70 72v20z" fill="${G.right[0]<0?'var(--surface-2)':`var(--i-${rc[0]})`}" stroke="var(--line)" stroke-width="2" data-act="mit" data-z="0"/><rect x="30" y="54" width="40" height="10" fill="${G.right[1]<0?'var(--bg)':`var(--i-${rc[1]})`}" stroke="var(--line)" stroke-width="2" data-act="mit" data-z="1"/><rect x="26" y="80" width="48" height="14" rx="5" fill="${G.right[2]<0?'var(--bg)':`var(--i-${rc[2]})`}" stroke="var(--line)" stroke-width="2" data-act="mit" data-z="2"/></g>`;
+  $('stage').innerHTML = `<p class="hint">Игра для двоих: взрослый называет цвет, ребёнок раскрашивает. Нажимай на части рукавички, цвет меняется.</p>
+    <p class="prompt">Сделай вторую рукавичку такой же</p>
+    <div class="analogy"><div class="box" style="width:min(180px,38vw)">${svg(mitten(G.left))}</div><div class="box" style="width:min(180px,38vw)"><svg viewBox="0 0 100 100" style="width:84%">${right}</svg></div></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, 3)}`;
+}
+ACT.mit = el => {
+  const z = +el.dataset.z; G.right[z] = (G.right[z]+1) % MIT_COL.length; mitRender();
+  if (G.right.every((v,i)=>v===G.left[i])){ $('fb').textContent = 'Пара готова! Рукавички одинаковые.';
+    later(() => { if (++G.r < 3) return mitRound(); done('3 пары', {stars:3, title:'Все пары готовы', sub:'Вы договорились и сделали одинаковые рукавички.'}); }, 1400); }
+};
+
+/* --- «Узор под диктовку»: озвученные шаги, закрасить нужные клетки --- */
+ENG.dictation = e => { G.r = 0; dictRound(); };
+const POS = ['вверху','в середине','внизу'], SIDE = ['слева','в центре','справа'], DC = [['rose','красным'],['sky','синим'],['green','зелёным'],['yellow','жёлтым']];
+function dictRound(){
+  const cells = pickN([0,1,2,3,4,5,6,7,8], 3 + G.r);
+  G.plan = cells.map(c => ({c, col:DC[Math.floor(Math.random()*DC.length)]})); G.k = 0; G.fill = {};
+  dictRender(); later(dictSay, 300);
+}
+const dictText = s => `Закрась клетку ${POS[Math.floor(s.c/3)]} ${SIDE[s.c%3]} ${s.col[1]}`;
+function dictSay(){ if (G.plan && G.plan[G.k]) say(dictText(G.plan[G.k]), .8); }
+function dictRender(){
+  const s = G.plan[G.k];
+  $('stage').innerHTML = `<p class="hint">Взрослый может читать вслух сам или нажать «Повторить».</p>
+    <p class="prompt" id="dtx">${s ? dictText(s) : 'Узор готов!'}</p>
+    <div class="tools">${DC.map(([c,n])=>`<button class="chip ${G.pen===c?'on':''}" data-act="dc-pen" data-c="${c}"><span style="width:18px;height:18px;border-radius:50%;background:var(--i-${c})"></span>${n.replace('ым','ый').replace('им','ий')}</button>`).join('')}<button class="chip" data-act="dc-say">${ICON_SPEAK} Повторить</button></div>
+    <div class="grid" style="--n:3;max-width:min(330px,100%)">${[...Array(9)].map((_,i)=>`<button class="cell" data-act="dc-cell" data-i="${i}" style="${G.fill[i]?`background:var(--i-${G.fill[i]});border-color:transparent`:''}"></button>`).join('')}</div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, 3)}`;
+}
+ACT['dc-pen'] = el => { G.pen = el.dataset.c; dictRender(); };
+ACT['dc-say'] = () => dictSay();
+ACT['dc-cell'] = el => {
+  const s = G.plan[G.k], i = +el.dataset.i; if (!s) return;
+  if (!G.pen){ $('fb').textContent = 'Сначала выбери цвет.'; return; }
+  if (i !== s.c || G.pen !== s.col[0]){ G.errors++; $('fb').textContent = i !== s.c ? 'Не та клетка. Послушай ещё раз.' : 'Клетка верная, а цвет другой.'; return; }
+  G.fill[i] = G.pen; G.k++; dictRender();
+  if (G.k < G.plan.length) return later(dictSay, 250);
+  later(() => { if (++G.r < 3) return dictRound();
+    done(`3 узора, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Узоры готовы', sub:'Ты внимательно слушал и всё закрасил правильно.', meta:`Для взрослых: ошибок ${G.errors}`}); }, 1000);
+};
+
+/* --- «Квадратное дыхание»: точка обходит квадрат 4-4-4-4 --- */
+ENG.square = e => {
+  $('stage').innerHTML = `<p class="hint">Следи за шариком. Вдох — пауза — выдох — пауза, по 4 счёта.</p>
+    <div class="breath" style="width:min(300px,76vw)"><svg viewBox="0 0 100 100" style="width:100%;height:100%;overflow:visible">
+      <rect x="12" y="12" width="76" height="76" rx="10" fill="var(--sky)" stroke="var(--i-sky)" stroke-width="3"/>
+      <circle id="sqDot" cx="0" cy="0" r="7" fill="var(--i-rose)" style="transition:transform 4s linear;transform:translate(12px,88px)"/>
+      <text id="sqTxt" x="50" y="54" text-anchor="middle" style="font:700 12px Comfortaa,sans-serif;fill:var(--i-ink)">Готов?</text></svg></div>
+    <div class="row center"><button class="btn primary" data-act="sq-go" id="sqGo">Начать</button></div>${dots(0,4)}`;
+};
+ACT['sq-go'] = () => {
+  $('sqGo').hidden = true; G.n = 0;
+  const pts = [[12,12,'Вдох'],[88,12,'Задержи'],[88,88,'Выдох'],[12,88,'Пауза']];
+  const tick = () => { const d = $('sqDot'); if (!d) return;
+    const [x,y,t] = pts[G.n%4]; d.style.transform = `translate(${x}px,${y}px)`; $('sqTxt').textContent = t;
+    if (G.n%4===0 && G.n) { const ds = document.querySelectorAll('.dots i'); ds[G.n/4-1] && ds[G.n/4-1].classList.add('on'); }
+    G.n++;
+    if (G.n > 16) return done('4 квадрата', {stars:3, title:'Ты спокоен и собран', sub:'Квадратное дыхание можно делать где угодно, даже незаметно.'});
+    G.timer = later(tick, 4000); };
+  tick();
+};
+
+/* --- «Надуй самый большой пузырь»: держать кнопку, медленно и ровно --- */
+ENG.bubble = e => { G.best = 0; G.r = 0; bubRender(); };
+function bubRender(){
+  $('stage').innerHTML = `<p class="hint">Нажми и держи кнопку, как будто медленно дуешь. Отпустишь — пузырь улетит.</p>
+    <div class="breath" style="width:min(300px,76vw)"><svg viewBox="0 0 100 100" style="width:100%;height:100%;overflow:visible"><g id="bub" style="transform-origin:50px 50px;transform:scale(.15)">${I.bubble}</g></svg></div>
+    <div class="row center"><button class="btn primary" id="bubBtn" style="min-height:80px;padding:0 40px;touch-action:none;user-select:none;-webkit-user-select:none">Дуть</button></div>
+    <p class="feedback" id="fb">Попытка ${G.r+1} из 3${G.best?` · лучший пузырь ${G.best} см`:''}</p>`;
+  const b = $('bubBtn'); let t0 = 0, raf = 0;
+  const grow = () => { const s = Math.min(1.25, .15 + (performance.now()-t0)/6000); $('bub').style.transform = `scale(${s})`; G.cur = s; raf = requestAnimationFrame(grow); };
+  b.addEventListener('pointerdown', ev => { ev.preventDefault(); t0 = performance.now(); raf = requestAnimationFrame(grow); });
+  const stop = () => { if (!t0) return; cancelAnimationFrame(raf); t0 = 0;
+    const cm = Math.round(G.cur*20); G.best = Math.max(G.best, cm); const g = $('bub'); g.style.transition = 'transform 2s ease-out, opacity 2s'; g.style.transform += ' translateY(-60px)'; g.style.opacity = 0;
+    later(() => { if (++G.r < 3) return bubRender(); done(`лучший пузырь ${G.best} см`, {stars:3, title:`Пузырь ${G.best} см!`, sub:'Чем медленнее выдох, тем больше пузырь. Так же дыши, когда волнуешься.'}); }, 1600); };
+  ['pointerup','pointerleave','pointercancel'].forEach(ev => b.addEventListener(ev, stop));
+  b.addEventListener('contextmenu', ev => ev.preventDefault());
+}
+
+/* --- «Моё безопасное место»: выбрать место, слушать спокойный текст --- */
+const PLACES = {beach:{t:'Тёплый берег', tint:'sky', lines:['Ты сидишь на тёплом песке.','Волны тихо шуршат: ш-ш-ш.','Солнце мягко греет плечи.','Вдох — волна приходит. Выдох — волна уходит.','Здесь спокойно и безопасно.']},
+  tree:{t:'Тихий лес', tint:'sage', lines:['Ты идёшь по мягкой тропинке.','Листья тихо шелестят.','Пахнет травой и хвоей.','Вдох — свежий воздух. Выдох — тишина.','Здесь спокойно и безопасно.']},
+  sofa:{t:'Уютная комната', tint:'lavender', lines:['Ты сидишь на мягком диване.','Рядом твой любимый плед.','Свет тёплый и неяркий.','Вдох — тепло. Выдох — покой.','Здесь спокойно и безопасно.']}};
+ENG.safe = e => {
+  $('stage').innerHTML = `<p class="prompt">Выбери своё безопасное место</p>
+    <div class="pick3">${Object.entries(PLACES).map(([k,p])=>`<button class="pick" data-act="sf" data-k="${k}">${svg(I[k])}<span>${p.t}</span></button>`).join('')}</div>`;
+};
+ACT.sf = el => {
+  const p = PLACES[el.dataset.k]; G.k = 0;
+  $('stage').innerHTML = `<div class="story"><div class="story-art" style="--tint:var(--${p.tint})"><div class="breath in" style="width:72%;margin:0">${svg(I[el.dataset.k])}</div></div>
+    <p class="story-text" id="sfTxt">Закрой глаза или смотри на картинку.</p>
+    <div class="story-nav"><button class="btn primary" data-act="sf-go" id="sfGo">${ICON_SPEAK} Слушать</button></div></div>`;
+  G.place = p;
+};
+ACT['sf-go'] = () => {
+  $('sfGo').hidden = true;
+  const next = () => { const t = $('sfTxt'); if (!t) return;
+    if (G.k >= G.place.lines.length) return done('релаксация', {stars:3, title:'Ты отдохнул', sub:'В безопасное место можно возвращаться в мыслях, когда тревожно.'});
+    t.textContent = G.place.lines[G.k]; say(G.place.lines[G.k], .7); G.k++; G.timer = later(next, 6000); };
+  next();
+};
+
+/* --- «Волшебная коробка»: заземление 5-4-3-2-1 --- */
+const GROUND = [[5,'Найди глазами 5 предметов синего цвета','eye'],[4,'Найди 4 вещи, которые можно потрогать','hand'],[3,'Прислушайся: какие 3 звука ты слышишь?','ear'],[2,'Найди 2 запаха рядом с тобой','cup'],[1,'Назови 1 вещь, которая тебе нравится','heart']];
+ENG.ground = e => { G.s = 0; G.c = 0; groundRender(); };
+function groundRender(){
+  const [n,t,ill] = GROUND[G.s];
+  $('stage').innerHTML = `<div class="say-card">${svg(I[ill])}<p class="say-word" style="font-size:clamp(22px,5vw,32px)">${t}</p><button class="chip" data-act="gr-say">${ICON_SPEAK} Прочитать</button></div>
+    <p class="prompt">Нажимай на звёздочку, когда найдёшь</p>
+    <div class="digits">${[...Array(n)].map((_,i)=>`<button data-act="gr" aria-label="Нашёл" style="${i<G.c?'background:var(--i-yellow);border-color:transparent':''}">${i<G.c?'★':'☆'}</button>`).join('')}</div>${dots(G.s, GROUND.length)}`;
+}
+ACT['gr-say'] = () => say(GROUND[G.s][1]);
+ACT.gr = () => { G.c++; groundRender();
+  if (G.c < GROUND[G.s][0]) return;
+  later(() => { G.c = 0; if (++G.s < GROUND.length) return groundRender();
+    done('5-4-3-2-1 пройдено', {stars:3, title:'Ты здесь и сейчас', sub:'Когда тревожно, можно открыть волшебную коробку и искать предметы вокруг.'}); }, 700); };
+
+/* --- «Мои сильные стороны»: выбрать из списка, сохраняется --- */
+const STRENGTHS = ['Я добрый','Я смелый','Я умею дружить','Я хорошо рисую','Я быстро бегаю','Я помогаю дома','Я люблю животных','Я умею ждать','Я весёлый','Я много знаю','Я стараюсь','Я хорошо собираю пазлы'];
+ENG.strengths = e => strRender();
+function strRender(){
+  const mine = S.strengths || [];
+  $('stage').innerHTML = `<p class="prompt">Что ты умеешь? Выбери всё, что про тебя</p>
+    <div class="wordgrid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${STRENGTHS.map(s=>`<button data-act="str" data-s="${s}" aria-pressed="${mine.includes(s)}">${s}</button>`).join('')}</div>
+    <div class="row center" style="margin-top:18px"><button class="btn primary" data-act="str-done">Это я!</button></div>`;
+}
+ACT.str = el => { const s = el.dataset.s, m = S.strengths = S.strengths || []; m.includes(s) ? m.splice(m.indexOf(s),1) : m.push(s); save(); el.setAttribute('aria-pressed', m.includes(s)); say(s); };
+ACT['str-done'] = () => { const m = S.strengths || []; if (!m.length) return;
+  done(`${m.length} сильных сторон`, {stars:3, title:'Вот какой ты!', sub:m.join(', ')+'.', meta:'Список сохранится. Его можно перечитывать вместе.'}); };
+
+/* --- «Мои победы»: дневник достижений --- */
+const STICKERS = ['trophy','medal','heart','balloon','cake','sun'];
+ENG.wins = e => winsRender();
+function winsRender(){
+  const w = S.wins || [];
+  $('stage').innerHTML = `<div class="panel" style="max-width:620px;margin:0 auto 16px"><h2>Новая победа</h2>
+      <form class="form" id="winForm"><label class="field" for="winT">Что получилось сегодня?<input id="winT" maxlength="80" placeholder="Например: сам оделся на прогулку" style="min-height:52px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);padding:0 14px;font-size:17px"></label>
+      <div class="tools" style="justify-content:flex-start;margin:0">${STICKERS.map((k,i)=>`<button type="button" class="chip ${i===0?'on':''}" data-act="win-st" data-k="${k}" style="padding:0 6px">${svg(I[k])}</button>`).join('')}</div>
+      <button class="btn primary" type="submit">Записать победу</button></form></div>
+    <div class="panel" style="max-width:620px;margin:0 auto"><h2>Мои победы${w.length?` · ${w.length}`:''}</h2>
+      <ul class="list">${w.length ? w.map(x=>`<li><div style="display:flex;gap:12px;align-items:center"><span style="width:44px;height:44px;flex:none">${svg(I[x.k])}</span><div><p class="t">${x.t}</p><p class="w">${x.d}</p></div></div></li>`).join('') : '<li><p class="muted">Пока пусто. Запиши первую победу, даже маленькую.</p></li>'}</ul></div>`;
+  document.querySelectorAll('[data-act="win-st"] svg').forEach(s => { s.style.width = '32px'; s.style.height = '32px'; });
+  G.st = 'trophy';
+  $('winForm').addEventListener('submit', ev => { ev.preventDefault(); const t = $('winT').value.trim(); if (!t) return;
+    (S.wins = S.wins || []).unshift({t, k:G.st, d:dateRu()}); save(); record('ex-'+G.id, G.e.t, 'победа: '+t, 0); say('Ура! ' + t); winsRender(); });
+}
+ACT['win-st'] = el => { G.st = el.dataset.k; document.querySelectorAll('[data-act="win-st"]').forEach(b => b.classList.toggle('on', b===el)); };
+
+/* --- «Я — это я»: части лица и тела --- */
+const PARTS = [['глаза','Покажи, где глаза'],['нос','Где нос?'],['рот','Где рот?'],['уши','Где уши?'],['волосы','Где волосы?'],['руки','Покажи руки'],['живот','Где живот?'],['ноги','Где ноги?']];
+ENG.body = e => { G.r = 0; G.list = shuffle(PARTS); bodyRender(); };
+function bodyRender(){
+  const [, ask] = G.list[G.r];
+  const z = (p, el) => el.replace('<', `<`).replace(/^<(\w+)/, `<$1 data-act="bp" data-p="${p}" style="cursor:pointer"`);
+  $('stage').innerHTML = `<p class="prompt">${ask} <button class="chip" data-act="bp-say" aria-label="Повторить">${ICON_SPEAK}</button></p>
+    <div class="situ" style="max-width:300px"><svg viewBox="0 0 100 160" role="img" aria-label="Ребёнок">
+      ${z('волосы','<path d="M28 30q22-28 44 0q-6-8-22-8t-22 8z" fill="var(--i-brown)"/>')}
+      ${z('уши','<g><circle cx="27" cy="40" r="6" fill="var(--i-peach)"/><circle cx="73" cy="40" r="6" fill="var(--i-peach)"/></g>')}
+      <circle cx="50" cy="40" r="22" fill="var(--i-peach)"/>
+      ${z('глаза','<g><circle cx="42" cy="38" r="4" fill="var(--i-ink)"/><circle cx="58" cy="38" r="4" fill="var(--i-ink)"/></g>')}
+      ${z('нос','<ellipse cx="50" cy="45" rx="3.5" ry="3" fill="var(--i-rose)"/>')}
+      ${z('рот','<path d="M43 52q7 6 14 0" stroke="var(--i-ink)" stroke-width="3" fill="none" stroke-linecap="round"/>')}
+      ${z('руки','<g><rect x="16" y="66" width="12" height="40" rx="6" fill="var(--i-peach)"/><rect x="72" y="66" width="12" height="40" rx="6" fill="var(--i-peach)"/></g>')}
+      <rect x="30" y="64" width="40" height="22" rx="8" fill="var(--i-sky)"/>
+      ${z('живот','<rect x="30" y="84" width="40" height="22" rx="6" fill="var(--i-sky)"/>')}
+      ${z('ноги','<g><rect x="34" y="106" width="13" height="44" rx="6" fill="var(--i-lavender)"/><rect x="53" y="106" width="13" height="44" rx="6" fill="var(--i-lavender)"/></g>')}
+    </svg></div><p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+}
+ACT['bp-say'] = () => say(G.list[G.r][1]);
+ACT.bp = el => {
+  if (G.lock) return; const want = G.list[G.r][0], got = el.dataset.p;
+  if (got !== want){ G.errors++; $('fb').textContent = `Это ${got}. А где ${want}?`; return; }
+  G.lock = true; $('fb').textContent = `Да, это ${want}!`; say(want);
+  later(() => { G.lock = false; if (++G.r < G.list.length) return bodyRender();
+    done(`${G.list.length} частей, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Ты знаешь себя!', sub:'Глаза, нос, рот, уши, руки, ноги. Это всё ты.', meta:`Для взрослых: ошибок ${G.errors}`}); }, 1300);
+};
+
+/* ===================== Партия 1: Психология, Коммуникация, Самооценка ===================== */
+const P = 'Психология', COM = 'Коммуникация', SELF = 'Самооценка и Я-концепция';
+
+/* --- Визуальные расписания --- */
+const sched = (t, steps, doneSub) => ({t, e:'steps', mod:P, cat:'Визуальное расписание', age:'3–8 лет', tier:'free', steps:steps.map(([k,t])=>({k,t})), speak:true, doneSub});
+ex('sch-school', sched('Собираюсь в школу', [['bed','Проснуться'],['toothbrush','Умыться'],['plate','Позавтракать'],['shirt','Одеться'],['bag','Взять рюкзак'],['school','Идти в школу']], 'Ты готов к школе. Хорошего дня!'));
+ex('sch-evening', sched('Вечерний ритуал', [['plate','Поужинать'],['box','Убрать игрушки'],['bath','Искупаться'],['toothbrush','Почистить зубы'],['pajama','Надеть пижаму'],['book','Сказка'],['moon','Спать']], 'Всё готово ко сну. Спокойной ночи!'));
+ex('sch-shop', sched('Поход в магазин', [['shirt','Одеться'],['list','Взять список'],['car','Поехать в магазин'],['cart','Взять тележку'],['apple','Найти продукты'],['coin','Заплатить на кассе'],['house','Вернуться домой']], 'Покупки сделаны!'));
+ex('sch-weekend', sched('Выходные дома', [['plate','Завтрак'],['ball','Поиграть'],['walk','Погулять'],['cup','Обед'],['book','Почитать'],['tv','Мультик'],['bath','Искупаться'],['moon','Спать']], 'Хороший выходной получился!'));
+
+/* --- Социальные истории --- */
+const story = (t, pages, moral) => ({t, e:'story', mod:P, cat:'Социальные истории', age:'4–9 лет', tier:'premium', pages, moral});
+ex('st-share', story('Как поделиться игрушкой', [
+  {bear:'joy', tint:'butter', text:'У меня есть мишка. Я люблю с ним играть.'},
+  {ill:'friend', tint:'peach', text:'Ко мне подходит Саша. Он тоже хочет поиграть с мишкой.'},
+  {ill:'clock', tint:'sky', text:'Я могу сказать: «Давай по очереди. Сначала я, потом ты».'},
+  {face:'calm', tint:'lavender', text:'Я жду свою очередь. Ждать трудно, но я справляюсь.'},
+  {ill:'heart', tint:'rose', text:'Играть вместе веселее!'}], 'Очередь — это когда каждый ждёт и каждый играет.'));
+ex('st-lose', story('Я проиграл', [
+  {ill:'ball', tint:'sky', text:'Мы играем в игру.'},
+  {face:'sad', tint:'lavender', text:'Иногда я проигрываю. Мне грустно или обидно. Это нормально.'},
+  {ill:'pause', tint:'sage', text:'Я делаю глубокий вдох и говорю: «Ничего, в следующий раз получится».'},
+  {ill:'trophy', tint:'butter', text:'Тот, кто выиграл, тоже старался. Я могу сказать: «Поздравляю!»'},
+  {face:'joy', tint:'peach', text:'Главное — что мы играли вместе.'}], 'Проигрывать неприятно, но с этим можно справиться.'));
+ex('st-help', story('Как попросить помощь', [
+  {ill:'puzzle', tint:'sage', text:'Иногда у меня что-то не получается.'},
+  {face:'angry', tint:'rose', text:'Я могу злиться или расстраиваться. Это нормально.'},
+  {ill:'helpq', tint:'sky', text:'Я подхожу к взрослому и говорю: «Помоги, пожалуйста».'},
+  {ill:'hand', tint:'peach', text:'Если трудно говорить, я могу показать карточку «Мне нужна помощь».'},
+  {face:'joy', tint:'butter', text:'Вместе мы справимся. Я говорю «спасибо».'}], 'Просить помощь — это смело и правильно.'));
+ex('st-birthday', story('Я иду на день рождения', [
+  {ill:'cake', tint:'peach', text:'Меня пригласили на день рождения.'},
+  {ill:'balloon', tint:'rose', text:'Там будет много гостей и шумно. Если станет слишком громко, я могу закрыть уши или попросить тишины.'},
+  {ill:'gift', tint:'lavender', text:'Я дарю подарок и говорю: «С днём рождения!»'},
+  {ill:'cake', tint:'butter', text:'Торт сначала получает именинник. Я жду свой кусочек.'},
+  {ill:'sofa', tint:'sky', text:'Если я устал, я прошу маму отдохнуть в тихом месте.'},
+  {ill:'house', tint:'sage', text:'Потом мы едем домой. Я был хорошим гостем.'}], 'Перед праздником прочитайте историю вместе ещё раз.'));
+ex('st-angry', story('Когда я злюсь', [
+  {face:'angry', tint:'rose', text:'Иногда я злюсь. Злость — нормальное чувство.'},
+  {ill:'no', tint:'peach', text:'Когда я злюсь, нельзя бить, кусаться и кидать вещи.'},
+  {ill:'hand', tint:'butter', text:'Я могу остановиться и сказать: «Стоп».'},
+  {ill:'balloon', tint:'sky', text:'Я медленно выдыхаю, будто сдуваю шарик. Пять раз.'},
+  {ill:'heart', tint:'lavender', text:'Я рассказываю взрослому, что меня разозлило.'},
+  {face:'calm', tint:'sage', text:'Злость уходит. Я снова спокоен.'}], 'Попробуйте после истории упражнение «Мой гнев».'));
+ex('st-lost', story('Я потерялся', [
+  {ill:'cart', tint:'sage', text:'Мы с мамой в магазине.'},
+  {face:'fear', tint:'lavender', text:'Вдруг я не вижу маму. Мне страшно.'},
+  {ill:'hand', tint:'peach', text:'Я стою на месте и никуда не ухожу.'},
+  {ill:'worker', tint:'sky', text:'Я подхожу к продавцу на кассе или охраннику и говорю: «Я потерялся».'},
+  {ill:'list', tint:'butter', text:'Я знаю своё имя, фамилию и телефон мамы.'},
+  {ill:'heart', tint:'rose', text:'Я не ухожу с незнакомыми людьми. Мама обязательно меня найдёт.'}], 'Выучите с ребёнком имя, фамилию и номер телефона.'));
+
+/* --- Эмоции и эмпатия --- */
+const EMOS = ['joy','sad','angry','surprise','fear','calm'], SKINS = ['var(--i-peach)','var(--i-lime)','var(--i-sky)','var(--i-lavender)'];
+ex('em-same', {t:'Найди такое же лицо', e:'choice', mod:P, cat:'Эмоции и эмпатия', age:'3–7 лет', tier:'free', doneTitle:'Ты внимательно смотришь на лица',
+  rounds:() => pickN(EMOS,5).map(k => ({scene:{face:k, skin:SKINS[Math.floor(Math.random()*4)]}, ask:'Найди такое же настроение', yes:`Да! Это ${EMO_N[k]}.`, no:'Посмотри на брови и рот.',
+    opts:[{face:k, ok:1}, ...pickN(EMOS.filter(x=>x!==k),3).map(x=>({face:x}))]}))});
+ex('em-joysad', {t:'Кто радуется, а кто грустит?', e:'choice', mod:P, cat:'Эмоции и эмпатия', age:'3–6 лет', tier:'free', doneTitle:'Ты различаешь радость и грусть',
+  rounds:() => [...Array(6)].map(() => { const k = Math.random()<.5 ? 'joy' : 'sad'; return {scene:{face:k, skin:SKINS[Math.floor(Math.random()*4)]}, ask:'Как он себя чувствует?', keep:true,
+    opts:[{text:'Радуется', ok:k==='joy'}, {text:'Грустит', ok:k==='sad'}], yes:k==='joy'?'Да, улыбается — радуется.':'Да, уголки рта вниз — грустит.', no:'Посмотри на рот.'}; })});
+const bearScene = obj => ({svg:`<svg viewBox="0 0 200 100" aria-hidden="true"><g>${bear('calm')}</g><g transform="translate(100 0)">${I[obj]}</g></svg>`});
+ex('em-bear', {t:'Как чувствует себя мишка?', e:'choice', mod:P, cat:'Эмоции и эмпатия', age:'4–8 лет', tier:'premium', doneTitle:'Ты понимаешь мишку', doneSub:'Ты догадался, что чувствует мишка в каждой ситуации.',
+  rounds:[['gift','Мишке подарили подарок.','joy','Он радуется подарку.'],['balloon','У мишки улетел воздушный шарик.','sad','Ему грустно, шарик жалко.'],['cloud','За окном гремит гром.','fear','Мишке страшно, гром громкий.'],['broken','Мишкину башню сломали.','angry','Мишка злится: он долго строил.'],['cake','Мишка нашёл огромный торт.','surprise','Мишка удивился: такой большой торт!']]
+    .map(([o,t,k,why]) => ({scene:bearScene(o), ask:`${t} Как он себя чувствует?`, yes:why, no:'Представь себя на месте мишки.', opts:[{bear:k, text:EMO_N[k], ok:1}, ...pickN(EMOS.filter(x=>x!==k),2).map(x=>({bear:x, text:EMO_N[x]}))]}))});
+ex('em-anger', {t:'Мой гнев', e:'anger', mod:P, cat:'Эмоции и эмпатия', age:'4–10 лет', tier:'premium'});
+
+/* --- Снижение тревожности --- */
+ex('calm-square', {t:'Квадратное дыхание', e:'square', mod:P, cat:'Снижение тревожности', age:'5–12 лет', tier:'free'});
+ex('calm-bubble', {t:'Надуй самый большой пузырь', e:'bubble', mod:P, cat:'Снижение тревожности', age:'3–8 лет', tier:'free'});
+ex('calm-safe', {t:'Моё безопасное место', e:'safe', mod:P, cat:'Снижение тревожности', age:'5–12 лет', tier:'premium'});
+ex('calm-box', {t:'Волшебная коробка (5-4-3-2-1)', e:'ground', mod:P, cat:'Снижение тревожности', age:'5–12 лет', tier:'premium'});
+
+/* --- Коммуникация --- */
+ex('com-cards', {t:'Карточки «Я хочу», «Стоп», «Помощь»', e:'pecs', mod:COM, cat:'Альтернативная коммуникация', age:'2–10 лет', tier:'free', groups:[
+  {t:'Я хочу', cards:[{ill:'cup',say:'Я хочу пить'},{ill:'plate',say:'Я хочу есть'},{ill:'ball',say:'Я хочу играть'},{ill:'toilet',say:'Я хочу в туалет'},{ill:'walk',say:'Я хочу гулять'},{ill:'book',say:'Почитай мне'},{ill:'heart',say:'Обними меня'},{ill:'moon',say:'Я хочу спать'}]},
+  {t:'Стоп, перерыв, помощь', cards:[{ill:'no',say:'Я не хочу'},{ill:'hand',say:'Стоп'},{ill:'pause',say:'Мне нужен перерыв'},{ill:'helpq',say:'Мне нужна помощь'}]},
+  {t:'Я чувствую', cards:[{face:'joy',say:'Мне весело'},{face:'sad',say:'Мне грустно'},{face:'fear',say:'Мне страшно'},{face:'angry',say:'Я злюсь'}]}]});
+ex('com-phrase', {t:'Собери фразу', e:'phrase', mod:COM, cat:'Речь и фразы', age:'4–8 лет', tier:'premium', rounds:[
+  {ill:'cup', words:['Я','хочу','пить']},{ill:'ball', words:['Дай','мне','мяч']},{ill:'cat', words:['Кошка','пьёт','молоко']},{ill:'helpq', words:['Помоги','мне','пожалуйста']},{ill:'book', words:['Почитай','мне','книгу']}]});
+ex('com-mittens', {t:'Рукавички', e:'mittens', mod:COM, cat:'Совместная деятельность', age:'4–8 лет', tier:'premium'});
+ex('com-dictation', {t:'Узор под диктовку', e:'dictation', mod:COM, cat:'Совместная деятельность', age:'5–9 лет', tier:'premium'});
+const role = (t, rounds) => ({t, e:'choice', mod:COM, cat:'Сюжетно-ролевая игра', age:'4–9 лет', tier:'premium', doneTitle:'Ты отлично справился', doneSub:'Можно разыграть эту сценку дома по-настоящему.', rounds});
+ex('role-shop', role('Играем в магазин', [
+  {scene:{ill:'worker'}, who:'Продавец', ask:'«Здравствуйте! Что вы хотите купить?»', opts:[{text:'Здравствуйте! Мне, пожалуйста, яблоко.', ok:1, why:'Верно! Поздоровались и вежливо попросили.'},{text:'Молча взять яблоко', why:'Сначала нужно поздороваться и попросить.'},{text:'Уйти', why:'Продавец ждёт ответа. Попробуй ответить.'}]},
+  {scene:{ill:'apple'}, who:'Продавец', ask:'«Яблоко стоит 30 рублей»', opts:[{text:'Дать деньги', ok:1, why:'Верно! За покупку нужно заплатить.'},{text:'Сказать «не буду платить»', why:'В магазине за всё платят.'},{text:'Спрятать яблоко в карман', why:'Так нельзя: сначала платим.'}]},
+  {scene:{ill:'coin'}, who:'Продавец', ask:'«Ваша сдача и чек»', opts:[{text:'Спасибо!', ok:1, why:'Верно! Благодарим продавца.'},{text:'Ничего не сказать', why:'Вежливо сказать «спасибо».'},{text:'Убежать', why:'Не торопись, возьми сдачу.'}]},
+  {scene:{ill:'house'}, who:'Ты уходишь', ask:'Что сказать продавцу на прощание?', opts:[{text:'До свидания!', ok:1, why:'Верно! Прощаемся вежливо.'},{text:'Отвернуться', why:'Попрощайся с продавцом.'},{text:'Крикнуть', why:'Говорим спокойным голосом.'}]}]));
+ex('role-doctor', role('Играем во врача', [
+  {scene:{ill:'doctor'}, who:'Врач', ask:'«Привет! Что у тебя болит?»', opts:[{text:'Показать, где болит, и сказать', ok:1, why:'Верно! Так врач поймёт, как помочь.'},{text:'Спрятаться под стол', why:'Врач хочет помочь. Попробуй сказать.'},{text:'Кричать', why:'Говорим спокойно, врач слушает.'}]},
+  {scene:{ill:'doctor'}, who:'Врач', ask:'«Открой рот и скажи: А-а-а»', opts:[{text:'Открыть рот: «А-а-а»', ok:1, why:'Молодец! Это совсем не больно.'},{text:'Закрыть рот руками', why:'Врачу нужно посмотреть горло.'},{text:'Отвернуться', why:'Посмотри на врача, это быстро.'}]},
+  {scene:{ill:'medal'}, who:'Врач', ask:'«Ты молодец! Вот тебе наклейка»', opts:[{text:'Спасибо!', ok:1, why:'Верно! Благодарим врача.'},{text:'Ничего не сказать', why:'Скажи «спасибо».'},{text:'Забрать и убежать', why:'Не торопись, попрощайся.'}]}]));
+
+/* --- Самооценка и Я-концепция --- */
+ex('self-strengths', {t:'Мои сильные стороны', e:'strengths', mod:SELF, cat:'Я и мои качества', age:'5–12 лет', tier:'free'});
+ex('self-wins', {t:'Мои победы', e:'wins', mod:SELF, cat:'Я и мои качества', age:'4–12 лет', tier:'free'});
+ex('self-body', {t:'Я — это я', e:'body', mod:SELF, cat:'Части тела и лица', age:'3–7 лет', tier:'free'});
+
+/* ===================== Библиотека из всех упражнений + Избранное ===================== */
+const MOD_META = {'Коммуникация':{note:'Общение и совместная игра', ill:'hand', tint:'sky'}, 'Самооценка и Я-концепция':{note:'Я и мои сильные стороны', ill:'medal', tint:'butter'},
+  'Дефектология':{note:'Внимание, память, мышление', ill:'eye', tint:'sky'}, 'СБО':{note:'Социально-бытовая ориентация', ill:'house', tint:'sage'}};
+const MOD_ORDER = ['Психология','Коммуникация','Самооценка и Я-концепция','Дефектология','Логопедия','СБО'];
+function libTree(){
+  const mods = LIB.map(m => ({...m, cats:m.cats.map(c => ({...c, items:c.items.slice()}))}));
+  Object.entries(EX).forEach(([id, e]) => {
+    let m = mods.find(x => x.mod === e.mod);
+    if (!m){ m = {mod:e.mod, ...(MOD_META[e.mod]||{note:'', ill:'star', tint:'sky'}), cats:[]}; mods.push(m); }
+    let c = m.cats.find(x => x.name === e.cat); if (!c){ c = {name:e.cat, items:[]}; m.cats.push(c); }
+    c.items.push({t:e.t, age:e.age, tier:e.tier, route:'ex-'+id, sub:e.sub});
+  });
+  return mods.sort((a,b) => MOD_ORDER.indexOf(a.mod) - MOD_ORDER.indexOf(b.mod));
+}
+const allItems = () => libTree().flatMap(m => m.cats.flatMap(c => c.items.map(it => ({...it, mod:m.mod}))));
+const isFav = r => (S.fav||[]).includes(r);
+const favBtn = r => r ? `<button class="fav" data-act="fav" data-r="${r}" aria-pressed="${isFav(r)}" aria-label="В избранное">${isFav(r)?'★':'☆'}</button>` : '';
+const exRow = it => `<div class="ex"><div><p class="n">${it.t}${it.sub?` <small>· ${it.sub}</small>`:''}</p><p class="d">${it.age} · ${TIER[it.tier]}</p></div><div class="ex-act">${favBtn(it.route)}${it.route?`<a href="#${it.route}">Открыть</a>`:'<span class="soon">Скоро</span>'}</div></div>`;
+R.library = () => {
+  const tree = libTree(), n = tree.reduce((k,m)=>k+m.cats.reduce((j,c)=>j+c.items.length,0),0);
+  const favs = allItems().filter(it => it.route && isFav(it.route));
+  return `
+<section class="wrap page-head"><p class="eyebrow">Библиотека упражнений</p><h1>Что можно назначить</h1><p class="muted">${n} упражнений. Звёздочка добавляет упражнение в «Избранное».</p>
+  <div class="row" style="margin-top:6px">${tree.map(m=>`<a class="chip" href="#library" data-act="jump" data-m="${m.mod}">${m.mod}</a>`).join('')}</div></section>
+<section class="wrap" style="margin-bottom:16px"><div class="mod"><div class="mod-h" style="--tint:var(--butter)">${svg(I.medal)}<div><h2>Избранное</h2><p class="muted small">${favs.length?plural(favs.length,'упражнение','упражнения','упражнений'):'Нажмите ☆ у любого упражнения'}</p></div></div>
+  ${favs.length?`<div class="cat">${favs.map(exRow).join('')}</div>`:''}<div style="height:12px"></div></div></section>
+<section class="wrap lib">
+  ${tree.map(m=>`<div class="mod" id="mod-${MOD_ORDER.indexOf(m.mod)}"><div class="mod-h" style="--tint:var(--${m.tint})">${svg(I[m.ill]||I.sun)}<div><h2>${m.mod}</h2><p class="muted small">${m.note}</p></div></div>
+    ${m.cats.map(c=>`<div class="cat"><h3>${c.name}</h3>${c.items.map(exRow).join('')}</div>`).join('')}<div style="height:12px"></div></div>`).join('')}
+</section>`;
+};
+ACT.jump = el => { const m = document.getElementById('mod-'+MOD_ORDER.indexOf(el.dataset.m)); m && m.scrollIntoView({behavior:'smooth', block:'start'}); };
+ACT.fav = el => {
+  const r = el.dataset.r || current.raw, f = S.fav = S.fav || [];
+  f.includes(r) ? f.splice(f.indexOf(r),1) : f.push(r); save();
+  document.querySelectorAll(`.fav[data-r="${r}"], .fav[data-cur]`).forEach(b => { if (b.dataset.cur && r !== current.raw) return; b.setAttribute('aria-pressed', f.includes(r)); b.textContent = f.includes(r) ? '★' : '☆'; });
+  if (current.route === 'library') render(true);
+};
+
 /* ===================== роутер ===================== */
 ['child','schedule','story','emotions','empathy','calm','schulte','proof','maze','seek','words','picto','memo','odd','analogy','matrix','sequence','cipher'].forEach(r => CHILD.add(r));
 const view = document.getElementById('view');
@@ -1554,13 +2057,14 @@ function render(keepScroll){
   const raw = (location.hash||'').slice(1) || 'home';
   const i = raw.indexOf('-'), r = i<0?raw:raw.slice(0,i), arg = i<0?'':raw.slice(i+1);
   const route = R[r] ? r : 'home';
-  current = {route, arg};
+  current = {route, arg, raw};
   document.documentElement.dataset.mode = CHILD.has(route) ? 'child' : 'adult';
   const y = window.scrollY;
   view.innerHTML = R[route](arg);
   if (keepScroll === true) window.scrollTo(0, y);
   else { view.classList.remove('enter'); void view.offsetWidth; view.classList.add('enter'); window.scrollTo(0,0); }
   AFTER[route] && AFTER[route](arg);
+  document.querySelectorAll('.fav[data-cur]').forEach(b => { const on = (S.fav||[]).includes(raw); b.setAttribute('aria-pressed', on); b.textContent = on ? '★' : '☆'; });
   const navKey = CHILD.has(route) ? 'child' : route;
   document.querySelectorAll('.nav a').forEach(a => a.getAttribute('href')==='#'+navKey ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
 }
