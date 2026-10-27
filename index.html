@@ -435,6 +435,64 @@ input[type=range]{accent-color:var(--accent);height:32px}
 .ex-act .fav{width:40px;height:40px;font-size:18px;margin:0}
 .ex-act a{flex:none;font-size:14px;font-weight:800;color:var(--accent);text-decoration:none;padding:8px 0}
 .analogy .box svg{width:84%}
+
+/* ---------- партия 2: восприятие, графомоторика ---------- */
+.sil *{fill:var(--ink-2)!important;stroke:var(--ink-2)!important;opacity:1!important}
+.outl *{fill:none!important;stroke:var(--ink)!important;stroke-width:2.2px!important;opacity:1!important}
+.cut-sample{border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.cut-sample svg{width:100%;display:block}
+.cut-board{display:grid;gap:3px;width:min(300px,62vw);padding:3px;border-radius:16px;background:var(--surface-2)}
+.cut-slot{padding:0;border:2px dashed var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+.cut-slot.full{border:0;border-radius:0}
+.cut-slot svg,.cut-piece svg{width:100%;height:100%;display:block}
+.cut-tray{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;min-height:90px;margin-bottom:8px}
+.cut-piece{width:min(96px,26vw);padding:0;border:2px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);transition:transform .3s var(--ease)}
+.cut-piece[aria-pressed="true"]{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 0 0 3px var(--accent)}
+.drum-btn{width:min(200px,50vw);aspect-ratio:1;border-radius:50%;border:2px solid var(--line);background:var(--surface);box-shadow:var(--shadow);padding:22px;transition:transform .12s ease}
+.drum-btn svg{width:100%;height:100%}
+.drum-btn.hit{transform:scale(.93);background:var(--rose)}
+.sheet{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:min(340px,86vw);aspect-ratio:1;margin:0 auto 12px;padding:10px;background:var(--surface);border-radius:20px;box-shadow:var(--shadow)}
+.sheet .pick{padding:6px;border-radius:14px;justify-content:center;min-height:0}
+.sheet .pick svg{max-width:60px}
+.draw{width:min(420px,88vw);margin:0 auto 14px;background:var(--surface);border-radius:24px;box-shadow:var(--shadow);touch-action:none;user-select:none;-webkit-user-select:none}
+.draw svg{width:100%;height:auto;display:block;touch-action:none}
+.draw .stroke{fill:none;stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.draw .guide{fill:none;stroke:var(--ink-2);stroke-width:2.2;stroke-dasharray:3 3;opacity:.7}
+.draw .base{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.draw .start{fill:var(--i-rose)}
+.draw [data-act]{cursor:pointer}
+.gd-steps{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 12px}
+.gd-steps span{padding:5px 10px;border-radius:12px;background:var(--surface);border:2px solid var(--line);font-weight:800;font-size:17px}
+.gd-steps .now{border-color:var(--accent);background:var(--butter)}
+.gd-steps .ok{opacity:.4}
+.arrows{display:grid;grid-template-columns:repeat(3,72px);gap:8px;justify-content:center}
+.arrows button{height:64px;border-radius:18px;border:2px solid var(--line);background:var(--surface);font-size:30px;font-weight:800;color:var(--ink)}
+.arrows button:active{background:var(--sage)}
+.pick3:has(> .pick:nth-child(2):last-child){grid-template-columns:repeat(2,1fr);max-width:420px}
+
+/* ---------- партия 3: СБО ---------- */
+.tm{width:min(280px,70vw);margin:0 auto 6px}
+.tm-ring{width:100%;height:auto;display:block}
+.shop-list{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:12px;margin:0 auto 14px;max-width:560px;border-radius:20px;background:var(--butter)}
+.shop-list .level{width:100%;text-align:center;margin:0}
+.shop-list span{display:inline-flex;align-items:center;gap:6px;padding:4px 12px 4px 4px;border-radius:999px;background:var(--surface);font-weight:700;transition:opacity .3s}
+.shop-list span svg{width:32px;height:32px}
+.shop-list span.got{opacity:.45;text-decoration:line-through}
+.price{font-family:var(--font-d);font-weight:700;font-size:34px;padding:8px 18px;border-radius:16px;background:var(--butter);border:2px dashed var(--line)}
+.tray{min-height:62px;display:flex;align-items:center;justify-content:center;padding:8px;margin:0 auto 4px;max-width:480px;border-radius:18px;background:var(--surface-2)}
+.tray svg{width:100%;height:auto}
+.coins button{width:72px;height:72px;padding:0;border:0;background:none;border-radius:50%;transition:transform .15s}
+.coins button:active{transform:scale(.92)}
+.coins svg{width:100%;height:100%}
+.lt-sel{display:flex;flex-wrap:wrap;gap:8px;min-height:48px}
+.lt-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 4px;border-radius:999px;border:2px solid var(--accent);background:var(--sage);font-weight:700;color:var(--ink)}
+.lt-chip svg{width:30px;height:30px}
+.lt-chip b{color:var(--ink-2);margin-left:2px}
+.lt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.lt-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;border-radius:16px;border:2px solid var(--line);background:var(--surface);font-size:13px;font-weight:700;color:var(--ink)}
+.lt-item svg{width:44px;height:44px}
+.lt-item[aria-pressed="true"]{border-color:var(--accent);background:var(--sage)}
+.field input:not([type=range]){min-height:48px;padding:0 14px;border-radius:14px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:600;font-size:16px}
 </style>
 
 <header class="topbar">
@@ -609,6 +667,64 @@ function mitten(c, flip){
   return `<g ${flip?'transform="translate(100 0) scale(-1 1)"':''}><path d="M30 92V40a20 20 0 0 1 40 0v12l9-6a7 7 0 0 1 8 11L70 72v20z" fill="${col(0)}"/><rect x="30" y="54" width="40" height="10" fill="${col(1)}"/><rect x="26" y="80" width="48" height="14" rx="5" fill="${col(2)}"/></g>`;
 }
 
+/* ===================== v3, партия 2: рисунки для дефектологии ===================== */
+const EYE2 = (y=46) => `<circle cx="40" cy="${y}" r="4" fill="var(--i-ink)"/><circle cx="60" cy="${y}" r="4" fill="var(--i-ink)"/>`;
+Object.assign(I, {
+  cow:`<path d="M30 30q-12-10-4-20M70 30q12-10 4-20" stroke="var(--i-butter)" stroke-width="6" fill="none" stroke-linecap="round"/><ellipse cx="16" cy="40" rx="11" ry="6" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><ellipse cx="84" cy="40" rx="11" ry="6" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><ellipse cx="50" cy="50" rx="27" ry="32" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><circle cx="64" cy="34" r="8" fill="var(--i-ink)" opacity=".75"/><circle cx="34" cy="56" r="5" fill="var(--i-ink)" opacity=".75"/>${EYE2(44)}<ellipse cx="50" cy="70" rx="19" ry="12" fill="var(--i-rose)"/><circle cx="43" cy="70" r="3" fill="var(--i-ink)"/><circle cx="57" cy="70" r="3" fill="var(--i-ink)"/>`,
+  duck:`<ellipse cx="54" cy="66" rx="34" ry="20" fill="var(--i-yellow)"/><path d="M56 60q14-4 22 6q-12 6-22 0z" fill="var(--i-butter)"/><circle cx="34" cy="38" r="17" fill="var(--i-yellow)"/><path d="M14 40q-8 2-10 6q10 4 16 0z" fill="var(--i-peach)"/><circle cx="30" cy="34" r="3.5" fill="var(--i-ink)"/>`,
+  frog:`<ellipse cx="50" cy="60" rx="38" ry="26" fill="var(--i-green)"/><circle cx="32" cy="34" r="13" fill="var(--i-green)"/><circle cx="68" cy="34" r="13" fill="var(--i-green)"/><circle cx="32" cy="34" r="7" fill="var(--i-light)"/><circle cx="68" cy="34" r="7" fill="var(--i-light)"/><circle cx="33" cy="35" r="3.5" fill="var(--i-ink)"/><circle cx="67" cy="35" r="3.5" fill="var(--i-ink)"/><path d="M30 64q20 12 40 0" stroke="var(--i-ink)" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="24" cy="58" r="4" fill="var(--i-rose)" opacity=".5"/><circle cx="76" cy="58" r="4" fill="var(--i-rose)" opacity=".5"/>`,
+  pig:`<path d="M22 30l4-18 16 12zM78 30l-4-18-16 12z" fill="var(--i-rose)"/><circle cx="50" cy="52" r="32" fill="var(--i-rose)"/>${EYE2(42)}<ellipse cx="50" cy="62" rx="14" ry="10" fill="var(--i-peach)"/><ellipse cx="45" cy="62" rx="2.6" ry="4" fill="var(--i-ink)"/><ellipse cx="55" cy="62" rx="2.6" ry="4" fill="var(--i-ink)"/>`,
+  mouse:`<circle cx="24" cy="30" r="16" fill="var(--i-lavender)"/><circle cx="76" cy="30" r="16" fill="var(--i-lavender)"/><circle cx="24" cy="30" r="9" fill="var(--i-rose)"/><circle cx="76" cy="30" r="9" fill="var(--i-rose)"/><path d="M50 30c18 0 28 14 28 30q0 22-28 26q-28-4-28-26c0-16 10-30 28-30z" fill="var(--i-lavender)"/>${EYE2(52)}<circle cx="50" cy="66" r="5" fill="var(--i-rose)"/><path d="M40 68l-16-3M40 72l-16 4M60 68l16-3M60 72l16 4" stroke="var(--i-ink)" stroke-width="1.6" opacity=".5"/>`,
+  carrot:`<path d="M50 30q16 0 12 14L52 90q-2 4-4 0L38 44q-4-14 12-14z" fill="var(--i-peach)"/><path d="M42 48h8M46 62h8M47 76h5" stroke="var(--i-brown)" stroke-width="2.5" opacity=".5" stroke-linecap="round"/><path d="M50 30q-4-16-14-20M50 30q0-18 4-24M50 30q6-14 16-16" stroke="var(--i-green)" stroke-width="6" fill="none" stroke-linecap="round"/>`,
+  tomato:`<circle cx="50" cy="56" r="32" fill="var(--i-rose)"/><path d="M50 26l5 8 10-2-6 8 6 6-11-2-4 8-4-8-11 2 6-6-6-8 10 2z" fill="var(--i-green)"/><ellipse cx="38" cy="48" rx="6" ry="9" fill="var(--i-light)" opacity=".35"/>`,
+  cucumber:`<rect x="16" y="38" width="70" height="26" rx="13" transform="rotate(-20 50 50)" fill="var(--i-green)"/><g fill="var(--i-light)" opacity=".55"><circle cx="34" cy="56" r="2"/><circle cx="48" cy="48" r="2"/><circle cx="62" cy="44" r="2"/><circle cx="44" cy="58" r="2"/><circle cx="58" cy="52" r="2"/></g><path d="M80 32q6-6 10-4" stroke="var(--i-brown)" stroke-width="3" fill="none"/>`,
+  sock:`<path d="M36 12h30v44q0 10 8 14t6 16q-4 8-16 6L36 80q-8-6-4-16l4-8z" fill="var(--i-sky)"/><rect x="36" y="12" width="30" height="10" fill="var(--i-light)" opacity=".5"/><path d="M60 82q10 2 16-4" stroke="var(--i-light)" stroke-width="4" fill="none" opacity=".5"/>`,
+  drum:`<ellipse cx="50" cy="44" rx="34" ry="12" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/><path d="M16 44v28q0 12 34 12t34-12V44q0 12-34 12T16 44z" fill="var(--i-rose)"/><path d="M22 56l14 22M50 58v24M78 56L64 78" stroke="var(--i-light)" stroke-width="3" opacity=".6"/><path d="M60 6l-14 34M86 14L56 40" stroke="var(--i-brown)" stroke-width="5" stroke-linecap="round"/>`,
+  umbrella:`<path d="M10 50a40 40 0 0 1 80 0q-6-6-13 0q-7-6-14 0q-6-6-13 0q-7-6-13 0q-7-6-14 0q-7-6-13 0z" fill="var(--i-lavender)"/><path d="M50 50v32a7 7 0 0 1-14 0" stroke="var(--i-brown)" stroke-width="5" fill="none" stroke-linecap="round"/>`,
+  leaf:`<path d="M20 80Q20 24 82 18Q78 80 20 80z" fill="var(--i-green)"/><path d="M20 80L70 30M40 60l-2-14M52 48l-2-12M40 60l14 2M52 48l12 2" stroke="var(--i-light)" stroke-width="2.5" opacity=".6" fill="none"/>`
+});
+/* шестерёнка: x, y, радиус, зубцов, цвет */
+function gear(x, y, r, n, c){
+  let d = ''; for (let i=0;i<n*2;i++){ const a = Math.PI*i/n, rr = i%2 ? r : r*1.22, a1 = a - Math.PI/(n*2)*.6, a2 = a + Math.PI/(n*2)*.6;
+    d += `${i?'L':'M'}${(x+rr*Math.cos(a1)).toFixed(1)} ${(y+rr*Math.sin(a1)).toFixed(1)}L${(x+rr*Math.cos(a2)).toFixed(1)} ${(y+rr*Math.sin(a2)).toFixed(1)}`; }
+  return `<path d="${d}z" fill="var(--i-${c})"/><circle cx="${x}" cy="${y}" r="${r*.32}" fill="var(--bg)"/>`;
+}
+/* круговая стрелка вращения */
+const spin = (x, y, r, cw) => `<path d="M${x-r} ${y}A${r} ${r} 0 0 1 ${x} ${y-r}" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" ${cw?'':`transform="translate(${2*x} 0) scale(-1 1)"`}/><path d="M${cw?x-4:x+4} ${y-r-4}L${cw?x+3:x-3} ${y-r}L${cw?x-4:x+4} ${y-r+4}" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+/* предмет внутри большой картинки */
+const put = (k, x, y, s=20, extra='') => `<svg x="${x}" y="${y}" width="${s}" height="${s}" viewBox="0 0 100 100" overflow="visible"><g ${extra}>${art(k)}</g></svg>`;
+
+/* ===================== v3, партия 3: рисунки для СБО ===================== */
+Object.assign(I, {
+  soap:`<rect x="18" y="40" width="64" height="38" rx="16" fill="var(--i-lavender)"/><ellipse cx="40" cy="52" rx="10" ry="4" fill="var(--i-light)" opacity=".5"/><circle cx="30" cy="28" r="7" fill="var(--i-sky)" opacity=".5"/><circle cx="46" cy="18" r="5" fill="var(--i-sky)" opacity=".5"/><circle cx="62" cy="28" r="8" fill="var(--i-sky)" opacity=".5"/>`,
+  towel:`<rect x="20" y="14" width="60" height="10" rx="5" fill="var(--i-brown)"/><path d="M26 22h48v62q0 4-4 4H30q-4 0-4-4z" fill="var(--i-sky)"/><path d="M26 66h48M26 72h48" stroke="var(--i-light)" stroke-width="3" opacity=".7"/>`,
+  faucet:`<rect x="12" y="20" width="40" height="14" rx="5" fill="var(--i-sky)"/><path d="M40 34h12a14 14 0 0 1 14 14v6H54v-4a4 4 0 0 0-4-4H40z" fill="var(--i-sky)"/><rect x="24" y="10" width="16" height="10" rx="3" fill="var(--i-ink)" opacity=".6"/><path d="M60 60q-4 10 0 14t0-14M60 80q-3 6 0 10t0-10" fill="var(--i-sky)" opacity=".6"/>`,
+  scissors:`<circle cx="30" cy="72" r="12" fill="none" stroke="var(--i-rose)" stroke-width="7"/><circle cx="70" cy="72" r="12" fill="none" stroke="var(--i-rose)" stroke-width="7"/><path d="M36 62L62 12M64 62L38 12" stroke="var(--i-ink)" stroke-width="6" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="40" r="3.5" fill="var(--i-light)"/>`,
+  knife:`<path d="M20 80L70 18q12-6 10 8L36 92z" fill="var(--i-light)" stroke="var(--i-ink)" stroke-width="2" opacity=".9"/><path d="M20 80l-8 10q-2 6 6 4l16-10z" fill="var(--i-brown)"/>`,
+  fire:`<path d="M50 10q24 26 22 50a22 22 0 0 1-44 0q0-14 10-24q0 12 8 16q-4-24 4-42z" fill="var(--i-peach)"/><path d="M50 50q12 12 10 22a10 10 0 0 1-20 0q0-10 10-22z" fill="var(--i-yellow)"/>`,
+  socket:`<rect x="16" y="16" width="68" height="68" rx="16" fill="var(--i-light)" stroke="var(--line)" stroke-width="3"/><circle cx="50" cy="50" r="24" fill="var(--surface-2)" stroke="var(--line)" stroke-width="2"/><circle cx="40" cy="50" r="5" fill="var(--i-ink)"/><circle cx="60" cy="50" r="5" fill="var(--i-ink)"/><path d="M76 22l-8 14h6l-6 12" stroke="var(--i-yellow)" stroke-width="3" fill="none"/>`,
+  pills:`<rect x="20" y="30" width="60" height="44" rx="10" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/>${[0,1,2].map(i=>[0,1].map(j=>`<circle cx="${34+i*16}" cy="${44+j*16}" r="6" fill="var(--i-rose)"/>`).join('')).join('')}`,
+  spoon:`<ellipse cx="50" cy="26" rx="14" ry="18" fill="var(--i-light)" stroke="var(--line)" stroke-width="3"/><rect x="46" y="42" width="8" height="48" rx="4" fill="var(--i-light)" stroke="var(--line)" stroke-width="3"/>`,
+  fork:`<path d="M36 10v22a14 14 0 0 0 28 0V10M45 10v20M55 10v20" stroke="var(--i-ink)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><rect x="46" y="44" width="8" height="46" rx="4" fill="var(--i-ink)" opacity=".55"/>`,
+  snow:`<g stroke="var(--i-sky)" stroke-width="6" stroke-linecap="round"><path d="M50 12v76M17 31l66 38M17 69l66-38"/><path d="M42 18l8 8 8-8M42 82l8-8 8 8" fill="none"/></g>`,
+  rain:`<path d="M24 56a14 14 0 0 1 4-27 20 20 0 0 1 38-4 16 16 0 0 1 6 31z" fill="var(--i-lavender)"/><path d="M32 66l-4 10M50 66l-4 10M68 66l-4 10M41 80l-4 10M59 80l-4 10" stroke="var(--i-sky)" stroke-width="5" stroke-linecap="round"/>`,
+  boots:`<path d="M20 20h24v44h20q14 0 14 14v8H20z" fill="var(--i-yellow)"/><rect x="20" y="80" width="58" height="8" rx="3" fill="var(--i-brown)"/><rect x="20" y="20" width="24" height="8" fill="var(--i-light)" opacity=".4"/>`,
+  scarf:`<path d="M22 24q28-12 56 0v14q-28-12-56 0z" fill="var(--i-rose)"/><path d="M58 34h16v52h-16z" fill="var(--i-rose)"/><path d="M58 50h16M58 66h16" stroke="var(--i-light)" stroke-width="4" opacity=".6"/><path d="M58 86v6M64 86v6M70 86v6" stroke="var(--i-rose)" stroke-width="3"/>`,
+  shorts:`<path d="M22 22h56l6 56H58L50 44l-8 34H16z" fill="var(--i-sky)"/><rect x="22" y="22" width="56" height="8" fill="var(--i-light)" opacity=".4"/>`,
+  panama:`<ellipse cx="50" cy="62" rx="40" ry="10" fill="var(--i-butter)"/><path d="M28 62q0-30 22-30t22 30z" fill="var(--i-butter)" stroke="var(--line)" stroke-width="1.5"/><path d="M29 54h42" stroke="var(--i-green)" stroke-width="5"/>`,
+  coat:`<path d="M34 12l-20 10 4 66h64l4-66-20-10q-6 10-16 10t-16-10z" fill="var(--i-brown)"/><path d="M50 22v66" stroke="var(--i-ink)" stroke-width="2" opacity=".4"/><circle cx="56" cy="40" r="3" fill="var(--i-light)"/><circle cx="56" cy="56" r="3" fill="var(--i-light)"/><circle cx="56" cy="72" r="3" fill="var(--i-light)"/>`,
+  broom:`<path d="M62 8L44 56" stroke="var(--i-brown)" stroke-width="6" stroke-linecap="round"/><path d="M34 52l22 8-4 30q-18 2-32-12z" fill="var(--i-yellow)"/>`,
+  bin:`<rect x="24" y="30" width="52" height="58" rx="6" fill="var(--i-green)"/><rect x="18" y="22" width="64" height="10" rx="4" fill="var(--i-green)"/><rect x="42" y="14" width="16" height="8" rx="3" fill="var(--i-green)"/><path d="M38 42v34M50 42v34M62 42v34" stroke="var(--i-light)" stroke-width="4" opacity=".5" stroke-linecap="round"/>`,
+  pencil:`<path d="M22 78L70 30l10 10-48 48H22z" fill="var(--i-yellow)"/><path d="M70 30l6-6a7 7 0 0 1 10 10l-6 6z" fill="var(--i-rose)"/><path d="M22 78v10h10z" fill="var(--i-ink)"/>`,
+  bottle:`<rect x="40" y="8" width="20" height="12" rx="3" fill="var(--i-sky)"/><path d="M38 20h24v8q10 6 10 16v40q0 6-6 6H34q-6 0-6-6V44q0-10 10-16z" fill="var(--i-sky)" opacity=".7"/><rect x="28" y="50" width="44" height="18" fill="var(--i-light)" opacity=".5"/>`,
+  zebra:`<rect x="0" y="20" width="100" height="60" fill="var(--i-ink)" opacity=".75"/>${[0,1,2,3,4].map(i=>`<rect x="${10+i*18}" y="24" width="10" height="52" fill="var(--i-light)"/>`).join('')}`,
+  bandage:`<rect x="14" y="36" width="72" height="28" rx="14" fill="var(--i-peach)" transform="rotate(-30 50 50)"/><rect x="38" y="38" width="24" height="24" rx="4" fill="var(--i-light)" opacity=".7" transform="rotate(-30 50 50)"/>`
+});
+/* светофор: какой сигнал горит (r, y, g) */
+const tlight = on => `<rect x="34" y="6" width="32" height="88" rx="10" fill="var(--i-ink)"/>${[['r','#E57373',22],['y','#F2C94C',50],['g','#6FCF97',78]].map(([k,c,y])=>`<circle cx="50" cy="${y}" r="10" fill="${c}" opacity="${k===on?1:.18}"/>`).join('')}`;
+/* монета с номиналом */
+const coinSvg = (v, x=0, y=0, s=40) => `<svg x="${x}" y="${y}" width="${s}" height="${s}" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="${v>=10?'var(--i-yellow)':'var(--i-butter)'}" stroke="var(--i-brown)" stroke-width="4"/><text x="50" y="${v>=10?64:66}" text-anchor="middle" font-size="${v>=10?40:46}" font-weight="800" fill="var(--i-brown)">${v}</text></svg>`;
+
 /* ===================== общие данные и помощники ===================== */
 const NAMES = {apple:'Яблоко',pear:'Груша',banana:'Банан',car:'Машина',bus:'Автобус',boat:'Кораблик',cat:'Кошка',dog:'Собака',bird:'Птичка',ball:'Мяч',
   fish:'Рыба',hat:'Шапка',rocket:'Ракета',book:'Книга',house:'Дом',sun:'Солнце',gift:'Подарок',icecream:'Мороженое',moon:'Луна',plate:'Тарелка',shirt:'Футболка',bag:'Рюкзак'};
@@ -683,6 +799,7 @@ function unlockAudio(){
   if (audioUnlocked) return; audioUnlocked = true;
   try { if (window.speechSynthesis){ const u = new SpeechSynthesisUtterance(' '); u.volume = 0; u.lang = 'ru-RU'; speechSynthesis.speak(u); } } catch(e){}
   try { player.src = SILENT; player.play().catch(()=>{}); } catch(e){}
+  try { ac(); } catch(e){}
 }
 ['touchend','click','keydown'].forEach(ev => document.addEventListener(ev, unlockAudio, {capture:true, passive:true}));
 let speakDone = null;
@@ -871,7 +988,7 @@ R.parent = () => {
   const list = [...mine, ...SEED_ATTEMPTS].slice(0,6);
   const abc = [...S.abc, ...SEED_ABC];
   return `
-<section class="wrap page-head"><p class="eyebrow">Кабинет родителя</p><h1>Миша, 6 лет</h1><p class="muted">Ведут: логопед Анна Сергеевна, психолог Олег Викторович</p><div class="row" style="margin-top:8px"><a class="chip" href="#planner">Собрать расписание</a><a class="chip" href="#calm">Подышать вместе</a><a class="chip" href="#child">Детский режим</a></div></section>
+<section class="wrap page-head"><p class="eyebrow">Кабинет родителя</p><h1>Миша, 6 лет</h1><p class="muted">Ведут: логопед Анна Сергеевна, психолог Олег Викторович</p><div class="row" style="margin-top:8px"><a class="chip" href="#planner">Собрать расписание</a><a class="chip" href="#calm">Подышать вместе</a><a class="chip" href="#lists">Чек-листы</a><a class="chip" href="#child">Детский режим</a></div></section>
 <section class="wrap tiles stagger">
   <div class="tile" style="--tint:var(--sky)"><p class="eyebrow">Сегодня</p><p class="v">${n} из ${TASKS.length}</p><p class="s">${n===TASKS.length?'Все задания сделаны':'заданий сделано'}</p></div>
   <div class="tile" style="--tint:var(--sage)"><p class="eyebrow">За неделю</p><p class="v">9 занятий</p><p class="s">Специалист назначил 12</p></div>
@@ -1610,6 +1727,10 @@ function pic(o){
   if (o.bear) return svg(bear(o.bear));
   if (o.shape) return svg(shp(...o.shape));
   if (o.svg) return o.svg.startsWith('<svg') ? o.svg : svg(o.svg, o.vb);
+  if (o.shadow) return `<svg viewBox="0 0 100 100" class="sil" aria-hidden="true">${art(o.shadow)}</svg>`;
+  if (o.outline) return `<svg viewBox="0 0 100 100" class="outl" aria-hidden="true">${[].concat(o.outline).map(k=>`<g>${art(k)}</g>`).join('')}</svg>`;
+  if (o.noise) return `<svg viewBox="0 0 100 100" aria-hidden="true">${art(o.noise)}${noise(o.level||14)}</svg>`;
+  if (o.swatch) return `<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="${o.swatch}"/></svg>`;
   return '';
 }
 
@@ -1651,15 +1772,17 @@ ACT['sp-next'] = () => {
 /* --- 3. Выбор ответа: картинки, лица или текст --- */
 ENG.choice = e => { G.r = 0; G.rounds = typeof e.rounds === 'function' ? e.rounds() : e.rounds; choiceRender(); };
 function choiceRender(){
-  const q = G.rounds[G.r], opts = q.keep ? q.opts : shuffle(q.opts), text = opts.every(o=>o.text && !o.ill && !o.face && !o.bear && !o.shape && !o.svg);
+  const q = G.rounds[G.r], opts = q.keep ? q.opts : shuffle(q.opts), text = opts.every(o=>o.text && !pic(o));
   G.opts = opts;
   $('stage').innerHTML = `${q.scene?`<div class="situ">${pic(q.scene)}</div>`:''}
     ${q.who?`<p class="hint" style="margin:0 0 6px"><b>${q.who}</b></p>`:''}<p class="prompt">${q.ask}</p>
+    ${q.play?`<div class="row center" style="margin-bottom:16px"><button class="btn primary" data-act="ch-play" style="min-height:60px">${ICON_SPEAK} Послушать</button></div>`:''}
     ${text ? `<div class="answers">${opts.map((o,i)=>`<button class="answer" data-act="ch" data-i="${i}">${o.text}</button>`).join('')}</div>`
            : `<div class="${opts.length===4?'pick4':'pick3'}">${opts.map((o,i)=>`<button class="pick" data-act="ch" data-i="${i}" aria-label="${o.text||''}">${pic(o)}${o.text?`<span>${o.text}</span>`:''}</button>`).join('')}</div>`}
     <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.rounds.length)}`;
   if (q.speak && G.spoke) say(q.ask);
 }
+ACT['ch-play'] = () => playCue(G.rounds[G.r].play);
 ACT.ch = el => { const q = G.rounds[G.r], o = G.opts[+el.dataset.i];
   choose(el, !!o.ok, o.why || q.yes || 'Верно!', o.why || q.no || 'Подумай ещё.', () => {
     if (++G.r < G.rounds.length) return choiceRender();
@@ -1911,6 +2034,520 @@ ACT.bp = el => {
     done(`${G.list.length} частей, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Ты знаешь себя!', sub:'Глаза, нос, рот, уши, руки, ноги. Это всё ты.', meta:`Для взрослых: ошибок ${G.errors}`}); }, 1300);
 };
 
+/* ===================== Движки партии 2: память, восприятие, графомоторика ===================== */
+
+const pw = (n, ...f) => plural(n, ...f).replace(/^\S+ /, '');   // только слово, без числа
+
+/* --- мягкие звуки (WebAudio): тихий синус без резких атак --- */
+let AC = null;
+function ac(){
+  if (!AC){ const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; AC = new C(); }
+  if (AC.state === 'suspended') AC.resume();
+  return AC;
+}
+function tone(f=330, d=.2, v=.4, at=0){
+  const c = ac(); if (!c) return;
+  const t = c.currentTime + at, o = c.createOscillator(), g = c.createGain();
+  o.type = 'sine'; o.frequency.value = f;
+  g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t+.02); g.gain.exponentialRampToValueAtTime(0.0001, t+d);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+d+.05);
+}
+/* удар «барабана» и ритмический рисунок: группы ударов, между группами пауза */
+const BEAT = .34, GAP = .55;
+const drum = (at=0) => tone(196, .22, .5, at);
+function playBeats(groups, onBeat){
+  let t = 0;
+  groups.forEach((n, gi) => { for (let k=0;k<n;k++){ drum(t); if (onBeat){ const ms = t*1000; later(() => onBeat(gi, k), ms); } t += BEAT; } t += GAP; });
+  return t;
+}
+function playCue(p){
+  if (!p) return;
+  if (p.say) say(p.say, p.rate || .8);
+  if (p.tone) tone(...p.tone);
+  if (p.beats) playBeats(p.beats);
+}
+/* «шум» поверх картинки: случайные мягкие линии */
+const rnd = (a, b) => a + Math.random()*(b-a);
+function noise(n){
+  let s = '';
+  for (let i=0;i<n;i++) s += `<path d="M${rnd(0,100).toFixed(0)} ${rnd(0,100).toFixed(0)}q${rnd(-30,30).toFixed(0)} ${rnd(-30,30).toFixed(0)} ${rnd(-45,45).toFixed(0)} ${rnd(-45,45).toFixed(0)}" stroke="var(--ink-2)" stroke-width="2.2" fill="none" opacity=".6" stroke-linecap="round"/>`;
+  return s;
+}
+
+/* --- 1. Запомни цифры: длина ряда растёт, пока ребёнок справляется --- */
+ENG.span = e => { G.len = e.start || 3; G.r = 0; G.best = 0; G.fails = 0; spanIntro(); };
+function spanIntro(){
+  const prev = G.seq ? 0 : 1; G.seq = [];
+  while (G.seq.length < G.len){ const d = 1 + Math.floor(Math.random()*9); if (d !== G.seq[G.seq.length-1]) G.seq.push(d); }
+  $('stage').innerHTML = `<p class="prompt">Запомни ${G.len} ${pw(G.len,'цифру','цифры','цифр')}</p>
+    <div class="say-card" style="min-height:150px"><p class="say-word" id="dgBig" style="font-size:72px">${prev?'?':'…'}</p></div>
+    <div class="row center"><button class="btn primary" data-act="dg-go" style="min-height:64px">Показать цифры</button></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>`;
+}
+ACT['dg-go'] = el => {
+  el.disabled = true; let i = 0;
+  const next = () => {
+    if (G.e.e !== 'span' || !$('dgBig')) return;
+    if (i === G.seq.length){ $('dgBig').textContent = ''; return later(spanAsk, 500); }
+    $('dgBig').textContent = G.seq[i]; say(String(G.seq[i]), .9); i++; later(() => { if ($('dgBig')) $('dgBig').textContent = ''; later(next, 250); }, 850);
+  };
+  next();
+};
+function spanAsk(){
+  if (!$('stage')) return;
+  G.in = [];
+  $('stage').innerHTML = `<p class="prompt">Нажми цифры в том же порядке</p>
+    <div class="say-card" style="min-height:96px"><p class="say-word" id="dgIn" style="letter-spacing:.2em">${'·'.repeat(G.len)}</p></div>
+    <div class="digits" style="max-width:260px;margin:0 auto">${[1,2,3,4,5,6,7,8,9].map(d=>`<button data-act="dg-d" data-d="${d}">${d}</button>`).join('')}</div>
+    <div class="row center" style="margin-top:12px"><button class="btn" data-act="dg-del">Стереть</button></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>`;
+}
+ACT['dg-del'] = () => { G.in.pop(); $('dgIn').textContent = G.in.join('') + '·'.repeat(G.len - G.in.length); };
+ACT['dg-d'] = el => {
+  if (G.lock || G.in.length >= G.len) return;
+  G.in.push(+el.dataset.d); $('dgIn').textContent = G.in.join('') + '·'.repeat(G.len - G.in.length);
+  if (G.in.length < G.len) return;
+  G.lock = true; G.r++;
+  const ok = G.in.join('') === G.seq.join('');
+  if (ok){ G.best = G.len; G.fails = 0; $('fb').textContent = 'Верно! Ещё на одну цифру больше.'; G.len++; }
+  else { G.errors++; G.fails++; $('fb').textContent = `Было: ${G.seq.join(' ')}. ${G.fails < 2 ? 'Попробуем ещё раз.' : ''}`; }
+  later(() => { G.lock = false;
+    if (G.fails >= 2 || G.len > 7 || G.r >= 9){
+      const b = G.best;
+      return done(`запомнил ${b} ${pw(b,'цифру','цифры','цифр')}`, {stars:b>=5?3:b>=4?2:1, title:b?`Ты запомнил ${b} ${pw(b,'цифру','цифры','цифр')}`:'Хорошая тренировка', sub:'Память растёт, когда её тренируешь. Попробуй завтра ещё.', meta:`Для взрослых: объём кратковременной памяти на цифры ${b}, попыток ${G.r}`});
+    }
+    spanIntro();
+  }, 1600);
+};
+
+/* --- 2. Опосредованное запоминание: к слову выбираем картинку-подсказку, потом по картинке вспоминаем слово --- */
+ENG.mediated = e => { G.i = 0; G.pairs = []; G.list = pickN(e.words, e.n || 6); medLearn(); };
+function medLearn(){
+  const w = G.list[G.i];
+  $('stage').innerHTML = `<p class="hint">Слово ${G.i+1} из ${G.list.length}. Правильного ответа нет: выбери картинку, которая поможет запомнить слово.</p>
+    <div class="say-card" style="min-height:110px"><p class="say-word">${w.w}</p><button class="btn" data-act="md-say" style="margin-top:8px">${ICON_SPEAK} Послушать</button></div>
+    <div class="pick4">${shuffle(w.pics).map(k=>`<button class="pick" data-act="md-pick" data-k="${k}">${svg(art(k))}</button>`).join('')}</div>`;
+}
+ACT['md-say'] = () => say(G.list[G.i].w);
+ACT['md-pick'] = el => {
+  G.pairs.push([G.list[G.i].w, el.dataset.k]);
+  if (++G.i < G.list.length) return medLearn();
+  G.r = 0; G.miss = 0; G.pairs = shuffle(G.pairs);
+  $('stage').innerHTML = `<div class="say-card"><p class="say-word" style="font-size:28px">Теперь вспомним слова</p><p class="note">По картинке, которую ты выбрал, найди слово.</p></div><div class="row center"><button class="btn primary" data-act="md-go">Начать</button></div>`;
+};
+ACT['md-go'] = () => medTest();
+function medTest(){
+  const [w, k] = G.pairs[G.r], words = G.list.map(x=>x.w);
+  G.opts = shuffle([w, ...pickN(words.filter(x=>x!==w), 3)]);
+  $('stage').innerHTML = `<div class="situ" style="max-width:200px">${svg(art(k))}</div><p class="prompt">Какое слово ты запомнил с этой картинкой?</p>
+    <div class="answers">${G.opts.map((x,i)=>`<button class="answer" data-act="md-ans" data-i="${i}">${x}</button>`).join('')}</div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.pairs.length)}`;
+  G.first = true;
+}
+ACT['md-ans'] = el => {
+  const ok = G.opts[+el.dataset.i] === G.pairs[G.r][0];
+  if (!ok && G.first){ G.miss++; G.first = false; }
+  choose(el, ok, 'Верно! Картинка помогла.', 'Не это слово. Подумай, почему ты выбрал эту картинку.', () => {
+    if (++G.r < G.pairs.length) return medTest();
+    const n = G.pairs.length, got = n - G.miss;
+    done(`вспомнил ${got} из ${n}`, {stars:got===n?3:got>=n-2?2:1, title:`Ты вспомнил ${got} из ${n}`, sub:'Картинки-подсказки помогают запоминать. Так можно учить и стихи, и правила.', meta:`Для взрослых: опосредованное запоминание, ${got} из ${n} с первой попытки`});
+  });
+};
+
+/* --- 3. Разрезные картинки: выбери кусочек, потом место для него --- */
+const CUT_GRID = {2:[2,1], 3:[3,1], 4:[2,2], 6:[3,2]};
+const CUT_PICS = ['house','cat','rocket','car','bus','boat','fish','dog','cow','pig','frog','duck','umbrella','cake','tree','tomato'];
+ENG.cut = e => { G.r = 0; G.done = 0; G.used = []; cutChoose(); };
+function cutChoose(){
+  $('stage').innerHTML = `<p class="prompt">На сколько частей разрезать картинку?</p>
+    <div class="digits">${[2,3,4,6].map(n=>`<button data-act="cut-n" data-n="${n}">${n}</button>`).join('')}</div>
+    <p class="note">Начните с 2 частей. Если легко, берите больше.</p>`;
+}
+ACT['cut-n'] = el => { G.parts = +el.dataset.n; cutRound(); };
+function cutPiece(i){
+  const [c, r] = CUT_GRID[G.parts], w = 100/c, h = 100/r, x = (i%c)*w, y = Math.floor(i/c)*h;
+  return `<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true"><rect width="100" height="100" fill="var(--butter)"/>${art(G.pic)}</svg>`;
+}
+function cutRound(){
+  G.pic = pickN(CUT_PICS.filter(k=>!G.used.includes(k)), 1)[0]; G.used.push(G.pic);
+  G.placed = Array(G.parts).fill(false); G.sel = null; G.tray = shuffle([...Array(G.parts).keys()]);
+  if (G.parts > 1 && G.tray.every((v,i)=>v===i)) G.tray.reverse();
+  cutRender();
+}
+function cutRender(){
+  const [c, r] = CUT_GRID[G.parts];
+  $('stage').innerHTML = `<div class="row center" style="gap:18px;align-items:flex-start;margin-bottom:8px">
+      <div style="width:84px;text-align:center"><div class="cut-sample">${svg('<rect width="100" height="100" fill="var(--butter)"/>'+art(G.pic))}</div><p class="note" style="margin:4px 0 0">Образец</p></div>
+      <div class="cut-board" style="grid-template-columns:repeat(${c},1fr)">${G.placed.map((p,i)=>`<button class="cut-slot${p?' full':''}" data-act="cut-s" data-i="${i}" style="aspect-ratio:${r}/${c}" aria-label="Место ${i+1}">${p?cutPiece(i):''}</button>`).join('')}</div></div>
+    <p class="prompt" style="font-size:18px">Выбери кусочек, потом нажми, куда его положить</p>
+    <div class="cut-tray">${G.tray.map(i=>G.placed[i]?'':`<button class="cut-piece" data-act="cut-p" data-i="${i}" aria-pressed="${G.sel===i}" style="aspect-ratio:${r}/${c}">${cutPiece(i)}</button>`).join('')}</div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, 3)}`;
+}
+ACT['cut-p'] = el => { G.sel = +el.dataset.i; document.querySelectorAll('.cut-piece').forEach(b => b.setAttribute('aria-pressed', b===el)); };
+ACT['cut-s'] = el => {
+  const i = +el.dataset.i;
+  if (G.lock || G.placed[i]) return;
+  if (G.sel === null){ $('fb').textContent = 'Сначала выбери кусочек внизу.'; return; }
+  if (G.sel !== i){ G.errors++; $('fb').textContent = 'Этот кусочек из другого места. Сравни с образцом.'; return; }
+  G.placed[i] = true; G.sel = null; cutRender();
+  if (!G.placed.every(Boolean)) return;
+  G.lock = true; $('fb').textContent = 'Картинка собрана!';
+  later(() => { G.lock = false;
+    if (++G.r < 3) return cutRound();
+    done(`3 картинки по ${G.parts} ${pw(G.parts,'части','части','частей')}, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Все картинки собраны', sub:G.parts<6?'В следующий раз попробуй больше частей.':'Это была самая трудная версия. Молодец!', meta:`Для взрослых: ${G.parts} ${pw(G.parts,'часть','части','частей')}, ${elapsed()}, ошибок ${G.errors}`});
+  }, 1500);
+};
+
+/* --- 4. Ритм: послушай и простучи так же --- */
+const RHY = [[1,1],[2,1],[1,2],[3],[2,2],[3,1],[1,3],[2,1,2]];
+ENG.rhythm = e => { G.r = 0; G.list = (e.patterns || RHY).slice(0, 6); G.taps = []; rhyRender(); };
+const rhyDots = gr => gr.map(n => '●'.repeat(n)).join('  ');
+function rhyRender(){
+  $('stage').innerHTML = `<p class="prompt">Послушай и простучи так же</p>
+    <div class="row center" style="margin-bottom:12px"><button class="btn primary" data-act="rh-play" style="min-height:60px">${ICON_SPEAK} Послушать</button></div>
+    <div class="row center"><button class="drum-btn" data-act="rh-tap" aria-label="Стучать">${svg(I.drum)}</button></div>
+    <p class="say-word" id="rhOut" style="min-height:44px;font-size:30px;letter-spacing:.1em" aria-live="polite"></p>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+}
+ACT['rh-play'] = () => { G.taps = []; $('rhOut').textContent = ''; const btn = document.querySelector('.drum-btn');
+  playBeats(G.list[G.r], () => { if (!btn) return; btn.classList.add('hit'); later(() => btn.classList.remove('hit'), 150); }); };
+ACT['rh-tap'] = el => {
+  if (G.lock) return;
+  drum(); el.classList.add('hit'); later(() => el.classList.remove('hit'), 120);
+  G.taps.push(performance.now()); clearTimeout(G.rt); G.rt = later(rhyCheck, 1400);
+  $('rhOut').textContent = rhyDots(rhyGroups(G.taps));
+};
+function rhyGroups(ts){ const g = []; ts.forEach((t,i) => { if (!i || t - ts[i-1] > 560) g.push(1); else g[g.length-1]++; }); return g; }
+function rhyCheck(){
+  if (!$('rhOut') || !G.taps.length) return;
+  const got = rhyGroups(G.taps), want = G.list[G.r]; G.taps = [];
+  if (got.join() === want.join()){
+    G.lock = true; $('fb').textContent = 'Верно! Ритм точно такой же.';
+    return later(() => { G.lock = false; if (++G.r < G.list.length) return rhyRender();
+      done(`${G.list.length} ритмов, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'У тебя хорошее чувство ритма', sub:'Ритм помогает речи и чтению: слова тоже делятся на слоги.', meta:`Для взрослых: ${elapsed()}, ошибок ${G.errors}`}); }, 1500);
+  }
+  G.errors++; $('fb').textContent = `Было: ${rhyDots(want)}. Послушай ещё раз и простучи.`;
+}
+
+/* --- 5. Ориентировка на листе: 9 клеток, «над», «под», «слева», «справа» --- */
+const SHEET_POS = ['в левый верхний угол','вверху посередине','в правый верхний угол','слева посередине','в центр','справа посередине','в левый нижний угол','внизу посередине','в правый нижний угол'];
+const SHEET_ITEMS = [{k:'apple', ins:'яблоком', gen:'яблока'}, {k:'ball', ins:'мячом', gen:'мяча'}, {k:'cat', ins:'кошкой', gen:'кошки'}, {k:'car', ins:'машиной', gen:'машины'}];
+ENG.sheet = e => {
+  const abs = pickN([0,1,2,3,4,5,6,7,8], 5).map(i => ({ask:'Нажми ' + SHEET_POS[i], ans:i}));
+  const rel = pickN([['над',-3,'ins'],['под',3,'ins'],['слева от',-1,'gen'],['справа от',1,'gen']], 3).map(([w,d,f]) => { const it = pickN(SHEET_ITEMS,1)[0]; return {ask:`Нажми клетку ${w} ${it[f]}`, ans:4+d, item:it.k}; });
+  G.r = 0; G.rounds = [...abs, ...rel]; sheetRender();
+};
+function sheetRender(){
+  const q = G.rounds[G.r];
+  $('stage').innerHTML = `<p class="prompt">${q.ask}</p>
+    <div class="row center" style="margin-bottom:12px"><button class="btn" data-act="sh-say">${ICON_SPEAK} Послушать</button></div>
+    <div class="sheet">${[...Array(9).keys()].map(i=>`<button class="pick" data-act="sh" data-i="${i}" aria-label="Клетка ${i+1}">${q.item&&i===4?svg(art(q.item)):''}</button>`).join('')}</div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.rounds.length)}`;
+}
+ACT['sh-say'] = () => say(G.rounds[G.r].ask);
+ACT.sh = el => { const q = G.rounds[G.r];
+  if (q.item && +el.dataset.i === 4) return;
+  choose(el, +el.dataset.i === q.ans, 'Верно!', 'Посмотри ещё раз. Верх — там, где начинается лист.', () => {
+    if (++G.r < G.rounds.length) return sheetRender();
+    done(`${G.rounds.length} заданий, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Ты хорошо ориентируешься на листе', sub:'Это пригодится в тетради: где начинать писать и куда ставить рисунок.', meta:`Для взрослых: ${elapsed()}, ошибок ${G.errors}`});
+  }); };
+
+/* --- общая «доска» для рисования пальцем (SVG, без canvas) --- */
+const padHtml = under => `<div class="draw"><svg viewBox="0 0 100 100" id="pad">${under}<g id="ink"></g></svg></div>`;
+function padBind(onStroke){
+  const s = $('pad'); G.strokes = []; let cur = null;
+  const pt = ev => { const p = s.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY; const q = p.matrixTransform(s.getScreenCTM().inverse()); return [q.x, q.y]; };
+  const draw = st => st.el.setAttribute('points', st.map(p => p[0].toFixed(1)+','+p[1].toFixed(1)).join(' '));
+  s.onpointerdown = ev => { ev.preventDefault(); try { s.setPointerCapture(ev.pointerId); } catch(e){}
+    cur = [pt(ev)]; cur.el = document.createElementNS('http://www.w3.org/2000/svg', 'polyline'); cur.el.setAttribute('class', 'stroke'); $('ink').appendChild(cur.el); G.strokes.push(cur); draw(cur); };
+  s.onpointermove = ev => { if (!cur) return; cur.push(pt(ev)); draw(cur); };
+  s.onpointerup = s.onpointercancel = () => { if (cur){ cur = null; if (onStroke) onStroke(); } };
+}
+ACT['pad-clear'] = () => { G.strokes = []; $('ink').innerHTML = ''; if ($('fb')) $('fb').textContent = ''; };
+
+/* --- 6. Обведи по контуру: считаем, какая часть линии пройдена и насколько точно --- */
+const TRACE = [
+  {t:'волну', d:'M10 50q10-22 20 0t20 0 20 0 20 0'},
+  {t:'зигзаг', d:'M10 66L25 34L40 66L55 34L70 66L85 34'},
+  {t:'домик', d:'M24 82V46L50 20L76 46V82Z'},
+  {t:'мячик', d:'M50 16A34 34 0 1 1 49.9 16Z'},
+  {t:'звезду', d:'M50 12L60 38L88 39L66 56L74 84L50 68L26 84L34 56L12 39L40 38Z'},
+  {t:'лесенку', d:'M14 80V64H30V48H46V32H62V16H80'}
+];
+ENG.trace = e => { G.r = 0; G.list = pickN(TRACE, 4); G.acc = []; traceRender(); };
+function traceRender(){
+  const t = G.list[G.r];
+  $('stage').innerHTML = `<p class="prompt">Обведи ${t.t} пальцем по пунктиру</p>
+    ${padHtml(`<path id="guide" class="guide" d="${t.d}"/><circle class="start" cx="${t.d.match(/M([\d.]+) ([\d.]+)/)[1]}" cy="${t.d.match(/M([\d.]+) ([\d.]+)/)[2]}" r="3"/>`)}
+    <div class="row center"><button class="btn" data-act="pad-clear">Стереть</button><button class="btn primary" data-act="tr-done">Готово</button></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+  const g = $('guide'), L = g.getTotalLength();
+  G.samples = [...Array(60).keys()].map(i => { const p = g.getPointAtLength(L*i/59); return [p.x, p.y]; });
+  G.dense = [...Array(240).keys()].map(i => { const p = g.getPointAtLength(L*i/239); return [p.x, p.y]; });
+  padBind(() => { if (traceScore().cover >= .93) traceNext(); });
+}
+const near = (p, list, r) => list.some(q => (p[0]-q[0])**2 + (p[1]-q[1])**2 <= r*r);
+function traceScore(){
+  const pts = G.strokes.flat();
+  if (!pts.length) return {cover:0, acc:0};
+  const cover = G.samples.filter(s => near(s, pts, 6)).length / G.samples.length;
+  const acc = pts.filter(p => near(p, G.dense, 6)).length / pts.length;
+  return {cover, acc};
+}
+ACT['tr-done'] = () => { const s = traceScore(); if (s.cover < .7){ $('fb').textContent = 'Обведи всю линию до конца.'; return; } traceNext(); };
+function traceNext(){
+  if (G.lock) return; G.lock = true;
+  const s = traceScore(); G.acc.push(s.acc);
+  $('fb').textContent = s.acc > .85 ? 'Очень точно!' : s.acc > .65 ? 'Хорошо получилось!' : 'Получилось! Старайся вести палец по пунктиру.';
+  later(() => { G.lock = false;
+    if (++G.r < G.list.length) return traceRender();
+    const a = G.acc.reduce((x,y)=>x+y,0)/G.acc.length, pc = Math.round(a*100);
+    done(`точность ${pc}%`, {stars:a>.85?3:a>.65?2:1, title:'Все фигуры обведены', sub:'Такие упражнения готовят руку к письму.', meta:`Для взрослых: средняя точность ведения линии ${pc}%`});
+  }, 1300);
+}
+
+/* --- 7. Дорисуй: оценки нет, важен сам рисунок и рассказ о нём --- */
+ENG.draw = e => { G.r = 0; G.list = e.items; drawRender(); };
+function drawRender(){
+  const it = G.list[G.r];
+  $('stage').innerHTML = `<p class="prompt">${it.ask}</p>${padHtml(it.base)}
+    <div class="row center"><button class="btn" data-act="pad-clear">Стереть</button><button class="btn primary" data-act="dr-next">Готово</button></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+  padBind();
+}
+ACT['dr-next'] = () => {
+  if (!G.strokes.length){ $('fb').textContent = 'Нарисуй что-нибудь, потом нажми «Готово».'; return; }
+  if (++G.r < G.list.length) return drawRender();
+  done(`${G.list.length} рисунков`, {stars:3, title:'Какие рисунки получились!', sub:'Расскажи взрослому, что ты нарисовал.', meta:'Для взрослых: попросите ребёнка рассказать о рисунке. Оценки здесь нет, важна фантазия.'});
+};
+
+/* --- 8. Соедини точки по порядку --- */
+const CONNECT = [
+  {t:'Звезда', c:'yellow', p:[[50,10],[61,37],[90,38],[67,56],[75,86],[50,69],[25,86],[33,56],[10,38],[39,37]]},
+  {t:'Домик', c:'peach', p:[[22,86],[22,46],[50,16],[78,46],[78,86]]},
+  {t:'Рыбка', c:'sky', p:[[10,50],[30,30],[56,26],[74,40],[92,24],[92,76],[74,60],[56,74],[30,70]]},
+  {t:'Кораблик', c:'rose', p:[[8,56],[92,56],[76,82],[24,82]]},
+  {t:'Ёлочка', c:'green', p:[[50,8],[70,34],[60,34],[80,60],[64,60],[86,86],[14,86],[36,60],[20,60],[40,34],[30,34]]},
+  {t:'Ромб', c:'lavender', p:[[50,10],[86,50],[50,90],[14,50]]}
+];
+ENG.connect = e => { G.r = 0; G.list = pickN(CONNECT, 3); conRound(); };
+function conRound(){ G.k = 0; conRender(); }
+function conRender(){
+  const f = G.list[G.r], pts = f.p, fin = G.k === pts.length;
+  const line = pts.slice(0, G.k).map(p=>p.join(',')).join(' ');
+  const lab = (p, i) => { const cx = 50, cy = 50, dx = p[0]-cx, dy = p[1]-cy, l = Math.hypot(dx,dy)||1; return [p[0]+dx/l*7, p[1]+dy/l*7+2]; };
+  $('stage').innerHTML = `<p class="prompt">${fin?f.t+'!':'Соедини точки по порядку: 1, 2, 3…'}</p>
+    <div class="draw"><svg viewBox="-6 -6 112 112">
+      ${fin?`<polygon points="${pts.map(p=>p.join(',')).join(' ')}" fill="var(--i-${f.c})" opacity=".9"/>`:''}
+      <polyline points="${line}" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      ${pts.map((p,i)=>`<g data-act="cn" data-i="${i}"><circle cx="${p[0]}" cy="${p[1]}" r="7" fill="transparent"/><circle cx="${p[0]}" cy="${p[1]}" r="${i===G.k?3.4:2.4}" fill="${i<G.k?'var(--accent)':'var(--ink)'}"/><text x="${lab(p,i)[0]}" y="${lab(p,i)[1]}" font-size="6.5" font-weight="700" text-anchor="middle" fill="var(--ink-2)">${i+1}</text></g>`).join('')}
+    </svg></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+}
+ACT.cn = el => {
+  if (G.lock) return;
+  const i = +el.dataset.i, f = G.list[G.r];
+  if (i !== G.k){ G.errors++; $('fb').textContent = `Ищи число ${G.k+1}.`; return; }
+  G.k++; conRender();
+  if (G.k < f.p.length) return;
+  G.lock = true; say(f.t);
+  later(() => { G.lock = false;
+    if (++G.r < G.list.length) return conRound();
+    done(`${G.list.length} фигуры, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Все фигуры готовы', sub:'Ты хорошо знаешь порядок чисел.', meta:`Для взрослых: ${elapsed()}, ошибок ${G.errors}`});
+  }, 1600);
+};
+
+/* --- 9. Графический диктант: стрелки по клеткам --- */
+const DIR = {r:[1,0,'→','вправо'], l:[-1,0,'←','влево'], u:[0,-1,'↑','вверх'], d:[0,1,'↓','вниз']};
+const GD = [
+  {t:'Лесенка', s:[1,8], steps:'u1 r1 u1 r1 u1 r1 u1 r1 u1 r1 u1 r1'},
+  {t:'Крепостная стена', s:[1,7], steps:'u2 r1 d2 r1 u2 r1 d2 r1 u2 r1 d2 r1'},
+  {t:'Змейка', s:[1,6], steps:'u2 r2 d2 r2 u2 r2 d2 r2'},
+  {t:'Ключик', s:[1,5], steps:'r6 u1 r3 d3 l3 u2'},
+  {t:'Ступеньки вниз', s:[1,1], steps:'r2 d1 r2 d1 r2 d1 r2 d1 r2 d1'}
+];
+const CELL = 7, GW = 14, GH = 10;
+ENG.gdict = e => { G.r = 0; G.list = pickN(GD.slice(0,3), 2).concat(pickN(GD.slice(3), 1)); gdRound(); };
+function gdRound(){
+  const p = G.list[G.r]; G.steps = p.steps.split(' ').map(x => [x[0], +x.slice(1)]);
+  G.s = 0; G.cnt = 0; G.pos = p.s.slice(); G.path = [p.s.slice()]; gdRender();
+}
+function gdRender(){
+  const W = GW*CELL, H = GH*CELL, P = G.list[G.r];
+  let grid = '';
+  for (let x=0;x<=GW;x++) grid += `<path d="M${x*CELL} 0V${H}" stroke="var(--line)" stroke-width=".5"/>`;
+  for (let y=0;y<=GH;y++) grid += `<path d="M0 ${y*CELL}H${W}" stroke="var(--line)" stroke-width=".5"/>`;
+  const pts = G.path.map(([x,y]) => `${x*CELL},${y*CELL}`).join(' '), [cx, cy] = G.pos;
+  $('stage').innerHTML = `<p class="prompt">${P.t}</p>
+    <div class="gd-steps">${G.steps.map(([d,n],i)=>`<span class="${i<G.s?'ok':i===G.s?'now':''}">${n}${DIR[d][2]}</span>`).join('')}</div>
+    <div class="draw" style="width:min(520px,94vw)"><svg viewBox="-2 -2 ${W+4} ${H+4}">${grid}<polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${cx*CELL}" cy="${cy*CELL}" r="2.6" fill="var(--i-rose)"/></svg></div>
+    <div class="arrows"><span></span><button data-act="gd" data-d="u" aria-label="Вверх">↑</button><span></span><button data-act="gd" data-d="l" aria-label="Влево">←</button><button data-act="gd" data-d="d" aria-label="Вниз">↓</button><button data-act="gd" data-d="r" aria-label="Вправо">→</button></div>
+    <div class="row center" style="margin-top:10px"><button class="btn" data-act="gd-say">${ICON_SPEAK} Продиктовать</button></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+}
+const cellsWord = n => `${n===1?'одна':n===2?'две':n} ${pw(n,'клетка','клетки','клеток')}`;
+ACT['gd-say'] = () => { const st = G.steps[G.s]; if (!st) return; const left = st[1] - G.cnt; say(`${cellsWord(left)} ${DIR[st[0]][3]}`); };
+ACT.gd = el => {
+  if (G.lock) return;
+  const st = G.steps[G.s], d = el.dataset.d;
+  if (d !== st[0]){ G.errors++; $('fb').textContent = `Сейчас нужно ${DIR[st[0]][3]}. Посмотри на подсвеченную стрелку.`; return; }
+  G.pos = [G.pos[0]+DIR[d][0], G.pos[1]+DIR[d][1]]; G.path.push(G.pos.slice());
+  if (++G.cnt === st[1]){ G.s++; G.cnt = 0; }
+  gdRender();
+  if (G.s < G.steps.length) return;
+  G.lock = true; $('fb').textContent = `Готово: ${G.list[G.r].t.toLowerCase()}!`;
+  later(() => { G.lock = false;
+    if (++G.r < G.list.length) return gdRound();
+    done(`${G.list.length} узора, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Графический диктант написан', sub:'Ты различаешь право и лево, верх и низ.', meta:`Для взрослых: ${elapsed()}, ошибок направления ${G.errors}`});
+  }, 1500);
+};
+
+/* ===================== Движки партии 3: СБО ===================== */
+
+/* --- 1. Таймер по шагам (чистим зубы, моем руки): круг показывает, сколько осталось --- */
+ENG.timer = e => { G.ph = 0; G.left = e.phases[0].s; G.run = false; timerRender(); };
+function timerRender(){
+  const e = G.e, ph = e.phases[G.ph], total = e.phases.reduce((a,p)=>a+p.s, 0);
+  const spent = e.phases.slice(0, G.ph).reduce((a,p)=>a+p.s, 0) + (ph.s - G.left), C = 2*Math.PI*44;
+  $('stage').innerHTML = `<div class="tm">
+      <svg viewBox="0 0 100 100" class="tm-ring"><circle cx="50" cy="50" r="44" fill="none" stroke="var(--surface-2)" stroke-width="7"/>
+        <circle id="tmArc" cx="50" cy="50" r="44" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-spent/total)}" transform="rotate(-90 50 50)" style="transition:stroke-dashoffset .9s linear"/>
+        <g transform="translate(21 10) scale(.58)">${art(ph.k)}</g>
+        <text id="tmSec" x="50" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="var(--ink-2)">${G.left} сек</text></svg></div>
+    <p class="prompt" id="tmTxt">${ph.t}</p>
+    <div class="row center"><button class="btn primary" data-act="tm-go" style="min-height:64px;padding:0 34px">${G.run?'Пауза':G.ph||G.left<ph.s?'Продолжить':'Старт'}</button></div>
+    <p class="note">${e.note||''}</p>${dots(G.ph, e.phases.length)}`;
+}
+ACT['tm-go'] = () => {
+  G.run = !G.run; timerRender();
+  if (G.run){ say(G.e.phases[G.ph].t); tick(); } else clearTimeout(G.timer);
+};
+function tick(){
+  G.timer = later(() => {
+    if (!G.run || !$('tmSec')) return;
+    G.left--;
+    if (G.left <= 0){
+      tone(523, .35, .25);
+      if (++G.ph >= G.e.phases.length){ G.run = false; return done('выполнено', {stars:3, title:G.e.doneTitle||'Готово!', sub:G.e.doneSub||'Ты всё сделал по шагам.'}); }
+      G.left = G.e.phases[G.ph].s; timerRender(); say(G.e.phases[G.ph].t);
+    } else timerRender();
+    tick();
+  }, 1000);
+}
+
+/* --- 2. Чек-лист: отмечай в любом порядке --- */
+ENG.check = e => { G.got = new Set(); checkRender(); };
+function checkRender(){
+  const it = G.e.items;
+  $('stage').innerHTML = `<p class="prompt">${G.e.prompt||'Отметь всё, что уже сделано'}</p>
+    <p class="hint" style="text-align:center">${G.got.size} из ${it.length}</p>
+    <div class="sched" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">${it.map((s,i)=>`<button class="step ${G.got.has(i)?'done':''}" data-act="ck" data-i="${i}" aria-pressed="${G.got.has(i)}">${svg(art(s.k))}<span>${s.t}</span><span class="tick">${G.got.has(i)?'✓ Готово':''}</span></button>`).join('')}</div>`;
+}
+ACT.ck = el => {
+  const i = +el.dataset.i;
+  if (G.got.has(i)) G.got.delete(i); else { G.got.add(i); if (G.e.speak !== false) say(G.e.items[i].t); }
+  checkRender();
+  if (G.got.size === G.e.items.length) later(() => { if (G.got.size === G.e.items.length) done(`${G.got.size} из ${G.got.size}`, {stars:3, title:G.e.doneTitle||'Всё готово!', sub:G.e.doneSub||'Ты ничего не забыл.'}); }, 700);
+};
+
+/* --- 3. Магазин по списку --- */
+ENG.shop = e => { G.r = 0; shopRound(); };
+function shopRound(){
+  const e = G.e, n = e.n ? e.n[G.r] : 3;
+  G.need = pickN(e.goods, n); G.taken = new Set();
+  G.shelf = shuffle([...G.need, ...pickN(e.goods.filter(g=>!G.need.includes(g)), 8-n)]);
+  shopRender();
+}
+function shopRender(){
+  $('stage').innerHTML = `<div class="shop-list"><p class="level">Список покупок</p>${G.need.map(g=>`<span class="${G.taken.has(g[0])?'got':''}">${svg(art(g[0]))}${g[1]}</span>`).join('')}</div>
+    <p class="prompt" style="font-size:19px">Найди на полке всё из списка</p>
+    <div class="pick4">${G.shelf.map(([k,n])=>`<button class="pick${G.taken.has(k)?' dim':''}" data-act="shp" data-k="${k}" aria-label="${n}">${svg(art(k))}<span>${n}</span></button>`).join('')}</div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.e.n?G.e.n.length:2)}`;
+}
+ACT.shp = el => {
+  const k = el.dataset.k, g = G.need.find(x=>x[0]===k);
+  if (G.lock || G.taken.has(k)) return;
+  if (!g){ G.errors++; $('fb').textContent = 'Этого нет в списке. Посмотри на список.'; return; }
+  G.taken.add(k); say(g[1]); shopRender();
+  if (G.taken.size < G.need.length){ $('fb').textContent = 'Положили в корзину.'; return; }
+  G.lock = true; $('fb').textContent = 'Всё по списку куплено!';
+  later(() => { G.lock = false; if (++G.r < (G.e.n?G.e.n.length:2)) return shopRound();
+    done(`${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Покупки сделаны', sub:'В настоящем магазине можно взять такой же список с картинками.', meta:`Для взрослых: ${elapsed()}, лишних товаров ${G.errors}`}); }, 1500);
+};
+
+/* --- 4. Касса: заплати ровно столько, сколько стоит --- */
+const COINS = [1, 2, 5, 10];
+ENG.pay = e => { G.r = 0; G.list = pickN(e.goods, 4).map((g,i) => [...g, e.prices ? e.prices[i] : [3,6,8,13][i]]); payRound(); };
+function payRound(){ G.tray = []; payRender(); }
+function payRender(){
+  const [k, n, p] = G.list[G.r], sum = G.tray.reduce((a,b)=>a+b, 0);
+  $('stage').innerHTML = `<div class="row center" style="gap:16px;margin-bottom:10px"><div style="width:110px">${svg(art(k))}</div><div class="price">${p} ₽</div></div>
+    <p class="prompt" style="font-size:19px">${n} стоит ${p} ${pw(p,'рубль','рубля','рублей')}. Положи монеты</p>
+    <div class="tray">${G.tray.length?`<svg viewBox="0 0 ${G.tray.length*44+4} 46" style="max-width:${G.tray.length*52}px">${G.tray.map((v,i)=>coinSvg(v,2+i*44,2,42)).join('')}</svg>`:'<span class="note">Здесь будут монеты</span>'}</div>
+    <p class="say-word" style="font-size:28px;text-align:center">${sum} ₽</p>
+    <div class="row center coins">${COINS.map(v=>`<button data-act="pay-c" data-v="${v}" aria-label="${v} ${pw(v,'рубль','рубля','рублей')}"><svg viewBox="0 0 100 100">${coinSvg(v,0,0,100)}</svg></button>`).join('')}</div>
+    <div class="row center" style="margin-top:12px"><button class="btn" data-act="pay-back">Убрать монету</button><button class="btn primary" data-act="pay-ok">Оплатить</button></div>
+    <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.r, G.list.length)}`;
+}
+ACT['pay-c'] = el => { if (G.lock) return; G.tray.push(+el.dataset.v); tone(880, .08, .15); payRender(); };
+ACT['pay-back'] = () => { G.tray.pop(); payRender(); };
+ACT['pay-ok'] = () => {
+  if (G.lock) return;
+  const p = G.list[G.r][2], sum = G.tray.reduce((a,b)=>a+b, 0);
+  if (sum !== p){ G.errors++; $('fb').textContent = sum < p ? `Не хватает ${p-sum} ₽.` : `Это больше, чем нужно, на ${sum-p} ₽. Убери монету.`; return; }
+  G.lock = true; $('fb').textContent = 'Спасибо за покупку!'; say('Спасибо за покупку!');
+  later(() => { G.lock = false; if (++G.r < G.list.length) return payRound();
+    done(`${G.list.length} покупки, ${errs(G.errors)}`, {stars:starsFor(G.errors), title:'Ты умеешь платить на кассе', sub:'Попробуйте так же в магазине с настоящими монетами.', meta:`Для взрослых: ${elapsed()}, ошибок ${G.errors}`}); }, 1500);
+};
+
+/* --- 5. Конструктор чек-листов для родителя: список становится упражнением для ребёнка --- */
+const ITEMS = {
+  toothbrush:'Почистить зубы', faucet:'Помыть руки', bed:'Заправить кровать', plate:'Поесть', cup:'Попить воды', shirt:'Одеться', sock:'Надеть носки',
+  coat:'Надеть куртку', hat:'Надеть шапку', scarf:'Надеть шарф', boots:'Надеть сапоги', panama:'Надеть панамку', umbrella:'Взять зонт',
+  bag:'Взять рюкзак', book:'Учебники', pencil:'Пенал', bottle:'Бутылка воды', towel:'Полотенце', soap:'Мыло', pills:'Лекарство', coin:'Деньги',
+  box:'Убрать игрушки', broom:'Подмести', bin:'Вынести мусор', bath:'Искупаться', pajama:'Надеть пижаму', book2:'Почитать', moon:'Спать', walk:'Погулять', tv:'Мультик'
+};
+const itemArt = k => k === 'book2' ? 'book' : k;
+const TEMPLATES = [
+  {t:'Утро', items:['bed','faucet','toothbrush','plate','shirt','bag']},
+  {t:'В школу', items:['book','pencil','bottle','plate','coat','bag']},
+  {t:'Бассейн', items:['towel','soap','sock','bottle','bag']},
+  {t:'Прогулка зимой', items:['sock','scarf','hat','coat','boots']},
+  {t:'Вечер', items:['box','bath','toothbrush','pajama','book2','moon']}
+];
+function regLists(){
+  Object.keys(EX).filter(k=>k.startsWith('my-')).forEach(k => delete EX[k]);
+  (S.lists||[]).forEach(l => ex('my-'+l.id, {t:l.t, e:'check', mod:'СБО', cat:'Мои чек-листы', age:'составил взрослый', tier:'free', prompt:'Отметь, что уже сделано',
+    items:l.items.map(k => ({k:itemArt(k), t:ITEMS[k]||k}))}));
+}
+R.lists = () => `<section class="wrap page-head"><p class="eyebrow">Кабинет родителя</p><h1>Конструктор чек-листов</h1><p class="muted">Соберите список с картинками. Он появится у ребёнка в разделе СБО, «Мои чек-листы».</p></section>
+  <section class="wrap"><div class="panel" id="mkl"></div><div id="myLists"></div></section>`;
+AFTER.lists = () => { G = {sel:[], t:'', lock:false, errors:0}; listsRender(); };
+function listsRender(){
+  $('mkl').innerHTML = `<h2>Новый список</h2>
+    <p class="level">Начать с шаблона</p><div class="row">${TEMPLATES.map((t,i)=>`<button class="chip" data-act="lt-tpl" data-i="${i}">${t.t}</button>`).join('')}</div>
+    <label class="field" style="margin-top:14px"><span>Название</span><input id="ltName" value="${G.t}" placeholder="Например, Собираюсь в бассейн" maxlength="40"></label>
+    <p class="level" style="margin-top:14px">В списке ${G.sel.length ? `(${G.sel.length})` : ''}</p>
+    <div class="lt-sel">${G.sel.length ? G.sel.map((k,i)=>`<button class="lt-chip" data-act="lt-del" data-i="${i}" aria-label="Убрать ${ITEMS[k]}">${svg(art(itemArt(k)))}<span>${ITEMS[k]}</span><b>×</b></button>`).join('') : '<p class="note">Нажимайте на картинки ниже, чтобы добавить шаги.</p>'}</div>
+    <p class="level" style="margin-top:14px">Картинки</p>
+    <div class="lt-grid">${Object.keys(ITEMS).map(k=>`<button class="lt-item" data-act="lt-add" data-k="${k}" ${G.sel.includes(k)?'aria-pressed="true"':''}>${svg(art(itemArt(k)))}<span>${ITEMS[k]}</span></button>`).join('')}</div>
+    <div class="row" style="margin-top:16px"><button class="btn primary" data-act="lt-save">Сохранить список</button></div><p class="feedback" id="fb" aria-live="polite"></p>`;
+  const l = S.lists || [];
+  $('myLists').innerHTML = l.length ? `<div class="panel" style="margin-top:16px"><h2>Мои списки</h2>${l.map(x=>`<div class="ex"><div><p class="n">${x.t}</p><p class="d">${x.items.length} ${pw(x.items.length,'шаг','шага','шагов')}</p></div><div class="ex-act"><button class="soon" data-act="lt-rm" data-id="${x.id}" style="border:0;background:none;color:var(--ink-2)">Удалить</button><a href="#ex-my-${x.id}">Открыть</a></div></div>`).join('')}</div>` : '';
+}
+const ltName = () => { const i = $('ltName'); if (i) G.t = i.value; };
+ACT['lt-tpl'] = el => { const t = TEMPLATES[+el.dataset.i]; G.sel = t.items.slice(); G.t = t.t; listsRender(); };
+ACT['lt-add'] = el => { ltName(); const k = el.dataset.k; if (!G.sel.includes(k) && G.sel.length < 12) G.sel.push(k); listsRender(); };
+ACT['lt-del'] = el => { ltName(); G.sel.splice(+el.dataset.i, 1); listsRender(); };
+ACT['lt-save'] = () => {
+  ltName();
+  if (!G.sel.length){ $('fb').textContent = 'Добавьте хотя бы один шаг.'; return; }
+  const id = Date.now().toString(36);
+  S.lists = [...(S.lists||[]), {id, t:G.t.trim() || 'Мой список', items:G.sel.slice()}]; save(); regLists();
+  location.hash = 'ex-my-' + id;
+};
+ACT['lt-rm'] = el => { S.lists = (S.lists||[]).filter(x => x.id !== el.dataset.id); save(); regLists(); listsRender(); };
+
 /* ===================== Партия 1: Психология, Коммуникация, Самооценка ===================== */
 const P = 'Психология', COM = 'Коммуникация', SELF = 'Самооценка и Я-концепция';
 
@@ -2007,6 +2644,244 @@ ex('role-doctor', role('Играем во врача', [
 ex('self-strengths', {t:'Мои сильные стороны', e:'strengths', mod:SELF, cat:'Я и мои качества', age:'5–12 лет', tier:'free'});
 ex('self-wins', {t:'Мои победы', e:'wins', mod:SELF, cat:'Я и мои качества', age:'4–12 лет', tier:'free'});
 ex('self-body', {t:'Я — это я', e:'body', mod:SELF, cat:'Части тела и лица', age:'3–7 лет', tier:'free'});
+
+/* ===================== Партия 2: Дефектология ===================== */
+const D = 'Дефектология';
+const dx = (id, o) => ex(id, {mod:D, ...o});
+const grpSvg = (n, k='apple', cols=3, s=24) => [...Array(n).keys()].map(i => put(k, 6+(i%cols)*(s+4), 4+Math.floor(i/cols)*(s+4), s)).join('');
+const groupPic = (n, k='apple') => { const cols = n>6?4:3, rows = Math.ceil(n/cols); return {svg:`<svg viewBox="0 0 ${12+cols*28} ${8+rows*28}" aria-hidden="true">${grpSvg(n,k,cols)}</svg>`}; };
+const nums = (n, spread=[1,-1,2]) => shuffle([n, ...spread.map(d=>n+d).filter(x=>x>=0 && x!==n)]).slice(0,3);
+const numOpts = (n, spread) => { const s = new Set(nums(n, spread)); s.add(n); return [...s].map(x => ({text:String(x), ok:x===n})); };
+
+/* --- Внимание --- */
+const GEN = {cat:'кошки', dog:'собаки', duck:'утки', pig:'поросёнка', frog:'лягушки', mouse:'мышки', cow:'коровы'};
+function linesRound(){
+  const L = pickN(Object.keys(GEN), 3), Rt = pickN(['house','ball','apple','car','gift','cake'], 3), ys = [18, 50, 82];
+  let perm; do { perm = shuffle([0,1,2]); } while (perm.every((v,i) => v===i));
+  const paths = L.map((_, i) => `<path d="M24 ${ys[i]}C${rnd(36,46).toFixed(0)} ${rnd(0,100).toFixed(0)} ${rnd(54,64).toFixed(0)} ${rnd(0,100).toFixed(0)} 76 ${ys[perm[i]]}" fill="none" stroke="var(--ink-2)" stroke-width="1.8" stroke-linecap="round"/>`).join('');
+  const q = Math.floor(Math.random()*3);
+  return {scene:{svg:`<svg viewBox="0 0 100 100" aria-hidden="true">${paths}${L.map((k,i)=>put(k,2,ys[i]-11,22)).join('')}${Rt.map((k,j)=>put(k,77,ys[j]-11,22)).join('')}</svg>`},
+    ask:`Куда ведёт линия от ${GEN[L[q]]}?`, yes:'Верно! Ты проследил линию до конца.', no:'Веди пальцем по линии, не отрывая.',
+    opts:Rt.map((k, j) => ({ill:k, ok:j===perm[q]}))};
+}
+dx('att-lines', {t:'Перепутанные линии', e:'choice', cat:'Внимание', age:'5–9 лет', tier:'free', doneTitle:'Ты внимательно следишь за линией', rounds:() => [...Array(5)].map(linesRound)});
+
+/* --- Память --- */
+dx('mem-digits', {t:'Запомни цифры', e:'span', cat:'Память', age:'5–10 лет', tier:'free', start:3});
+dx('mem-mediated', {t:'Опосредованное запоминание', e:'mediated', cat:'Память', age:'7–10 лет', tier:'center', sub:'проводит взрослый', n:6, words:[
+  {w:'обед', pics:['plate','car','moon','ball']}, {w:'игра', pics:['ball','bed','fish','umbrella']}, {w:'ночь', pics:['moon','apple','bus','gift']},
+  {w:'праздник', pics:['gift','cake','sock','tree']}, {w:'дорога', pics:['car','bus','cup','frog']}, {w:'учёба', pics:['book','bag','cat','sun']},
+  {w:'дружба', pics:['heart','friend','carrot','boat']}, {w:'лето', pics:['sun','beach','hat','mouse']}, {w:'болезнь', pics:['cup','bed','duck','rocket']},
+  {w:'семья', pics:['house','heart','leaf','drum']}]});
+
+/* --- Мышление --- */
+const CLS = [
+  {ask:'Это фрукт или овощ?', a:'Фрукт', b:'Овощ', A:['apple','pear','banana'], B:['carrot','tomato','cucumber']},
+  {ask:'Это животное или транспорт?', a:'Животное', b:'Транспорт', A:['cat','dog','cow','pig','duck','frog'], B:['car','bus','boat','rocket']},
+  {ask:'Это одежда или еда?', a:'Одежда', b:'Еда', A:['shirt','hat','sock','pajama'], B:['apple','cake','icecream','banana']}
+];
+dx('th-classify', {t:'Классификация', e:'choice', cat:'Мышление', age:'4–7 лет', tier:'free', doneTitle:'Ты правильно разложил всё по группам',
+  rounds:() => shuffle(CLS.flatMap(c => [...pickN(c.A,2).map(k=>[c,k,'a']), ...pickN(c.B,1).map(k=>[c,k,'b'])])).slice(0,8)
+    .map(([c,k,g]) => ({scene:{ill:k}, ask:c.ask, keep:true, opts:[{text:c.a, ok:g==='a'}, {text:c.b, ok:g==='b'}]}))});
+
+function compareRound(type){
+  const k = pickN(['circle','square','star','heart','triangle'],1)[0], col = pickN(Object.keys(COLORS),1)[0];
+  if (type === 'size'){ const big = Math.random()<.5;
+    return {ask:big?'Где фигура больше?':'Где фигура меньше?', opts:[{shape:[k,col,1], ok:big}, {shape:[k,col,.55], ok:!big}]}; }
+  if (type === 'len'){ const long = Math.random()<.5, bar = w => ({svg:`<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="${50-w/2}" y="42" width="${w}" height="16" rx="8" fill="var(--i-${col})"/></svg>`});
+    return {ask:long?'Какая полоска длиннее?':'Какая полоска короче?', opts:[{...bar(86), ok:long}, {...bar(50), ok:!long}]}; }
+  if (type === 'more'){ const a = 2+Math.floor(Math.random()*4), b = a+1+Math.floor(Math.random()*3);
+    return {ask:'Где яблок больше?', opts:[{...groupPic(b), ok:1}, groupPic(a)]}; }
+  const n = 3+Math.floor(Math.random()*4);
+  return {scene:groupPic(n,'pear'), ask:'Где яблок столько же, сколько груш?', opts:[{...groupPic(n), ok:1}, groupPic(n+1), groupPic(n-1)]};
+}
+dx('th-compare', {t:'Сравнение', e:'choice', cat:'Мышление', age:'3–7 лет', tier:'free', doneTitle:'Ты умеешь сравнивать',
+  rounds:() => ['size','len','more','same','size','len'].map(compareRound)});
+
+function mathRound(type){
+  if (type === 'count'){ const n = 3+Math.floor(Math.random()*7), k = pickN(['apple','ball','fish','duck'],1)[0];
+    return {scene:groupPic(n,k), ask:'Сколько здесь предметов?', opts:numOpts(n)}; }
+  if (type === 'add'){ const a = 1+Math.floor(Math.random()*4), b = 1+Math.floor(Math.random()*3);
+    return {scene:{svg:`<svg viewBox="0 0 200 64" aria-hidden="true">${grpSvg(a,'apple',4,22)}<text x="104" y="40" font-size="30" font-weight="700" fill="var(--ink)">+</text><g transform="translate(118 0)">${grpSvg(b,'apple',3,22)}</g></svg>`},
+      ask:`Было ${a}, дали ещё ${b}. Сколько стало?`, opts:numOpts(a+b)}; }
+  if (type === 'sub'){ const a = 4+Math.floor(Math.random()*5), b = 1+Math.floor(Math.random()*3);
+    return {ask:`Было ${a} ${pw(a,'шарик','шарика','шариков')}. ${b} ${pw(b,'улетел','улетели','улетели')}. Сколько осталось?`, scene:{ill:'balloon'}, opts:numOpts(a-b)}; }
+  if (type === 'next'){ const n = 2+Math.floor(Math.random()*8);
+    return {ask:`Какое число идёт после ${n}?`, opts:numOpts(n+1, [-1,1,-2])}; }
+  const st = 1+Math.floor(Math.random()*3), d = 2, s = [st, st+d, st+2*d];
+  return {ask:`Продолжи ряд: ${s.join(', ')}, …`, opts:numOpts(st+3*d, [-1,1,2])};
+}
+dx('th-math', {t:'Математика и логика', e:'choice', cat:'Мышление', age:'5–8 лет', tier:'premium', doneTitle:'Ты хорошо считаешь',
+  rounds:() => ['count','count','add','sub','next','series'].map(mathRound)});
+
+function mechRound(type){
+  if (type === 'scale'){ const [a, b] = pickN(['ball','gift','apple','cup','book'], 2), right = Math.random()<.5, ang = right ? 12 : -12;
+    return {scene:{svg:`<svg viewBox="0 0 100 92" aria-hidden="true"><path d="M50 52L38 88h24z" fill="var(--i-brown)"/><g transform="rotate(${ang} 50 50)"><rect x="8" y="48" width="84" height="5" rx="2.5" fill="var(--ink-2)"/>${put(a,8,26,24)}${put(b,68,26,24)}</g><circle cx="50" cy="50" r="3.5" fill="var(--ink)"/></svg>`},
+      ask:'Посмотри на весы. Что тяжелее?', yes:'Верно! Тяжёлая сторона опускается вниз.', no:'Какая чаша весов ниже?', opts:[{ill:a, ok:!right}, {ill:b, ok:right}]}; }
+  const cw = Math.random()<.5, three = type === 'gear3';
+  const sc = three ? `${gear(20,50,13,9,'sky')}${gear(50,50,13,9,'yellow')}${gear(80,50,13,9,'rose')}${spin(20,50,22,cw)}`
+                   : `${gear(30,50,18,11,'sky')}${gear(71,50,18,11,'rose')}${spin(30,50,28,cw)}`;
+  const same = three, ans = same ? cw : !cw;
+  return {scene:{svg:`<svg viewBox="0 0 100 100" aria-hidden="true">${sc}</svg>`}, keep:true,
+    ask:`Голубая шестерёнка крутится, как показывает стрелка. Как будет крутиться розовая?`,
+    yes:three?'Верно! Через одну шестерёнку направление меняется дважды.':'Верно! Соседние шестерёнки крутятся в разные стороны.', no:'Соседние шестерёнки всегда крутятся в разные стороны.',
+    opts:[{text:'По часовой стрелке ↻', ok:ans}, {text:'Против часовой стрелки ↺', ok:!ans}]};
+}
+dx('th-mech', {t:'Механическая понятливость', e:'choice', cat:'Мышление', age:'7–10 лет', tier:'premium', doneTitle:'Ты понимаешь, как работают механизмы',
+  rounds:() => ['gear2','scale','gear2','gear3','scale'].map(mechRound)});
+
+/* --- Восприятие --- */
+const P_CAT = 'Восприятие';
+dx('pr-cut', {t:'Разрезные картинки', e:'cut', cat:P_CAT, age:'3–8 лет', tier:'free', sub:'2, 3, 4 или 6 частей'});
+const SIL = ['cat','dog','duck','frog','cow','car','bus','boat','rocket','house','tree','umbrella','cup','fish','bird','hat','carrot','banana','pear','drum'];
+dx('pr-shadow', {t:'Найди тень', e:'choice', cat:P_CAT, age:'3–7 лет', tier:'free', doneTitle:'Ты узнаёшь предметы по тени',
+  rounds:() => pickN(SIL,6).map(k => ({scene:{ill:k}, ask:'Найди тень этого предмета', yes:'Верно! Это его тень.', no:'Посмотри на форму.', opts:[{shadow:k, ok:1}, ...pickN(SIL.filter(x=>x!==k),3).map(x=>({shadow:x}))]}))});
+dx('pr-noise', {t:'Зашумлённые картинки', e:'choice', cat:P_CAT, age:'4–8 лет', tier:'premium', doneTitle:'Ты видишь предметы даже под линиями',
+  rounds:() => pickN(SIL,6).map((k,i) => ({scene:{noise:k, level:10+i*3}, ask:'Что спрятано под линиями?', opts:[{ill:k, ok:1}, ...pickN(SIL.filter(x=>x!==k),3).map(x=>({ill:x}))]}))});
+const OVL = [['translate(-2 -4) scale(.68)'],['translate(34 2) scale(.68)'],['translate(12 30) scale(.68)']];
+dx('pr-overlay', {t:'Наложенные изображения', e:'choice', cat:P_CAT, age:'5–9 лет', tier:'premium', sub:'по Поппельрейтеру', doneTitle:'Ты различаешь наложенные контуры',
+  rounds:() => [...Array(5)].map(() => { const three = pickN(SIL,3), hid = three[Math.floor(Math.random()*3)];
+    return {scene:{svg:`<svg viewBox="0 0 100 100" class="outl" aria-hidden="true">${three.map((k,i)=>`<g transform="${OVL[i][0]}">${art(k)}</g>`).join('')}</svg>`},
+      ask:'Какой из этих предметов нарисован на картинке?', opts:[{ill:hid, ok:1}, ...pickN(SIL.filter(x=>!three.includes(x)),3).map(x=>({ill:x}))]}; })});
+const HUES = [205, 145, 25, 345, 265, 50];
+dx('pr-shades', {t:'Цвета и оттенки', e:'choice', cat:P_CAT, age:'4–8 лет', tier:'free', doneTitle:'Ты хорошо различаешь оттенки',
+  rounds:() => [18,15,12,10,8].map(d => { const h = pickN(HUES,1)[0], L = 50+Math.floor(Math.random()*10), c = l => `hsl(${h},45%,${l}%)`;
+    return {scene:{swatch:c(L)}, ask:'Найди точно такой же цвет', opts:[{swatch:c(L), ok:1}, {swatch:c(L+d)}, {swatch:c(L-d)}, {swatch:c(L+2*d)}]}; })
+    .concat([(() => { const h = pickN(HUES,1)[0]; return {ask:'Найди самый светлый цвет', opts:[{swatch:`hsl(${h},45%,82%)`, ok:1}, {swatch:`hsl(${h},45%,64%)`}, {swatch:`hsl(${h},45%,50%)`}, {swatch:`hsl(${h},45%,36%)`}]}; })()])});
+const ANIMAL_SAYS = [['cat','Мяу-мяу','кошка'],['dog','Гав-гав','собака'],['cow','Му-у-у','корова'],['duck','Кря-кря','утка'],['frog','Ква-ква','лягушка'],['pig','Хрю-хрю','поросёнок'],['mouse','Пи-пи-пи','мышка'],['bird','Чик-чирик','птичка']];
+dx('pr-whosays', {t:'Кто как говорит?', e:'choice', cat:P_CAT, age:'2–5 лет', tier:'free', doneTitle:'Ты знаешь, кто как говорит',
+  rounds:() => pickN(ANIMAL_SAYS,6).map(([k,s,n],i) => i<4
+    ? {play:{say:s}, ask:'Послушай. Кто так говорит?', yes:`Да! Так говорит ${n}.`, opts:[{ill:k, ok:1}, ...pickN(ANIMAL_SAYS.filter(a=>a[0]!==k),2).map(a=>({ill:a[0]}))]}
+    : {scene:{ill:k}, ask:`Как говорит ${n}?`, opts:[{text:s, ok:1}, ...pickN(ANIMAL_SAYS.filter(a=>a[0]!==k),2).map(a=>({text:a[1]}))]})});
+dx('pr-rhythm', {t:'Ритм', e:'rhythm', cat:P_CAT, age:'4–8 лет', tier:'premium', sub:'послушай и простучи'});
+dx('pr-loud', {t:'Громко или тихо?', e:'choice', cat:P_CAT, age:'2–6 лет', tier:'free', doneTitle:'Ты различаешь громкие и тихие звуки',
+  rounds:() => shuffle([1,1,1,0,0,0]).map(l => ({play:{tone:[262, .8, l?.6:.04]}, keep:true, ask:'Нажми «Послушать». Это громко или тихо?',
+    yes:l?'Да, громко, как барабан.':'Да, тихо, как мышка.', no:'Послушай ещё раз.', opts:[{ill:'drum', text:'Громко', ok:!!l}, {ill:'mouse', text:'Тихо', ok:!l}]}))});
+
+/* --- Воображение --- */
+const IM = 'Воображение';
+const LIKE = [
+  {svg:'<circle cx="50" cy="50" r="30" fill="var(--i-yellow)"/>', o:[['sun','солнце'],['ball','мячик'],['apple','яблоко']]},
+  {svg:'<path d="M14 66a36 36 0 0 1 72 0z" fill="var(--i-lavender)"/>', o:[['umbrella','зонтик'],['cake','торт'],['hat','шапку']]},
+  {svg:'<path d="M8 50q10-20 21 0t21 0 21 0 21 0" stroke="var(--i-sky)" stroke-width="7" fill="none" stroke-linecap="round"/>', o:[['wave','волны'],['fish','рыбку'],['leaf','листик']]},
+  {svg:'<path d="M50 14L84 80H16z" fill="var(--i-green)"/>', o:[['tree','дерево'],['house','крышу'],['rocket','ракету']]},
+  {svg:'<path d="M24 72a16 16 0 0 1 4-31 22 22 0 0 1 42-4 18 18 0 0 1 6 35z" fill="var(--i-light)" stroke="var(--line)" stroke-width="2"/>', o:[['cloud','облако'],['bubble','мыльный пузырь'],['cow','барашка… или корову']]}
+];
+dx('im-like', {t:'На что похоже?', e:'choice', cat:IM, age:'3–7 лет', tier:'free', doneTitle:'Какая у тебя фантазия!', doneSub:'Правильного ответа нет. Придумайте вместе: на что ещё это похоже?',
+  rounds:() => LIKE.map(l => ({scene:{svg:l.svg}, ask:'На что это похоже?', opts:l.o.map(([k,n]) => ({ill:k, ok:1, why:`Да, похоже на ${n}! А на что ещё?`}))}))});
+dx('im-draw', {t:'Дорисуй фигуру', e:'draw', cat:IM, age:'3–8 лет', tier:'free', items:[
+  {ask:'Дорисуй лучики, и получится солнышко', base:'<circle class="base" cx="50" cy="50" r="18"/>'},
+  {ask:'Дорисуй лицо. Какое у него настроение?', base:'<circle class="base" cx="50" cy="50" r="34"/>'},
+  {ask:'Под крышей нет домика. Дорисуй его', base:'<path class="base" d="M20 46L50 18L80 46Z"/>'},
+  {ask:'Дорисуй второе крылышко бабочки', base:'<path class="guide" d="M50 12V92"/><path class="base" d="M50 30V78"/><path class="base" d="M50 44C34 14 10 22 18 44C10 62 32 74 50 60"/>'},
+  {ask:'Это ниточка. Дорисуй, что к ней привязано', base:'<path class="base" d="M50 94q-6-12 0-24t0-22"/>'}]});
+const GRASS = '<rect y="80" width="100" height="20" fill="var(--i-green)" opacity=".5"/>';
+const ABSURD = [
+  {sc:GRASS+put('tree',18,14,70)+put('fish',44,22,22)+put('sun',76,2,20), o:['Рыба сидит на дереве','Светит солнце','Растёт дерево']},
+  {sc:put('beach',0,0,100)+put('snowman',30,28,46), o:['Снеговик на жарком пляже','Светит солнце','Плещется море']},
+  {sc:GRASS+put('house',8,30,52,'transform="rotate(180 50 50)"')+put('tree',62,30,38)+put('sun',78,2,18), o:['Дом стоит крышей вниз','Растёт дерево','Светит солнце']},
+  {sc:GRASS+put('car',30,6,34)+put('bird',70,30,18)+put('flower',10,62,20), o:['Машина едет по небу','Летит птица','Растёт цветок']},
+  {sc:'<rect width="100" height="100" fill="var(--i-sky)" opacity=".35"/>'+put('fish',8,58,24)+put('cow',38,34,36)+put('fish',72,14,20), o:['Корова плавает под водой','Плавают рыбки','Вода голубая']}
+];
+dx('im-absurd', {t:'Нелепицы', e:'choice', cat:IM, age:'4–8 лет', tier:'premium', doneTitle:'Ты замечаешь, что бывает, а чего не бывает',
+  rounds:() => ABSURD.map(a => ({scene:{svg:`<svg viewBox="0 0 100 100" aria-hidden="true">${a.sc}</svg>`}, ask:'Что здесь не так?', yes:'Верно! Так не бывает.', no:'Так бывает. Ищи то, чего не бывает.', opts:a.o.map((t,i)=>({text:t, ok:i===0}))}))});
+
+/* --- Пространство и графомоторика --- */
+const SP = 'Пространство и графомоторика';
+const ARROW = {Вправо:0, Вниз:90, Влево:180, Вверх:270};
+function lrRound(type){
+  const [a, b, c] = pickN(['cat','dog','car','apple','duck','house','fish','cow'], 3);
+  if (type === 'arrow'){ const d = pickN(Object.keys(ARROW),1)[0];
+    return {scene:{svg:`<svg viewBox="-60 0 220 100" aria-hidden="true"><path d="M22 50h52M56 30l20 20-20 20" stroke="var(--accent)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(${ARROW[d]} 50 50)"/></svg>`},
+      ask:'Куда показывает стрелка?', keep:true, opts:Object.keys(ARROW).map(t=>({text:t, ok:t===d}))}; }
+  if (type === 'mid') return {scene:{svg:`<svg viewBox="0 0 100 40" aria-hidden="true">${put(a,4,4,30)}${put(b,35,4,30)}${put(c,66,4,30)}</svg>`}, ask:'Что посередине?', opts:[{ill:b, ok:1},{ill:a},{ill:c}]};
+  if (type === 'next') return {scene:{svg:`<svg viewBox="0 0 100 40" aria-hidden="true">${put(a,4,4,30)}${put('ball',35,4,30)}${put(c,66,4,30)}</svg>`}, ask:'Что справа от мяча?', opts:[{ill:c, ok:1},{ill:a}]};
+  const left = type === 'left';
+  return {scene:{svg:`<svg viewBox="0 0 100 50" aria-hidden="true">${put(a,6,4,40)}${put(b,54,4,40)}</svg>`}, ask:left?'Что слева?':'Что справа?', opts:[{ill:a, ok:left},{ill:b, ok:!left}]};
+}
+dx('sp-lr', {t:'Лево-право', e:'choice', cat:SP, age:'4–7 лет', tier:'free', doneTitle:'Ты знаешь, где лево, а где право',
+  rounds:() => ['left','right','arrow','mid','left','arrow','next','right'].map(lrRound)});
+dx('sp-sheet', {t:'Ориентируюсь на листе', e:'sheet', cat:SP, age:'5–8 лет', tier:'free'});
+dx('sp-trace', {t:'Обведи по контуру', e:'trace', cat:SP, age:'3–7 лет', tier:'free'});
+dx('sp-connect', {t:'Соедини точки', e:'connect', cat:SP, age:'4–7 лет', tier:'free'});
+dx('sp-gdict', {t:'Графический диктант', e:'gdict', cat:SP, age:'6–9 лет', tier:'premium'});
+
+/* ===================== Партия 3: СБО (социально-бытовая ориентация) ===================== */
+const SB = 'СБО';
+const sx = (id, o) => ex(id, {mod:SB, ...o});
+const HYG = 'Гигиена и самообслуживание', SAFE = 'Безопасность', HOME = 'Быт', MONEY = 'Деньги';
+
+/* --- Гигиена --- */
+sx('sbo-teeth', {t:'Чистим зубы', e:'timer', cat:HYG, age:'3–8 лет', tier:'free', sub:'таймер 2 минуты', doneTitle:'Зубы чистые!', doneSub:'Две минуты, как советуют стоматологи. Утром и вечером.',
+  note:'Каждые 20 секунд таймер подскажет, какие зубы чистить дальше.',
+  phases:['Верхние зубы слева','Верхние зубы справа','Верхние зубы спереди','Нижние зубы слева','Нижние зубы справа','Нижние зубы спереди'].map(t=>({t, s:20, k:'toothbrush'}))});
+sx('sbo-hands', {t:'Моем руки', e:'timer', cat:HYG, age:'3–7 лет', tier:'free', doneTitle:'Руки чистые!', doneSub:'Мыть руки нужно после улицы, туалета и перед едой.',
+  phases:[{t:'Открой воду и намочи руки', s:5, k:'faucet'}, {t:'Возьми мыло', s:5, k:'soap'}, {t:'Потри ладошки', s:10, k:'hand'}, {t:'Потри между пальчиками', s:10, k:'hand'}, {t:'Смой мыло водой', s:10, k:'faucet'}, {t:'Вытри руки полотенцем', s:10, k:'towel'}]});
+sx('sbo-weather', {t:'Одеваемся по погоде', e:'choice', cat:HYG, age:'4–8 лет', tier:'free', doneTitle:'Ты знаешь, как одеться по погоде',
+  rounds:[
+    {scene:{ill:'snow'}, ask:'На улице снег и мороз. Что надеть?', opts:[{ill:'scarf', text:'Шарф', ok:1}, {ill:'shorts', text:'Шорты'}, {ill:'panama', text:'Панамка'}]},
+    {scene:{ill:'rain'}, ask:'Идёт дождь. Что взять с собой?', opts:[{ill:'umbrella', text:'Зонт', ok:1}, {ill:'panama', text:'Панамка'}, {ill:'shorts', text:'Шорты'}]},
+    {scene:{ill:'sun'}, ask:'Жарко, светит солнце. Что надеть на голову?', opts:[{ill:'panama', text:'Панамка', ok:1}, {ill:'scarf', text:'Шарф'}, {ill:'umbrella', text:'Зонт'}]},
+    {scene:{ill:'rain'}, ask:'На улице лужи. Какую обувь надеть?', opts:[{ill:'boots', text:'Резиновые сапоги', ok:1}, {ill:'sock', text:'Носки'}, {ill:'shorts', text:'Шорты'}]},
+    {scene:{ill:'snow'}, ask:'Холодно. Что надеть сверху?', opts:[{ill:'coat', text:'Тёплая куртка', ok:1}, {ill:'shorts', text:'Шорты'}, {ill:'panama', text:'Панамка'}]},
+    {scene:{ill:'sun'}, ask:'Лето, очень тепло. Что лучше надеть?', opts:[{ill:'shorts', text:'Шорты', ok:1}, {ill:'coat', text:'Куртка'}, {ill:'scarf', text:'Шарф'}]}]});
+sx('sbo-school', {t:'Собираюсь в школу', e:'check', cat:HYG, age:'6–10 лет', tier:'free', sub:'чек-лист', prompt:'Положи в рюкзак и отметь', doneTitle:'Рюкзак собран!', doneSub:'Ничего не забыто. Можно идти.',
+  items:[{k:'book', t:'Учебники и тетради'}, {k:'pencil', t:'Пенал'}, {k:'bottle', t:'Бутылка воды'}, {k:'apple', t:'Перекус'}, {k:'boots', t:'Сменная обувь'}, {k:'list', t:'Дневник'}]});
+
+/* --- Безопасность --- */
+const DANGER = [['knife','Нож острый, можно порезаться.'], ['scissors','Ножницы берём только со взрослым.'], ['fire','Огонь обжигает. Спички не игрушка.'], ['socket','В розетке ток. Её нельзя трогать.'], ['pills','Таблетки даёт только взрослый.']];
+const SAFE_IT = ['ball','book','cup','sock','apple','duck','drum','towel'];
+sx('sbo-danger', {t:'Опасные предметы', e:'choice', cat:SAFE, age:'3–7 лет', tier:'free', doneTitle:'Ты знаешь, что опасно', doneSub:'Если увидел опасный предмет, не трогай и позови взрослого.',
+  rounds:() => shuffle(DANGER).map(([k, why]) => ({ask:'Что опасно трогать без взрослых?', yes:why, no:'Это можно. Ищи опасный предмет.', opts:[{ill:k, ok:1}, ...pickN(SAFE_IT,3).map(x=>({ill:x}))]}))});
+sx('sbo-stranger', {t:'Свой или чужой', e:'choice', cat:SAFE, age:'4–9 лет', tier:'premium', doneTitle:'Ты знаешь, как себя вести с незнакомыми', doneSub:'Чужой — это любой человек, которого ты не знаешь, даже если он добрый.',
+  rounds:[
+    {scene:{ill:'stranger'}, who:'Незнакомый человек на улице зовёт посмотреть котёнка.', ask:'Что ты сделаешь?', opts:[{text:'Скажу «Нет» и пойду к маме', ok:1}, {text:'Пойду с ним'}, {text:'Возьму его за руку'}]},
+    {scene:{ill:'stranger'}, who:'Незнакомец угощает конфетой.', ask:'Что ты сделаешь?', opts:[{text:'Скажу «Нет, спасибо» и отойду', ok:1}, {text:'Возьму и съем'}, {text:'Попрошу ещё'}]},
+    {scene:{ill:'house'}, who:'Звонят в дверь, а мамы нет дома.', ask:'Что ты сделаешь?', opts:[{text:'Не открою и позвоню маме', ok:1}, {text:'Открою дверь'}, {text:'Скажу, что я один дома'}]},
+    {scene:{ill:'cart'}, who:'Ты потерялся в магазине.', ask:'К кому подойти?', opts:[{text:'К продавцу на кассе или охраннику', ok:1}, {text:'Уйду домой сам'}, {text:'Пойду с первым, кто позовёт'}]},
+    {scene:{ill:'school'}, who:'Чужой человек говорит: «Мама попросила тебя забрать».', ask:'Что ты сделаешь?', opts:[{text:'Не пойду и скажу воспитателю', ok:1}, {text:'Пойду с ним'}, {text:'Подожду его на улице'}]}]});
+const road = d => ({svg:`<svg viewBox="0 0 100 100" aria-hidden="true">${d}</svg>`});
+sx('sbo-road', {t:'Правила дорожного движения', e:'choice', cat:SAFE, age:'4–9 лет', tier:'free', doneTitle:'Ты знаешь правила дороги', doneSub:'Переходим дорогу только со взрослым, по зебре и на зелёный свет.',
+  rounds:[
+    {scene:road(tlight('r')), ask:'Горит красный свет. Можно переходить?', keep:true, opts:[{text:'Можно идти'}, {text:'Стоять и ждать', ok:1}]},
+    {scene:road(tlight('g')), ask:'Горит зелёный свет. Можно переходить?', keep:true, opts:[{text:'Можно идти, посмотрев по сторонам', ok:1}, {text:'Стоять и ждать'}]},
+    {scene:road(tlight('y')), ask:'Горит жёлтый свет. Что делать?', keep:true, opts:[{text:'Бежать быстрее'}, {text:'Стоять и ждать', ok:1}]},
+    {ask:'Где можно переходить дорогу?', opts:[{ill:'zebra', text:'По зебре', ok:1}, {svg:'<rect y="20" width="100" height="60" fill="var(--i-ink)" opacity=".75"/><path d="M0 50h100" stroke="var(--i-light)" stroke-width="3" stroke-dasharray="10 8"/>', text:'Где захочу'}]},
+    {scene:{ill:'zebra'}, ask:'Что нужно сделать перед переходом?', opts:[{text:'Посмотреть налево и направо', ok:1}, {text:'Побежать бегом'}, {text:'Смотреть в телефон'}]},
+    {scene:{ill:'car'}, ask:'С кем переходить дорогу?', opts:[{text:'Со взрослым, держась за руку', ok:1}, {text:'Одному'}, {text:'С другом-ровесником'}]}]});
+
+/* --- Быт --- */
+const ROOMS = {k:'На кухню', b:'В ванную', w:'В шкаф', t:'В ящик для игрушек', s:'На полку'};
+const PUT = [['plate','k'],['cup','k'],['spoon','k'],['toothbrush','b'],['soap','b'],['towel','b'],['shirt','w'],['sock','w'],['ball','t'],['duck','t'],['book','s']];
+sx('sbo-sort', {t:'Разложи по местам', e:'choice', cat:HOME, age:'4–8 лет', tier:'free', doneTitle:'Всё на своих местах',
+  rounds:() => pickN(PUT,7).map(([k,p]) => ({scene:{ill:k}, ask:'Куда это положить?', opts:[{text:ROOMS[p], ok:1}, ...pickN(Object.keys(ROOMS).filter(x=>x!==p),2).map(x=>({text:ROOMS[x]}))]}))});
+sx('sbo-table', {t:'Сервируем стол', e:'choice', cat:HOME, age:'5–9 лет', tier:'premium', doneTitle:'Стол накрыт!', doneSub:'Вилка слева, ложка справа, тарелка посередине.',
+  rounds:[
+    {ask:'Что ставим перед каждым первым делом?', opts:[{ill:'plate', text:'Тарелку', ok:1}, {ill:'cake', text:'Торт'}, {ill:'bottle', text:'Бутылку'}]},
+    {scene:{ill:'plate'}, ask:'Что кладём слева от тарелки?', opts:[{ill:'fork', text:'Вилку', ok:1}, {ill:'spoon', text:'Ложку'}]},
+    {scene:{ill:'plate'}, ask:'Что кладём справа от тарелки?', opts:[{ill:'spoon', text:'Ложку', ok:1}, {ill:'fork', text:'Вилку'}]},
+    {ask:'Чем едят суп?', opts:[{ill:'spoon', text:'Ложкой', ok:1}, {ill:'fork', text:'Вилкой'}, {ill:'knife', text:'Ножом'}]},
+    {ask:'Во что наливают чай?', opts:[{ill:'cup', text:'В кружку', ok:1}, {ill:'plate', text:'В тарелку'}, {ill:'bin', text:'В ведро'}]}]});
+sx('sbo-clean', {t:'Уборка в комнате', e:'steps', cat:HOME, age:'4–9 лет', tier:'free', speak:true, doneTitle:'Чисто и уютно!', doneSub:'Ты навёл порядок сам.',
+  steps:[{k:'box', t:'Собрать игрушки в ящик'}, {k:'book', t:'Поставить книги на полку'}, {k:'bed', t:'Заправить кровать'}, {k:'broom', t:'Подмести пол'}, {k:'bin', t:'Вынести мусор'}, {k:'faucet', t:'Помыть руки'}]});
+
+/* --- Деньги --- */
+const GOODS = [['apple','Яблоки'],['banana','Бананы'],['carrot','Морковь'],['tomato','Помидоры'],['cucumber','Огурцы'],['cake','Торт'],['icecream','Мороженое'],['cup','Кружка'],['soap','Мыло'],['bottle','Вода'],['pear','Груши'],['fish','Рыба']];
+sx('sbo-shop', {t:'Магазин по списку', e:'shop', cat:MONEY, age:'4–9 лет', tier:'free', goods:GOODS, n:[2,3,4]});
+const coinRow = list => ({svg:`<svg viewBox="0 0 ${list.length*44+4} 46" aria-hidden="true">${list.map((v,i)=>coinSvg(v,2+i*44,2,42)).join('')}</svg>`});
+function coinsRound(i){
+  const pool = i < 2 ? [1,2] : [1,2,5,10], list = [...Array(i<2?3:4)].map(() => pickN(pool,1)[0]).sort((a,b)=>b-a), sum = list.reduce((a,b)=>a+b,0);
+  if (i < 4) return {scene:coinRow(list), ask:'Сколько здесь рублей?', opts:numOpts(sum, [1,-1,2])};
+  const [k, n] = pickN(GOODS,1)[0], enough = i === 4, price = enough ? sum - 1 - Math.floor(Math.random()*2) : sum + 2 + Math.floor(Math.random()*3);
+  return {scene:coinRow(list), who:`${n} стоят ${price} ₽`, ask:'Хватит денег?', keep:true, yes:enough?'Да, хватит, ещё и сдача будет.':'Верно, не хватит.', opts:[{text:'Хватит', ok:enough}, {text:'Не хватит', ok:!enough}]};
+}
+sx('sbo-coins', {t:'Монеты и цена', e:'choice', cat:MONEY, age:'6–10 лет', tier:'premium', doneTitle:'Ты умеешь считать деньги', rounds:() => [0,1,2,3,4,5].map(coinsRound)});
+sx('sbo-pay', {t:'Касса', e:'pay', cat:MONEY, age:'6–10 лет', tier:'premium', sub:'заплати без сдачи', goods:GOODS});
+
+/* --- конструктор чек-листов: пункт в библиотеке и списки, которые составил родитель --- */
+LIB.push({mod:SB, note:'Социально-бытовая ориентация', ill:'house', tint:'sage', cats:[HYG, SAFE, HOME, MONEY].map(name => ({name, items:[]}))
+  .concat({name:'Мои чек-листы', items:[{t:'Конструктор чек-листов', age:'для родителя', tier:'free', route:'lists'}]})});
+regLists();
 
 /* ===================== Библиотека из всех упражнений + Избранное ===================== */
 const MOD_META = {'Коммуникация':{note:'Общение и совместная игра', ill:'hand', tint:'sky'}, 'Самооценка и Я-концепция':{note:'Я и мои сильные стороны', ill:'medal', tint:'butter'},
