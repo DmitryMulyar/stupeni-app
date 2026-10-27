@@ -620,22 +620,39 @@ const dateRu = () => { const s = new Date().toLocaleDateString('ru-RU',{weekday:
 const art = k => k.startsWith('face-') ? face(k.slice(5)) : I[k];
 const later = (fn, ms) => setTimeout(fn, ms);
 
-/* ---------- озвучка: голос логопеда, если записан, иначе голос устройства ---------- */
+/* ---------- озвучка: голос логопеда, если записан, иначе голос устройства ----------
+   iOS разрешает звук только синхронно внутри касания. Поэтому say() ничего не ждёт
+   перед speak(), а при первом касании «разблокирует» речь и аудио. */
 let ruVoice = null;
 function pickVoice(){ const vs = (window.speechSynthesis && speechSynthesis.getVoices()) || []; ruVoice = vs.find(v=>/^ru/i.test(v.lang) && /Milena|Милена/i.test(v.name)) || vs.find(v=>/^ru/i.test(v.lang)) || null; }
 if (window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch(e){}   // звук и при беззвучном режиме
+const player = new Audio();
+player.setAttribute('playsinline', '');
+const SILENT = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+let audioUnlocked = false;
+function unlockAudio(){
+  if (audioUnlocked) return; audioUnlocked = true;
+  try { if (window.speechSynthesis){ const u = new SpeechSynthesisUtterance(' '); u.volume = 0; u.lang = 'ru-RU'; speechSynthesis.speak(u); } } catch(e){}
+  try { player.src = SILENT; player.play().catch(()=>{}); } catch(e){}
+}
+['touchend','click','keydown'].forEach(ev => document.addEventListener(ev, unlockAudio, {capture:true, passive:true}));
+let speakDone = null;
 function speakTTS(text, rate=0.8){
   return new Promise(res => {
     if (!window.speechSynthesis) return res(false);
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text); u.lang = 'ru-RU'; u.rate = rate; u.pitch = 1.05; if (ruVoice) u.voice = ruVoice;
-    u.onend = () => res(true); u.onerror = () => res(false);
+    if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel();
+    if (speakDone) speakDone(false);
+    const u = new SpeechSynthesisUtterance(text); u.lang = 'ru-RU'; u.rate = rate; u.pitch = 1.05; u.volume = 1; if (ruVoice) u.voice = ruVoice;
+    speakDone = res; u.onend = () => { speakDone = null; res(true); }; u.onerror = () => { speakDone = null; res(false); };
     speechSynthesis.speak(u);
+    try { speechSynthesis.resume(); } catch(e){}
   });
 }
-async function say(text, rate){
-  const blob = await Voice.get('ref:'+text.toLowerCase());
-  if (blob) return Voice.play(blob);
+const REC_KEYS = new Set();   // какие эталоны записаны: проверка без ожидания
+function say(text, rate){
+  const key = 'ref:'+text.toLowerCase();
+  if (REC_KEYS.has(key)){ player.src = ''; return Voice.get(key).then(b => b ? Voice.play(b) : speakTTS(text, rate)); }
   return speakTTS(text, rate);
 }
 
@@ -647,9 +664,10 @@ const Voice = {
       r.onupgradeneeded = () => r.result.createObjectStore('clips');
       r.onsuccess = () => { this.db = r.result; res(this.db); }; r.onerror = () => res(null);
     } catch(e){ res(null); } }); },
-  async put(key, blob){ const db = await this.open(); if (!db) return; return new Promise(r => { const t = db.transaction('clips','readwrite'); t.objectStore('clips').put(blob, key); t.oncomplete = r; t.onerror = r; }); },
+  async put(key, blob){ REC_KEYS.add(key); const db = await this.open(); if (!db) return; return new Promise(r => { const t = db.transaction('clips','readwrite'); t.objectStore('clips').put(blob, key); t.oncomplete = r; t.onerror = r; }); },
   async get(key){ const db = await this.open(); if (!db) return null; return new Promise(r => { const q = db.transaction('clips').objectStore('clips').get(key); q.onsuccess = () => r(q.result||null); q.onerror = () => r(null); }); },
-  play(blob){ return new Promise(r => { const a = new Audio(URL.createObjectURL(blob)); a.onended = () => r(true); a.onerror = () => r(false); a.play().catch(() => r(false)); }); },
+  play(blob){ return new Promise(r => { if (player.src && player.src.startsWith('blob:')) URL.revokeObjectURL(player.src); player.src = URL.createObjectURL(blob); player.onended = () => r(true); player.onerror = () => r(false); player.play().catch(() => r(false)); }); },
+  async loadKeys(){ const db = await this.open(); if (!db) return; try { const q = db.transaction('clips').objectStore('clips').getAllKeys(); q.onsuccess = () => (q.result||[]).forEach(k => REC_KEYS.add(k)); } catch(e){} },
   canRecord(){ return !!(window.isSecureContext && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder); },
   rec:null, chunks:[], stream:null,
   async start(){
@@ -663,6 +681,7 @@ const Voice = {
     this.rec.onstop = () => { this.stream.getTracks().forEach(t=>t.stop()); const b = new Blob(this.chunks, {type:this.rec.mimeType||'audio/mp4'}); this.rec = null; r(b); };
     this.rec.stop(); }); }
 };
+Voice.loadKeys();
 const NO_MIC = 'Запись голоса работает в установленной версии по HTTPS. Здесь можно послушать образец и оценить произношение на слух.';
 
 /* распознавание речи: только подсказка, не оценка */
@@ -1438,9 +1457,9 @@ function phRender(){
     <p class="prompt">Слышишь звук [${s.label}]?</p>
     <div class="yn"><button data-act="ph" data-y="1">${svg(face('joy'))}Да, есть</button><button data-act="ph" data-y="0">${svg(face('calm'))}Нет</button></div>
     <p class="feedback" id="fb" aria-live="polite"></p>${dots(G.i, G.list.length)}`;
-  later(() => say(it.w, 0.7), 350);
+  if (G.autoSay) say(it.w, 0.7);
 }
-ACT['ph-say'] = () => say(G.list[G.i].w, 0.7);
+ACT['ph-say'] = () => { G.autoSay = true; say(G.list[G.i].w, 0.7); };
 ACT.ph = el => {
   if (G.lock) return;
   const it = G.list[G.i], s = SND[G.k], ok = +el.dataset.y === it.y;
