@@ -493,6 +493,68 @@ input[type=range]{accent-color:var(--accent);height:32px}
 .lt-item svg{width:44px;height:44px}
 .lt-item[aria-pressed="true"]{border-color:var(--accent);background:var(--sage)}
 .field input:not([type=range]){min-height:48px;padding:0 14px;border-radius:14px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:600;font-size:16px}
+
+/* ===================== v4: фильтры, вкладки, настроение, чат, герой, спокойный экран ===================== */
+.filters{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.fgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.flabel{font-size:13px;font-weight:800;color:var(--ink-2);text-transform:uppercase;letter-spacing:.04em;min-width:70px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{min-height:40px;padding:0 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);font-weight:700;font-size:15px;color:var(--ink-2);transition:all .25s var(--ease)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.seg.wd button{min-width:48px;padding:0 10px}
+.linkbtn{border:0;background:none;padding:0;color:var(--accent);font-weight:800;font:inherit;font-weight:800;cursor:pointer;text-decoration:underline}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 0 16px;padding:4px 0}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;text-decoration:none;padding:9px 16px;border-radius:999px;font-weight:700;font-size:15px;color:var(--ink-2);background:var(--surface-2)}
+.tabs a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+.banner{display:flex;gap:12px;align-items:center;padding:12px 16px;border-radius:18px;background:var(--butter);margin-bottom:16px}
+.banner svg{width:36px;height:36px;flex:none}
+.banner p{margin:0}
+.small-btn{min-height:40px;padding:0 16px;font-size:14px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.mood-row{margin-bottom:12px}
+.mood-opts{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.mood{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 2px;border-radius:16px;border:2px solid var(--line);background:var(--surface);font-size:12px;font-weight:700;color:var(--ink-2);transition:all .25s var(--ease)}
+.mood svg{width:44px;height:44px}
+.mood[aria-pressed="true"]{border-color:var(--accent);background:var(--sage);color:var(--ink)}
+.chat{display:flex;flex-direction:column;gap:10px;max-height:380px;overflow-y:auto;padding:4px 2px 8px}
+.msg{max-width:85%;padding:10px 14px;border-radius:18px 18px 18px 6px;background:var(--surface-2)}
+.msg.me{align-self:flex-end;border-radius:18px 18px 6px 18px;background:var(--sage)}
+.msg p{margin:0}
+.msg span{display:block;font-size:12px;color:var(--ink-2);margin-top:4px}
+.chat-form{display:flex;gap:10px;align-items:flex-end;margin-top:10px}
+.chat-form textarea{flex:1;min-height:52px;padding:12px 14px;border-radius:16px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:16px;resize:vertical}
+.notes>h2{display:flex;align-items:center;gap:8px}
+.notes>h2 svg{width:26px;height:26px}
+.iom-list{display:flex;flex-direction:column;max-height:420px;overflow-y:auto;border:2px solid var(--line);border-radius:16px}
+.iom-it{display:flex;align-items:center;gap:12px;padding:10px 12px;border-top:1px solid var(--line);cursor:pointer}
+.iom-it:first-child{border-top:0}
+.iom-it input{width:22px;height:22px;accent-color:var(--accent);flex:none}
+.iom-it span{flex:1;display:flex;flex-direction:column}
+.iom-it small{color:var(--ink-2);font-size:13px}
+.iom-it a{font-size:14px;font-weight:700;color:var(--accent)}
+.calm-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 16px;border-radius:999px;border:2px solid var(--line);background:var(--surface);font-weight:700;color:var(--ink)}
+.calm-btn svg{width:24px;height:24px}
+.calm-btn[aria-pressed="true"]{background:var(--lavender);border-color:var(--i-lavender)}
+.child-tools{display:flex;align-items:center;gap:8px;margin-left:auto}
+.starbank{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;background:var(--butter);font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;font-variant-numeric:tabular-nums}
+.game-top .starbank{margin-left:auto}
+.hero-av{text-decoration:none}
+.av-stage{width:min(220px,56vw);aspect-ratio:1;margin:4px auto 10px;border-radius:50%;background:var(--sky);display:grid;place-items:center}
+.av-stage svg{width:82%;height:82%}
+.av-h{font-size:19px;margin:14px 0 10px;text-align:center}
+.av-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;max-width:720px;margin:0 auto}
+.av-pick{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;border-radius:20px;border:2px solid var(--line);background:var(--surface);font-weight:700;font-size:14px;color:var(--ink)}
+.av-pick svg{width:56px;height:56px}
+.av-pick b{font-size:13px;color:var(--ink-2)}
+.av-pick[aria-pressed="true"]{border-color:var(--accent);background:var(--sage)}
+.av-pick.own b{color:var(--accent)}
+/* спокойный экран: без движения, приглушённые цвета */
+html[data-calm] *,html[data-calm] *::before,html[data-calm] *::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+html[data-calm] #view,html[data-calm] .topbar{filter:saturate(.45) brightness(.98)}
+html[data-calm] body{background:var(--surface-2)}
+@media (max-width:640px){.mood span{font-size:10px}.mood svg{width:36px;height:36px}.flabel{min-width:0;width:100%}.child-tools{margin-left:0}}
 </style>
 
 <header class="topbar">
@@ -871,7 +933,7 @@ function result({stars, title, sub, meta}){
     <h2>${title}</h2><p>${sub}</p>${meta?`<p class="meta">${meta}</p>`:''}
     <div class="row center"><button class="btn" data-act="again">Ещё раз</button><button class="btn primary" data-act="back">Готово</button></div></div>`;
 }
-const finish = o => { $('stage').innerHTML = result(o); };
+const finish = o => { if (o.stars) { earn(o.stars); o.meta = (o.meta ? o.meta + ' · ' : '') + `+${o.stars} ★ в копилку героя`; } $('stage').innerHTML = result(o); };
 const dots = (i, n) => `<div class="dots" aria-hidden="true">${Array.from({length:n},(_,k)=>`<i class="${k<i?'on':''}"></i>`).join('')}</div>`;
 let G = null;           // состояние текущего упражнения
 const R = {}, AFTER = {}, ACT = {};
@@ -2047,6 +2109,7 @@ function ac(){
 }
 function tone(f=330, d=.2, v=.4, at=0){
   const c = ac(); if (!c) return;
+  if (S.calm) v *= .4;
   const t = c.currentTime + at, o = c.createOscillator(), g = c.createGain();
   o.type = 'sine'; o.frequency.value = f;
   g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t+.02); g.gain.exponentialRampToValueAtTime(0.0001, t+d);
@@ -2922,11 +2985,326 @@ ACT.fav = el => {
   if (current.route === 'library') render(true);
 };
 
+/* ===================== v4: фильтры, ИОМ, настроение, чат, заметки, аватар, спокойный экран, напоминания, офлайн ===================== */
+const KID_ID = 'misha';   // в демо родитель смотрит на Мишу
+const DEMO_NOTE = '<p class="demo-note" style="margin-top:12px">В демо данные хранятся только на этом устройстве. С сервером родитель и специалист будут видеть их каждый у себя.</p>';
+const tabsBar = (base, tabs, cur) => `<nav class="tabs" aria-label="Разделы">${tabs.map(([k,t]) => `<a href="#${base}${k?'-'+k:''}" ${k===cur?'aria-current="page"':''}>${t}</a>`).join('')}</nav>`;
+const dayKey = d => d.toISOString().slice(0,10);
+const ago = n => { const d = new Date(); d.setDate(d.getDate()-n); return d; };
+const ddmm = d => d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0');
+const nowRu = () => { const t = new Date(); return t.toLocaleDateString('ru-RU',{day:'numeric',month:'short'}).replace('.','') + ', ' + hhmm(t); };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- 1. Фильтры библиотеки ---------- */
+const AGE_F = [['','Любой'],['3','3–4'],['5','5–6'],['7','7+']];
+const TIER_F = [['','Все'],['free','Бесплатно'],['paid','Подписка']];
+const BLOCK_F = [['','Все'],['Психология','Психология'],['Дефектология','Дефектология'],['Логопедия','Логопедия'],['СБО','СБО']];
+const BLOCK_OF = m => ['Коммуникация','Самооценка и Я-концепция'].includes(m) ? 'Психология' : m;
+function ageFits(age, f){
+  if (!f) return true;
+  const m = String(age).match(/(\d+)\D+(\d+)/); if (!m) return false;
+  const lo = +m[1], hi = +m[2], [a, b] = f==='3' ? [3,4] : f==='5' ? [5,6] : [7,99];
+  return lo <= b && hi >= a;
+}
+const itemFits = (it, mod, f) => ageFits(it.age, f.age) && (!f.tier || (f.tier==='free' ? it.tier==='free' : it.tier!=='free')) && (!f.block || BLOCK_OF(mod)===f.block);
+function filtTree(f){
+  return libTree().map(m => ({...m, cats:m.cats.map(c => ({...c, items:c.items.filter(it => itemFits(it, m.mod, f))})).filter(c => c.items.length)})).filter(m => m.cats.length);
+}
+const filtBar = (f, act) => `<div class="filters">
+  ${[['age','Возраст',AGE_F],['tier','Доступ',TIER_F],['block','Блок',BLOCK_F]].map(([k,t,opts]) => `<div class="fgroup"><span class="flabel">${t}</span><div class="seg">${opts.map(([v,l]) => `<button data-act="${act}" data-k="${k}" data-v="${v}" aria-pressed="${(f[k]||'')===v}">${l}</button>`).join('')}</div></div>`).join('')}</div>`;
+R.library = () => {
+  const f = S.filt = S.filt || {}, tree = filtTree(f), n = tree.reduce((k,m)=>k+m.cats.reduce((j,c)=>j+c.items.length,0),0), any = f.age||f.tier||f.block;
+  const favs = allItems().filter(it => it.route && isFav(it.route));
+  return `
+<section class="wrap page-head"><p class="eyebrow">Библиотека упражнений</p><h1>Что можно назначить</h1>
+  ${filtBar(f, 'filt')}
+  <p class="muted small" style="margin-top:10px">${any ? `Найдено: ${plural(n,'упражнение','упражнения','упражнений')}. <button class="linkbtn" data-act="filt-reset">Сбросить фильтры</button>` : `${plural(n,'упражнение','упражнения','упражнений')}. Звёздочка добавляет в «Избранное».`}</p></section>
+${!any && favs.length ? `<section class="wrap" style="margin-bottom:16px"><div class="mod"><div class="mod-h" style="--tint:var(--butter)">${svg(I.medal)}<div><h2>Избранное</h2><p class="muted small">${plural(favs.length,'упражнение','упражнения','упражнений')}</p></div></div><div class="cat">${favs.map(exRow).join('')}</div><div style="height:12px"></div></div></section>` : ''}
+<section class="wrap lib">
+  ${tree.length ? tree.map(m=>`<div class="mod"><div class="mod-h" style="--tint:var(--${m.tint})">${svg(I[m.ill]||I.sun)}<div><h2>${m.mod}</h2><p class="muted small">${m.note}</p></div></div>
+    ${m.cats.map(c=>`<div class="cat"><h3>${c.name}</h3>${c.items.map(exRow).join('')}</div>`).join('')}<div style="height:12px"></div></div>`).join('') : '<div class="panel"><p>Под эти фильтры ничего нет. Попробуйте другой возраст или блок.</p></div>'}
+</section>`;
+};
+ACT.filt = el => { S.filt = {...(S.filt||{}), [el.dataset.k]: el.dataset.v}; save(); render(true); };
+ACT['filt-reset'] = () => { S.filt = {}; save(); render(true); };
+
+/* ---------- 8. Спокойный экран ---------- */
+function applyCalm(){ document.documentElement.toggleAttribute('data-calm', !!S.calm); document.querySelectorAll('[data-act="calm"]').forEach(b => b.setAttribute('aria-pressed', !!S.calm)); }
+ACT.calm = () => { S.calm = !S.calm; save(); applyCalm(); };
+const calmBtn = (label=true) => `<button class="calm-btn" data-act="calm" aria-pressed="${!!S.calm}" aria-label="Спокойный экран">${svg(I.moon)}${label?'<span>Спокойный экран</span>':''}</button>`;
+
+/* ---------- 7. Звёзды, персонаж и аксессуары ---------- */
+if (S.stars == null) S.stars = 12;
+function earn(n){ S.stars = (S.stars||0) + n; S.earned = (S.earned||0) + n; save(); }
+const CHARS = [
+  {k:'bear', t:'Мишка', s:() => bear('joy'), eye:47, top:0},
+  {k:'kid', t:'Ребёнок', s:() => face('joy','var(--i-peach)'), eye:47, top:0},
+  {k:'pig', t:'Хрюша', s:() => I.pig, eye:42, top:2},
+  {k:'mouse', t:'Мышка', s:() => I.mouse, eye:52, top:12},
+  {k:'frog', t:'Лягушка', s:() => I.frog, eye:35, top:6},
+  {k:'cow', t:'Бурёнка', s:() => I.cow, eye:44, top:6}
+];
+const ACCS = [
+  {k:'cap', t:'Кепка', p:5, kind:'hat', s:'<path d="M28 30a22 19 0 0 1 44 0z" fill="var(--i-sky)"/><path d="M60 29h22q2 4-4 5H60z" fill="var(--i-sky)"/><circle cx="50" cy="12" r="3" fill="var(--i-light)"/>'},
+  {k:'glasses', t:'Очки', p:8, kind:'eyes', s:'<circle cx="40" cy="47" r="9" fill="var(--i-light)" fill-opacity=".25" stroke="var(--i-ink)" stroke-width="3"/><circle cx="60" cy="47" r="9" fill="var(--i-light)" fill-opacity=".25" stroke="var(--i-ink)" stroke-width="3"/><path d="M49 46h2M31 45l-9-3M69 45l9-3" stroke="var(--i-ink)" stroke-width="3" stroke-linecap="round"/>'},
+  {k:'bow', t:'Бантик', p:6, kind:'hat', s:'<path d="M70 22l-12-8v16zM70 22l12-8v16z" fill="var(--i-rose)"/><circle cx="70" cy="22" r="4" fill="var(--i-rose)" stroke="var(--i-light)" stroke-width="1.5"/>'},
+  {k:'scarf', t:'Шарф', p:10, kind:'neck', s:'<path d="M26 80q24 12 48 0v8q-24 12-48 0z" fill="var(--i-green)"/><path d="M62 88h10v12H62z" fill="var(--i-green)"/>'},
+  {k:'phones', t:'Наушники', p:15, kind:'ears', s:'<path d="M20 52a30 32 0 0 1 60 0" fill="none" stroke="var(--i-ink)" stroke-width="5" opacity=".8"/><rect x="12" y="46" width="13" height="20" rx="6" fill="var(--i-lavender)"/><rect x="75" y="46" width="13" height="20" rx="6" fill="var(--i-lavender)"/>'},
+  {k:'crown', t:'Корона', p:25, kind:'hat', s:'<path d="M32 26l4-16 8 9 6-12 6 12 8-9 4 16z" fill="var(--i-yellow)"/><circle cx="50" cy="20" r="2.5" fill="var(--i-rose)"/>'},
+  {k:'flower', t:'Цветок', p:4, kind:'hat', s:'<g transform="translate(28 22)">'+[0,72,144,216,288].map(a=>`<ellipse cx="0" cy="-6" rx="4" ry="6" fill="var(--i-peach)" transform="rotate(${a})"/>`).join('')+'<circle r="3.5" fill="var(--i-yellow)"/></g>'},
+  {k:'cape', t:'Плащ героя', p:30, kind:'back', s:'<path d="M18 70q32 10 64 0l10 30H8z" fill="var(--i-rose)"/>'}
+];
+const AV = () => S.av = S.av || {ch:'bear', own:[], on:[]};
+function avatarSvg(av=AV()){
+  const c = CHARS.find(x=>x.k===av.ch) || CHARS[0], on = ACCS.filter(a => av.on.includes(a.k));
+  const lay = a => `<g transform="translate(0 ${a.kind==='eyes' ? c.eye-47 : a.kind==='hat' ? c.top : 0})">${a.s}</g>`;
+  return svg(on.filter(a=>a.kind==='back').map(lay).join('') + c.s() + on.filter(a=>a.kind!=='back').map(lay).join(''), '0 0 100 100');
+}
+CHILD.add('avatar');
+R.avatar = () => { const av = AV(); return `
+<section class="wrap game"><div class="game-top"><button class="back" data-act="back" aria-label="Назад">${ICON_BACK}</button><h1 class="game-title">Мой герой</h1><span class="starbank">★ ${S.stars}</span></div>
+  <div class="av-stage">${avatarSvg()}</div>
+  <h2 class="av-h">Выбери героя</h2>
+  <div class="av-row">${CHARS.map(c=>`<button class="av-pick" data-act="av-ch" data-k="${c.k}" aria-pressed="${av.ch===c.k}" aria-label="${c.t}">${svg(c.s())}<span>${c.t}</span></button>`).join('')}</div>
+  <h2 class="av-h">Магазин</h2><p class="hint" style="margin:-6px 0 12px">Звёзды дают за каждое выполненное упражнение</p>
+  <div class="av-row">${ACCS.map(a=>{ const own = av.own.includes(a.k), wear = av.on.includes(a.k);
+    return `<button class="av-pick shop${own?' own':''}" data-act="av-acc" data-k="${a.k}" aria-pressed="${wear}">${avatarSvg({ch:av.ch, on:[a.k]})}<span>${a.t}</span><b>${own ? (wear?'Надето':'Надеть') : '★ '+a.p}</b></button>`; }).join('')}</div>
+  <p class="feedback" id="fb" aria-live="polite"></p>
+</section>`; };
+ACT['av-ch'] = el => { AV().ch = el.dataset.k; save(); render(true); };
+ACT['av-acc'] = el => {
+  const av = AV(), a = ACCS.find(x=>x.k===el.dataset.k);
+  if (!av.own.includes(a.k)){
+    if (S.stars < a.p){ $('fb').textContent = `Нужно ещё ${plural(a.p-S.stars,'звезда','звезды','звёзд')}. Позанимайся, и они появятся!`; return; }
+    S.stars -= a.p; av.own.push(a.k); av.on.push(a.k); tone(660,.15,.2); tone(880,.2,.2,.12);
+  } else av.on = av.on.includes(a.k) ? av.on.filter(x=>x!==a.k) : [...av.on.filter(x => ACCS.find(y=>y.k===x).kind !== a.kind), a.k];
+  save(); render(true);
+};
+
+/* ---------- 6. ИОМ: назначения специалиста ---------- */
+const SEED_ROUTE = {'Моё утро':'schedule','Найди числа (Шульте 3×3)':'schulte','Что лишнее?':'odd','Какое настроение?':'emotions','Звук спрятался':'phonem-r','Слоги → слова → фразы [Р]':'auto-r','Запомни и найди':'memo','Последовательность событий':'sequence'};
+const iom = id => (S.iom = S.iom || {})[id] = S.iom[id] || [];
+const assigned = id => [...KIDS[id].assign.map(a => ({t:a[0], f:a[1], p:a[2], r:SEED_ROUTE[a[0]]})), ...(S.extra[id]||[]).map(a=>({t:a.t, f:a.f})), ...iom(id).map(a => ({...a, isNew:true}))];
+function iomBuilder(id){
+  const f = S.iomF = S.iomF || {age: KIDS[id].age<=4?'3':KIDS[id].age<=6?'5':'7'}, has = new Set(assigned(id).map(a=>a.r).filter(Boolean));
+  const items = filtTree(f).flatMap(m => m.cats.flatMap(c => c.items.filter(it => it.route && !it.route.startsWith('ex-my-') && !['lists','parent','planner','voice-r'].includes(it.route)).map(it => ({...it, mod:m.mod, cat:c.name}))));
+  return `<div class="panel"><h2>Конструктор ИОМ</h2><p class="muted small" style="margin-bottom:12px">Выберите упражнения и частоту. У родителя они появятся во вкладке «Задания от специалиста», у ребёнка в списке на сегодня.</p>
+    ${filtBar(f, 'iom-f')}
+    <label class="field" style="margin:14px 0"><span>Как часто</span><select id="iomFreq"><option>каждый день</option><option>5 раз в неделю</option><option selected>3 раза в неделю</option><option>1 раз в неделю</option></select></label>
+    <div class="iom-list">${items.map(it=>`<label class="iom-it"><input type="checkbox" value="${it.route}" data-t="${esc(it.t)}" ${has.has(it.route)?'checked disabled':''}><span><b>${it.t}</b><small>${it.cat} · ${it.age} · ${TIER[it.tier]}</small></span><a href="#${it.route}" aria-label="Посмотреть">Открыть</a></label>`).join('') || '<p class="muted">Ничего не найдено.</p>'}</div>
+    <div class="row" style="margin-top:14px"><button class="btn primary" data-act="iom-add" data-id="${id}">Назначить выбранные</button></div><p class="feedback" id="fb" aria-live="polite" style="text-align:left"></p></div>`;
+}
+ACT['iom-f'] = el => { S.iomF = {...(S.iomF||{}), [el.dataset.k]: el.dataset.v}; save(); render(true); };
+ACT['iom-add'] = el => {
+  const id = el.dataset.id, boxes = [...document.querySelectorAll('.iom-it input:checked:not(:disabled)')];
+  if (!boxes.length){ $('fb').textContent = 'Отметьте хотя бы одно упражнение.'; return; }
+  boxes.forEach(b => iom(id).push({r:b.value, t:b.dataset.t, f:$('iomFreq').value, at:ddmm(new Date())})); save(); render(true);
+};
+ACT['iom-del'] = el => { const id = el.dataset.id; S.iom[id] = iom(id).filter(a => a.r !== el.dataset.r); save(); render(true); };
+const assignList = (id, spec) => `<ul class="list assign">${assigned(id).map(a=>`<li><div><p class="t">${a.t}</p><p class="w">${a.f}${a.at?' · назначено '+a.at:''}</p></div><p class="r">${spec && a.isNew ? `<button class="linkbtn" data-act="iom-del" data-id="${id}" data-r="${a.r}">Убрать</button>` : ''} ${!spec && a.r ? `<a class="btn small-btn" href="#${a.r}">${S.done.includes(a.r)||S.done.includes(a.r.replace(/^ex-/,''))?'✓ Сегодня':'Начать'}</a>` : a.isNew?'<span class="pill new">Новое</span>':`<span class="pill">${a.p||''}</span>`}</p></li>`).join('')}</ul>`;
+
+/* ---------- 3. Дневник настроения ---------- */
+const MOODS = [['joy','Радостный',5],['calm','Спокойный',4],['sad','Грустный',2],['fear','Тревожный',2],['angry','Раздражённый',1]];
+const MSCORE = Object.fromEntries(MOODS.map(m=>[m[0],m[2]]));
+const SEED_MOOD = {misha:['calm joy','joy calm','calm sad','calm calm','joy joy','calm angry','sad calm','joy calm','calm calm','calm fear','joy joy','calm calm','joy calm'],
+  sonya:['joy joy','joy calm','calm calm','sad sad','calm joy','joy joy','calm calm','joy joy','calm calm','joy calm','calm calm','joy joy','calm joy'],
+  artem:['calm calm','fear sad','calm calm','calm joy','calm calm','joy calm','calm angry','calm calm','fear calm','calm calm','joy joy','calm calm','calm joy']};
+function moodData(id){
+  const own = (S.mood = S.mood || {})[id] || {}, out = [];
+  for (let i=13;i>=0;i--){ const d = ago(i), k = dayKey(d), seed = i ? (SEED_MOOD[id][13-i]||'calm calm').split(' ') : [null,null];
+    const o = own[k] || {}; out.push({d, k, am:o.am || (i?seed[0]:null), pm:o.pm || (i?seed[1]:null)}); }
+  return out;
+}
+function moodChart(id){
+  const data = moodData(id), W=440, H=220, L=36, B=30, T=14, step=(W-L-16)/13, x=i=>L+8+step*i, y=v=>T+(H-T-B)*(1-(v-1)/4);
+  let g = [1,2,3,4,5].map(v=>`<line x1="${L}" x2="${W-6}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v>1?'stroke-dasharray="3 5"':''}/>`).join('');
+  g += [[5,'joy'],[3,'calm'],[1,'angry']].map(([v,k])=>`<g transform="translate(${L-30} ${y(v)-11}) scale(.22)">${face(k)}</g>`).join('');
+  const avg = data.map((p,i)=>{ const s=[p.am,p.pm].filter(Boolean).map(k=>MSCORE[k]); return s.length?[x(i), y(s.reduce((a,b)=>a+b,0)/s.length)]:null; }).filter(Boolean);
+  g += `<polyline points="${avg.map(p=>p.join(',')).join(' ')}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
+  data.forEach((p,i)=>{ if (p.am) g+=`<circle cx="${x(i)-3}" cy="${y(MSCORE[p.am])}" r="4" fill="var(--i-yellow)"/>`; if (p.pm) g+=`<circle cx="${x(i)+3}" cy="${y(MSCORE[p.pm])}" r="4" fill="var(--i-lavender)"/>`;
+    if (i%2===1 || i===13) g+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" ${i===13?'style="font-weight:800;fill:var(--ink)"':''}>${i===13?'сегодня':ddmm(p.d)}</text>`; });
+  const bad = data.filter(p=>p.pm && MSCORE[p.pm]<=2).length, badAm = data.filter(p=>p.am && MSCORE[p.am]<=2).length;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Настроение за 2 недели">${g}</svg>
+    <p class="muted small legend"><span><i style="background:var(--i-yellow)"></i>утро</span><span><i style="background:var(--i-lavender)"></i>вечер</span><span><i style="background:var(--accent)"></i>среднее за день</span></p>
+    <p class="muted small" style="margin-top:6px">За 2 недели трудных утр: ${badAm}, трудных вечеров: ${bad}.${bad>badAm?' Вечером состояние хуже, чем утром.':''}</p>`;
+}
+function moodPicker(id){
+  const t = ((S.mood = S.mood || {})[id] = S.mood[id] || {})[todayKey()] || {};
+  const row = (part, label) => `<div class="mood-row"><p class="level">${label}</p><div class="mood-opts">${MOODS.map(([k,n])=>`<button class="mood" data-act="mood" data-part="${part}" data-k="${k}" aria-pressed="${t[part]===k}" aria-label="${n}">${svg(face(k))}<span>${n}</span></button>`).join('')}</div></div>`;
+  return `<div class="panel"><h2>Как Миша сегодня?</h2><p class="muted small" style="margin-bottom:10px">Отметьте настроение утром и вечером. Специалист увидит график.</p>${row('am','Утро')}${row('pm','Вечер')}</div>`;
+}
+ACT.mood = el => { const t = (S.mood[KID_ID][todayKey()] = S.mood[KID_ID][todayKey()] || {}); t[el.dataset.part] = el.dataset.k; save(); render(true); };
+
+/* ---------- 4. Вопрос куратору ---------- */
+const SEED_CHAT = {misha:[{from:'parent', text:'Миша стал закрывать уши на шумных занятиях. Это нормально?', at:'24 окт, 19:10'},
+  {from:'spec', text:'Да, так он справляется с перегрузкой. Перед выходом из дома сделайте вместе «Безопасное место», а в шумных местах дайте наушники.', at:'25 окт, 09:30'}], sonya:[], artem:[]};
+const chat = id => (S.chat = S.chat || {})[id] = S.chat[id] || SEED_CHAT[id].slice();
+function chatPanel(id, me){
+  const who = {parent:'Мама', spec:'Анна Сергеевна'};
+  return `<div class="panel"><h2>${me==='parent'?'Вопрос куратору':'Вопросы родителей'}</h2>
+    <p class="muted small" style="margin-bottom:12px">${me==='parent'?'Куратор: логопед Анна Сергеевна. Обычно отвечает в течение дня.':`Переписка с родителями: ${KIDS[id].name}`}</p>
+    <div class="chat" id="chatBox">${chat(id).map(m=>`<div class="msg ${m.from===me?'me':''}"><p>${esc(m.text)}</p><span>${who[m.from]} · ${m.at}</span></div>`).join('') || '<p class="muted small">Сообщений пока нет.</p>'}</div>
+    <form class="chat-form" id="chatForm" data-id="${id}" data-me="${me}"><textarea id="chatT" rows="2" maxlength="600" placeholder="${me==='parent'?'Напишите вопрос':'Ответ родителю'}"></textarea><button class="btn primary" type="submit">Отправить</button></form></div>`;
+}
+function bindChat(){
+  const f = $('chatForm'); if (!f) return;
+  const box = $('chatBox'); box.scrollTop = box.scrollHeight;
+  f.addEventListener('submit', e => { e.preventDefault(); const t = $('chatT').value.trim(); if (!t) return;
+    chat(f.dataset.id).push({from:f.dataset.me, text:t, at:nowRu()}); save(); render(true); });
+}
+
+/* ---------- 5. Заметки специалиста (родитель не видит) ---------- */
+const SEED_NOTES = {misha:[{text:'На шумных занятиях закрывает уши. На следующей встрече проверить реакцию на звуки разной громкости, обсудить с мамой наушники.', at:'25 окт, 10:05'}], sonya:[], artem:[]};
+const notes = id => (S.notes = S.notes || {})[id] = S.notes[id] || SEED_NOTES[id].slice();
+const notesPanel = id => `<div class="panel notes"><h2>${svg('<rect x="22" y="44" width="56" height="44" rx="8" fill="var(--i-lavender)"/><path d="M34 44V32a16 16 0 0 1 32 0v12" fill="none" stroke="var(--i-lavender)" stroke-width="8"/>')} Заметки специалиста</h2>
+  <p class="muted small" style="margin-bottom:12px">Видны только специалистам центра. В кабинете родителя их нет.</p>
+  <ul class="list">${notes(id).map((n,i)=>`<li><div><p>${esc(n.text)}</p><p class="w">${n.at}</p></div><p class="r"><button class="linkbtn" data-act="note-del" data-id="${id}" data-i="${i}">Удалить</button></p></li>`).join('') || '<li><p class="muted small">Заметок пока нет.</p></li>'}</ul>
+  <form class="chat-form" id="noteForm" data-id="${id}" style="margin-top:12px"><textarea id="noteT" rows="2" maxlength="1000" placeholder="Наблюдение, гипотеза, план на встречу"></textarea><button class="btn primary" type="submit">Сохранить</button></form></div>`;
+ACT['note-del'] = el => { notes(el.dataset.id).splice(+el.dataset.i, 1); save(); render(true); };
+function bindNotes(){ const f = $('noteForm'); if (!f) return; f.addEventListener('submit', e => { e.preventDefault(); const t = $('noteT').value.trim(); if (!t) return; notes(f.dataset.id).unshift({text:t, at:nowRu()}); save(); render(true); }); }
+
+/* ---------- 2. Напоминания через Календарь ---------- */
+const WD = [['MO','Пн'],['TU','Вт'],['WE','Ср'],['TH','Чт'],['FR','Пт'],['SA','Сб'],['SU','Вс']];
+const RM = () => S.remind = S.remind || {days:['MO','WE','FR'], time:'18:00', kind:'home'};
+function remindPanel(){
+  const r = RM();
+  return `<div class="panel"><h2>Напоминания</h2><p class="muted small" style="margin-bottom:12px">Напоминание попадёт в Календарь iPhone или iPad и сработает, даже если приложение закрыто.</p>
+    <p class="level">Что напоминать</p><div class="seg" style="margin-bottom:12px">${[['home','Домашнее задание'],['center','Занятие в центре']].map(([k,t])=>`<button data-act="rm-kind" data-k="${k}" aria-pressed="${r.kind===k}">${t}</button>`).join('')}</div>
+    <p class="level">Дни</p><div class="seg wd" style="margin-bottom:12px">${WD.map(([k,t])=>`<button data-act="rm-day" data-k="${k}" aria-pressed="${r.days.includes(k)}">${t}</button>`).join('')}</div>
+    <label class="field" style="max-width:200px"><span>Время</span><input type="time" id="rmTime" value="${r.time}"></label>
+    <div class="row" style="margin-top:14px"><button class="btn primary" data-act="rm-ics">Добавить в Календарь</button></div>
+    <p class="feedback" id="rmMsg" aria-live="polite" style="text-align:left"></p></div>`;
+}
+ACT['rm-kind'] = el => { RM().kind = el.dataset.k; save(); render(true); };
+ACT['rm-day'] = el => { const r = RM(), k = el.dataset.k; r.days = r.days.includes(k) ? r.days.filter(x=>x!==k) : [...r.days, k]; save(); render(true); };
+function icsFor(r){
+  const [h, m] = r.time.split(':').map(Number), order = WD.map(w=>w[0]);
+  let d = new Date(); d.setHours(h, m, 0, 0);
+  for (let i=0;i<8;i++){ const wd = order[(d.getDay()+6)%7]; if (r.days.includes(wd) && d > new Date()) break; d.setDate(d.getDate()+1); }
+  const p = n => String(n).padStart(2,'0'), loc = `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(h)}${p(m)}00`;
+  const title = r.kind === 'home' ? 'Ступени: домашнее задание' : 'Ступени: занятие в центре';
+  const text = r.kind === 'home' ? 'Пора позаниматься 10–15 минут. Откройте Ступени.' : 'Сегодня занятие в центре. Возьмите сменную обувь.';
+  const now = new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
+  return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Stupeni//RU','CALSCALE:GREGORIAN','BEGIN:VEVENT',`UID:${Date.now()}@stupeni`,`DTSTAMP:${now}`,`DTSTART:${loc}`,'DURATION:PT20M',
+    `RRULE:FREQ=WEEKLY;BYDAY=${r.days.join(',')}`,`SUMMARY:${title}`,`DESCRIPTION:${text}`,`URL:${location.origin}${location.pathname}#child`,
+    'BEGIN:VALARM','ACTION:DISPLAY','TRIGGER:-PT5M',`DESCRIPTION:${title}`,'END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+}
+const standalone = () => window.navigator.standalone || matchMedia('(display-mode: standalone)').matches;
+async function giveFile(name, type, text){
+  const file = new File([text], name, {type});
+  if (standalone() && navigator.canShare && navigator.canShare({files:[file]})){ try { await navigator.share({files:[file], title:name}); return 'share'; } catch(e){ return 'cancel'; } }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = name; document.body.appendChild(a); a.click(); a.remove(); later(() => URL.revokeObjectURL(a.href), 4000);
+  return 'download';
+}
+ACT['rm-ics'] = async () => {
+  const r = RM(); r.time = $('rmTime').value || r.time; save();
+  if (!r.days.length){ $('rmMsg').textContent = 'Выберите хотя бы один день.'; return; }
+  const how = await giveFile('stupeni-napominanie.ics', 'text/calendar', icsFor(r));
+  $('rmMsg').textContent = how === 'share' ? 'Выберите «Календарь» или сохраните файл и откройте его.' : how === 'cancel' ? '' : 'Нажмите «Добавить всё», когда iPhone покажет событие. Если ничего не открылось, откройте сайт в Safari и повторите.';
+};
+/* в приложении: напоминание, если задания на сегодня не сделаны */
+function remindBanner(){
+  const r = S.remind; if (!r || r.kind !== 'home') return '';
+  const wd = WD[(new Date().getDay()+6)%7][0], [h, m] = r.time.split(':').map(Number), now = new Date();
+  if (!r.days.includes(wd) || now.getHours()*60+now.getMinutes() < h*60+m) return '';
+  const left = TASKS.filter(t => !S.done.includes(t.id)).length;
+  return left ? `<div class="banner">${svg(I.clock)}<p><b>Напоминание:</b> сегодня не сделано: ${plural(left,"задание","задания","заданий")}. <a href="#child">Открыть детский режим</a></p></div>` : '';
+}
+
+/* ---------- 9. Офлайн-набор ---------- */
+function offlinePanel(){
+  const cards = EX['com-cards'] ? EX['com-cards'].groups.reduce((n,g)=>n+g.cards.length,0) : 0, st = Object.keys(EX).filter(k=>EX[k].e==='story').length + 1;
+  return `<div class="panel"><h2>Без интернета</h2>
+    <p class="muted small" id="offState" style="margin-bottom:12px">Проверяю…</p>
+    <p class="small" style="margin-bottom:12px">Карточки «Я хочу» (${cards}) и социальные истории (${st}) можно сохранить файлом. Он открывается без интернета и печатается на A4.</p>
+    <div class="row"><button class="btn primary" data-act="off-file">Скачать карточки и истории</button><button class="btn" data-act="off-sync">Обновить копию в приложении</button></div>
+    <p class="feedback" id="offMsg" aria-live="polite" style="text-align:left"></p></div>`;
+}
+async function offState(){
+  const el = $('offState'); if (!el) return;
+  let ok = false; try { ok = !!(navigator.serviceWorker && navigator.serviceWorker.controller) && (await caches.keys()).length > 0; } catch(e){}
+  el.textContent = ok ? 'Приложение сохранено на этом устройстве. Все упражнения, карточки и истории работают без интернета.' : 'Офлайн-копия появится после первого открытия сайта по HTTPS (с иконки на экране «Домой»).';
+}
+ACT['off-sync'] = async () => {
+  try { const r = await navigator.serviceWorker.getRegistration(); if (r) await r.update(); const c = await caches.open((await caches.keys())[0] || 'stupeni');
+    await c.add('./index.html'); $('offMsg').textContent = 'Готово: копия обновлена.'; } catch(e){ $('offMsg').textContent = 'Не получилось: нужен интернет и открытие по HTTPS.'; }
+  offState();
+};
+function offlineHtml(){
+  const page = (title, body) => `<section class="sheet-pg"><h2>${title}</h2>${body}</section>`;
+  const cards = EX['com-cards'] ? EX['com-cards'].groups.map(g => page('Карточки: ' + g.t, `<div class="cards">${g.cards.map(c=>`<div class="card">${pic(c)}<p>${c.say}</p></div>`).join('')}</div>`)).join('') : '';
+  const stories = [{t:STORY.title, pages:STORY.pages.map(p=>({ill:p.ill, text:p.text}))}, ...Object.values(EX).filter(e=>e.e==='story').map(e=>({t:e.t, pages:e.pages}))]
+    .map(s => page('История: ' + s.t, `<div class="pages">${s.pages.map((p,i)=>`<div class="pg"><div class="art">${pic(p)}</div><p><b>${i+1}.</b> ${p.text}</p></div>`).join('')}</div>`)).join('');
+  const css = [...document.styleSheets].map(s => { try { return [...s.cssRules].map(r=>r.cssText).filter(t => t.startsWith(':root') || t.startsWith('@media (prefers-color-scheme')).join('\n'); } catch(e){ return ''; } }).join('\n');
+  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ступени: карточки и истории</title>
+<style>${css}
+body{margin:0;padding:16px;font:16px/1.45 -apple-system,system-ui,sans-serif;background:var(--bg);color:var(--ink)}h1{font-size:26px}h2{font-size:20px;margin:0 0 12px}
+.sheet-pg{background:var(--surface);border-radius:20px;padding:18px;margin:0 0 18px;break-after:page}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}.card{border:3px solid var(--line);border-radius:18px;padding:10px;text-align:center}
+.card svg{width:100%;max-width:120px;height:auto}.card p{margin:6px 0 0;font-weight:800;font-size:18px}
+.pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.pg{border:2px solid var(--line);border-radius:16px;padding:10px}.art svg{width:100%;max-height:160px}
+@media print{body{background:#fff;padding:0}.sheet-pg{border-radius:0}}</style></head><body>
+<h1>Ступени: карточки и социальные истории</h1><p>Файл работает без интернета. Его можно распечатать или открыть на планшете.</p>${cards}${stories}</body></html>`;
+}
+ACT['off-file'] = async () => { const how = await giveFile('stupeni-kartochki-i-istorii.html', 'text/html', offlineHtml());
+  $('offMsg').textContent = how === 'share' ? 'Выберите «Сохранить в Файлы». Файл откроется без интернета.' : how === 'download' ? 'Файл скачан. На iPhone он в приложении «Файлы», папка «Загрузки».' : ''; };
+
+/* ---------- Кабинет родителя: вкладки ---------- */
+const PARENT_TABS = [['','Обзор'],['tasks','Задания от специалиста'],['mood','Настроение'],['chat','Вопрос куратору'],['more','Настройки']];
+const parentOverview = R.parent, parentOverviewAfter = AFTER.parent;
+const parentHead = () => `<section class="wrap page-head"><p class="eyebrow">Кабинет родителя</p><h1>Миша, 6 лет</h1><p class="muted">Ведут: логопед Анна Сергеевна, психолог Олег Викторович</p></section>`;
+R.parent = tab => {
+  const bar = `<section class="wrap">${tabsBar('parent', PARENT_TABS, tab||'')}${remindBanner()}</section>`;
+  if (!tab){ const html = parentOverview(); const i = html.indexOf('</section>') + 10; return html.slice(0, i) + bar + html.slice(i); }
+  const body = {
+    tasks: () => `<section class="wrap"><div class="panel"><h2>Задания от специалиста</h2><p class="muted small" style="margin-bottom:12px">Индивидуальный маршрут Миши. Назначает Анна Сергеевна.</p>${assignList(KID_ID, false)}</div>${DEMO_NOTE}</section>`,
+    mood: () => `<section class="wrap two">${moodPicker(KID_ID)}<div class="panel"><h2>Настроение за 2 недели</h2>${moodChart(KID_ID)}</div></section>`,
+    chat: () => `<section class="wrap">${chatPanel(KID_ID, 'parent')}${DEMO_NOTE}</section>`,
+    more: () => `<section class="wrap two">${remindPanel()}<div class="panel"><h2>Спокойный экран</h2><p class="muted small" style="margin-bottom:14px">Без анимаций, с приглушёнными цветами и тихими звуками. Помогает при сенсорной перегрузке. Включается и в детском режиме.</p>${calmBtn()}</div></section>
+      <section class="wrap two">${offlinePanel()}<div class="panel"><h2>Для дома</h2><div class="row"><a class="chip" href="#planner">Собрать расписание</a><a class="chip" href="#lists">Чек-листы</a><a class="chip" href="#calm">Подышать вместе</a><a class="chip" href="#avatar">Герой ребёнка</a></div></div></section>`
+  }[tab];
+  return parentHead() + bar + (body ? body() : '');
+};
+AFTER.parent = tab => { if (!tab) return parentOverviewAfter(); if (tab==='chat') bindChat(); if (tab==='more') offState(); };
+
+/* ---------- Кабинет специалиста: вкладки ---------- */
+const SPEC_TABS = [['','Обзор'],['iom','ИОМ'],['mood','Настроение'],['chat','Вопросы'],['notes','Заметки']];
+const kidOverview = kidPage, specList = R.specialist;
+R.specialist = arg => {
+  const [id, tab=''] = (arg||'').split('-');
+  if (!id || !KIDS[id]) return specList();
+  const k = KIDS[id], bar = `<section class="wrap">${tabsBar('specialist-'+id, SPEC_TABS, tab)}</section>`;
+  const head = `<section class="wrap page-head"><a class="crumbs" href="#specialist">← Мои дети</a><h1>${k.name}, ${k.age} лет</h1><p class="muted">${k.team}</p></section>`;
+  if (!tab){ let html = kidOverview(id).replace(/<form class="form" id="assignForm"[\s\S]*?<\/form>/, `<a class="btn" href="#specialist-${id}-iom" style="margin-top:14px">Открыть конструктор ИОМ</a>`);
+    html = html.replace(/<ul class="list assign">[\s\S]*?<\/ul>/, assignList(id, true)); const i = html.indexOf('</section>') + 10; return html.slice(0, i) + bar + html.slice(i); }
+  const body = {
+    iom: () => `<section class="wrap two">${iomBuilder(id)}<div class="panel"><h2>Сейчас назначено</h2>${assignList(id, true)}</div></section>`,
+    mood: () => `<section class="wrap"><div class="panel"><h2>Эмоциональный фон: ${k.name}</h2><p class="muted small" style="margin-bottom:8px">Отмечает родитель утром и вечером. Шкала от 1 (раздражён) до 5 (радостный).</p>${moodChart(id)}</div></section>`,
+    chat: () => `<section class="wrap">${chatPanel(id, 'spec')}</section>`,
+    notes: () => `<section class="wrap">${notesPanel(id)}</section>`
+  }[tab];
+  return head + bar + (body ? body() : '');
+};
+AFTER.specialist = arg => { const [id, tab] = (arg||'').split('-'); if (tab==='chat') bindChat(); if (tab==='notes') bindNotes(); };
+
+/* ---------- Детский режим: герой, звёзды, задания специалиста, спокойный экран ---------- */
+const childBase = R.child;
+R.child = () => {
+  let html = childBase();
+  html = html.replace(/<div class="avatar">[\s\S]*?<\/div>/, `<a class="avatar hero-av" href="#avatar" aria-label="Мой герой">${avatarSvg()}</a>`);
+  html = html.replace('<button class="hold"', `<div class="child-tools"><a class="starbank" href="#avatar">★ ${S.stars}</a>${calmBtn(false)}</div><button class="hold"`);
+  const extra = iom(KID_ID).filter(a => !TASKS.some(t => t.id === a.r)).slice(0, 4), tints = ['peach','sky','sage','lavender'];
+  if (extra.length) html = html.replace(/(<section class="wrap tasks stagger">)/, `$1${extra.map((a,i)=>{ const d = S.done.includes(a.r) || S.done.includes(a.r.replace(/^ex-/,''));
+    return `<a class="task${d?' is-done':''}" href="#${a.r}" style="--tint:var(--${tints[i%4]})"><div class="task-art">${svg(I.medal)}</div><div><h3>${a.t}</h3><p>Задание от специалиста</p></div>${d?'<span class="check">✓ Готово</span>':''}</a>`; }).join('')}`);
+  return html;
+};
+
 /* ===================== роутер ===================== */
 ['child','schedule','story','emotions','empathy','calm','schulte','proof','maze','seek','words','picto','memo','odd','analogy','matrix','sequence','cipher'].forEach(r => CHILD.add(r));
 const view = document.getElementById('view');
 let current = {route:'home', arg:''};
 function render(keepScroll){
+  applyCalm();
   if (G && G.timer) clearTimeout(G.timer);
   if (window.speechSynthesis) speechSynthesis.cancel();
   const raw = (location.hash||'').slice(1) || 'home';
